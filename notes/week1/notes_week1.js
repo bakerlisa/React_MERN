@@ -73,8 +73,51 @@ function doThingTwo(){
 const firstName = "Mike"
 // firstName = "Lisa";
 const iceCream = ['chocolate','vanilla','cookie dough,fudge,brownie']
-iceCream[0] = "strawberry";
-console.log(iceCream);
+// iceCream[0] = "strawberry";
+// console.log(iceCream);
 
 // why did this work? 
     // - you can't change the type, in this case an array to string or number or object
+
+// ============================== DESTRUCTING ==============================
+// pull values out and name to a var that already exsists
+
+const [chocolate,other,] = iceCream;
+// console.log(chocolate);
+
+const sundea = {
+    flavor: "vanilla",
+    sauce: "hot fudge",
+    toppings: ["cookies","rainbow","bananas","whipped cream"]
+}
+
+// console.log(sundea.toppings)
+const [yellow] = sundea.toppings 
+
+sundea.toppings[0] = "oreo";
+//console.log(yellow) // already saved the value befreo we saved it so it wasn't updated
+
+//console.log(sundea.toppings)
+
+// value is not being removed but now we have an extra variable
+
+
+// ============================== REST / SPREAD ==============================
+// rest
+const [first, ...others] = iceCream;
+console.log(others);
+
+// spread - spreads all thw values inside the array/object
+// const newList = ["hot cheeto", iceCream]
+// vrs
+const newList = ["hot cheeto", ...iceCream,'jello']
+console.log(newList)
+
+const {flavor, ...fixings}  = sundea;
+// console.log(fixings);
+
+const superChocolate = {
+    flavor: "chocolate",
+    ...fixings
+}
+// console.log(superChocolate);
