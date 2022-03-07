@@ -22,7 +22,8 @@
     </p>
     <!-- 1. <p onmouseover="mouseOverFunction(this)"> -->
     <!-- 2. <p onmouseover="setBackgroundColorById('last_item',getValueFromId('last_item'))"></p> -->
-    <p id="parent_wrapper" onmouseover="changeBackground('parent_wrapper',getValueFromId('last_item'))">
+    <!-- 3. <p id="parent_wrapper" onmouseover="changeBackground(getElemnetId(event),getValueFromId('last_item'))"> -->
+    <p id="parent_wrapper" onmouseover="changeBackgroundClean(this)">
         Another task: This should be another feature. I want to click anywhere in this paragraph tag and I want to be able to change the background color to whatever is in this input: <input id="last_item" type="text" value=""/>.
     </p>
     <script>
@@ -36,10 +37,20 @@
 
         // 1.
         const getValueFromId = (id) => document.getElementById(id).value;
+
         // 2.
         const setBackgroundColorById = (id, color) => document.getElementById(id).style = "background-color: " + color;
+
+        //2.5 
+        const getElemnetId = (event) => event.target.getAttribute('id');
+
         // 3.
         const changeBackground = (el,color) => document.getElementById(el).style = `background-color: ${color}`;
+
+        // 4. - cleaned up with TA help
+        const changeBackgroundClean = (el) => {
+            el.style = `background-color: ${document.getElementById("last_item").value}`;
+        }
 
     </script>
 </body>
