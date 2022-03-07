@@ -161,6 +161,25 @@ const countHigh = () => {
         console.log(i);
     }
 }
-countHigh()
+// countHigh()
 
 // varialbe in JS is very flexiable and its more of what can I do and not what I can't do
+
+
+
+
+// ============================== Class ==============================
+
+class Sundea{
+    constructor(flavor,numScopes,sauce,toppings,whipped,container){
+        this.flavor = flavor;
+        this.numScopes = numScopes;
+        this.sauce = sauce;
+        this.toppings = toppings;
+        this.whipped = whipped;
+        this.container = container;
+    }
+}
+
+const sunday = new Sundea("vanilla",2,['chocolate', 'fudge'],["chocolate chips","bananas"],true,"glass bowel")
+console.log(sunday)
