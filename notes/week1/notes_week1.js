@@ -199,7 +199,16 @@ class Fighter {
         this.weight = weight;
         this.playerNum = 0;
     }
+
+    attack(opponent){
+        opponent.percent += 5;
+        console.log(`${this.name} kicked ${opponent.name} and downed 5%`)
+    }
 }
 
-const rob = new Fighter("Marth",1,8,7,5);
-const kirby = new Fighter("")
+const rob = new Fighter("Rob",0,8,7,5);
+const kirby = new Fighter("Kirby",2,5,5,3);
+
+console.log(rob)
+kirby.attack(rob);
+console.log(rob)
