@@ -186,8 +186,8 @@ class Sundea{
 }
 
 const sunday = new Sundea("vanilla",20,['chocolate', 'fudge'],["chocolate chips","bananas"],true,"glass bowel")
-sunday.eat()
-sunday.eat()
+// sunday.eat()
+// sunday.eat()
 
 
 class Fighter {
@@ -206,9 +206,13 @@ class Fighter {
     }
 }
 
-const rob = new Fighter("Rob",0,8,7,5);
-const kirby = new Fighter("Kirby",2,5,5,3);
 
-console.log(rob)
-kirby.attack(rob);
-console.log(rob)
+// const kirby = new Fighter("Kirby",2,5,5,3);
+
+// console.log(rob)
+// kirby.attack(rob);
+// console.log(rob)
+
+
+//Export my fighter class
+module.exports = Fighter
