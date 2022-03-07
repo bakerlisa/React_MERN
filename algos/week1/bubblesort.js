@@ -1,7 +1,6 @@
-// Bubble Sort
-// Looking at 2 numbers and seeing if they're in the correct order
+// BUBBLE SORT
 
-// Way1:
+// Way1 - on my own
 function bubbleSort(arr){
     i=0;
     var finish = true;
@@ -25,7 +24,7 @@ function bubbleSort(arr){
 // let arg = [5,4,2,6,8,14,3,1];
 // console.log(bubbleSort(arg));
 
-// Way2:
+// Way2 - with class
 function bubbleSort(arr){
     var finish = true;
     while(finish){
@@ -44,6 +43,9 @@ function bubbleSort(arr){
 
 // let arg = [5,4,2,6,8,14,3,1];
 // console.log(bubbleSort(arg));
+
+// SELECTION SORTING
+// Way1 - on my own not finished
 
 function selectionSort(arr,value){
     var checker = true;
@@ -68,6 +70,8 @@ function selectionSort(arr,value){
 // let arg = [5,4,2,6,8,14,3,1];
 // console.log(selectionSort(arg,1));
 
+
+// Way2 - with class
 function selectionSort(arr){
     for(i=0;i<arr.length;i++){
         var mindex = i;
