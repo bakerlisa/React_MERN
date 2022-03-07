@@ -179,7 +179,27 @@ class Sundea{
         this.whipped = whipped;
         this.container = container;
     }
+    eat(){
+        this.numScopes -= 1;
+        console.log(`Wow thats amazing! I love ${this.flavor} ice cream, only ${this.numScopes} left`)
+    }
 }
 
-const sunday = new Sundea("vanilla",2,['chocolate', 'fudge'],["chocolate chips","bananas"],true,"glass bowel")
-console.log(sunday)
+const sunday = new Sundea("vanilla",20,['chocolate', 'fudge'],["chocolate chips","bananas"],true,"glass bowel")
+sunday.eat()
+sunday.eat()
+
+
+class Fighter {
+    constructor(name,percent,playerNum,strength,defense,weight){
+        this.name = name;
+        this.percent = percent;
+        this.strength = strength;
+        this.defense = defense;
+        this.weight = weight;
+        this.playerNum = 0;
+    }
+}
+
+const rob = new Fighter("Marth",1,8,7,5);
+const kirby = new Fighter("")
