@@ -59,7 +59,7 @@ function doThingTwo(){
     // console.log(hello);
     // hello = "hello!";
     // console.log(hey);
-    for(let i=0;i <100; i++){
+    for( i=0;i <100; i++){
         // do something or nothing but i will still be avaialbe outside of the for loop
     }
     console.log(i)
@@ -105,13 +105,13 @@ sundea.toppings[0] = "oreo";
 // ============================== REST / SPREAD ==============================
 // rest
 const [first, ...others] = iceCream;
-console.log(others);
+// console.log(others);
 
 // spread - spreads all thw values inside the array/object
 // const newList = ["hot cheeto", iceCream]
 // vrs
 const newList = ["hot cheeto", ...iceCream,'jello']
-console.log(newList)
+// console.log(newList)
 
 const {flavor, ...fixings}  = sundea;
 // console.log(fixings);
@@ -121,3 +121,46 @@ const superChocolate = {
     ...fixings
 }
 // console.log(superChocolate);
+
+
+// ============================== ARROW FUNCTIONS ==============================
+// ALL functions are variables
+
+// console.log(doThing)
+
+// const ontherFun = doThingTwo();
+// console.log(ontherFun)
+
+// regular function
+function nameFun(){
+
+}
+
+// anaymous
+// () => {}
+
+// namedd function
+// nameFun = () => what to do
+
+
+function runThing (func){
+    func();
+}
+
+
+runThing(() => {
+    var heryThere = "Hey there!";
+    for(i=0;i<5;i++){
+        //console.log(i)
+    }
+});
+// runThing(doThingTwo);
+
+const countHigh = () => {
+    for(i=0;i <= 100;i++){
+        console.log(i);
+    }
+}
+countHigh()
+
+// varialbe in JS is very flexiable and its more of what can I do and not what I can't do
