@@ -207,7 +207,8 @@ class Fighter {
 }
 
 
-// const kirby = new Fighter("Kirby",2,5,5,3);
+const kirby = new Fighter("Kirby",2,5,5,3);
+const Rob = new Fighter("Rob",2,5,5,3);
 
 // console.log(rob)
 // kirby.attack(rob);
