@@ -1,0 +1,19 @@
+1. Don't touch the index.html
+2. don't touch the node_modules
+3. 
+
+
+app.js - is the magic - centeral control zone (like the server.py)
+
+
+GETTING STARTED
+1. remove logo and logo import
+2. <div className="App"> - remove everything inbetween div tags
+
+ODDS:
+1. {} = javascript
+2. add a / to self closing/non closing tags
+3. /**/ = comment
+
+SYNTHECIT EVENT
+1. pass over the event of what just happened

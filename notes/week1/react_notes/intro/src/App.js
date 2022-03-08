@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const hello  = "hello world!!!!!";
+
+  const printStuff = () => {
+    console.log("Button pressed!!");
+  }
+
+  const thirdButton = (message) => {
+    console.log(message);
+  }
+
+  const eventTarget = (eventTarget) =>{
+    console.log(eventTarget.target.classList);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>Hello World!! I am amazing</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello World!!</h1>
+      <p> {7+8} </p>
+      <h2><marquee>{hello}</marquee></h2>
+      <button class="button" onClick={printStuff}>Click Me</button>
+      <button onClick={ () =>{console.log("I'm a clever button!")} }>Click this for a different message!</button>
+      <button onClick={() => {thirdButton("I'm the third button")}} >Thrid Button</button>
+      <button class="button" onClick={eventTarget}>Event Click!</button>
     </div>
   );
 }
