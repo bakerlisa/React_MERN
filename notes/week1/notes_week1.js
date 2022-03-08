@@ -217,3 +217,12 @@ const Rob = new Fighter("Rob",2,5,5,3);
 
 //Export my fighter class
 module.exports = Fighter
+
+function(message){
+    console.log( message );
+};
+parentFunction( function(message) {
+    console.log( message );
+});
+
+parentFunction("Hello World");
