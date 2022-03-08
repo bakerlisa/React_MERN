@@ -8,3 +8,4 @@ h1{width: 100%; text-align: center;}
 .info-wrapper p{padding-bottom: 0; margin: 0;}
 .info-wrapper img{max-height: 100%; width:auto;}
 .info-wrapper .img-wrapper{height:300px; overflow: hidden;}
+.info-wrapper .sidenote{padding-top: 10px;font-size: 12px;}
