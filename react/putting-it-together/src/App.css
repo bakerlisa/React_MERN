@@ -1,0 +1,24 @@
+:root{
+  --white:#fff;
+  --black:#000;
+  --green:#207169;
+  --orange:#B35F20;
+}
+
+.orange{color:var(--orange);}
+
+.button{cursor: pointer; transform-origin:center; transform: scale(1); transition: all .25 ease-in;}
+.button{transform: scale(.9); transition: all .25 ease-in;}
+
+*{box-sizing: border-box;}
+h1{font-size: 45px;}
+.meetTheMonsters{display: flex; flex-wrap: wrap;align-items: start;justify-content: start;}
+.meetTheMonsters h1{width: 100%; text-align: center; position: relative; color:var(--green);}
+.meetTheMonsters h1::before{content:''; height:5px; width: 125px; margin: 0 auto; position: absolute;background-color:var(--green); bottom: -10px; left: 0;right: 0;}
+
+.monster-card{width: 25%;padding: 25px; text-align: center;}
+.monster-card p{padding: 0;margin: 0;}
+.monster-card .img-wrp{height: 300px; position: relative;}
+.monster-card img{max-width: 250px; display: block; margin: 0 auto; position: relative; top: 50%;transform: translateY(-50%);}
+
+.monster-card button{background-color:var(--orange); border:none; color:var(--white); padding: 10px 15px; font-weight: 600; text-transform: uppercase; margin-top: 25px;}
