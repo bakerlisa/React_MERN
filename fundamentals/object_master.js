@@ -53,3 +53,9 @@ const pkmnIds = pokémon.map( p => p.id )
 // console.log(pkmnOnlyPoision);
 
 // 7.
+// const pkmnFirstFlying = pokémon.filter( p => p.types[1] == "flying");
+// console.log(pkmnFirstFlying)
+
+// 8. 
+const pkmnNormal = pokémon.filter(p => p.types[0] == "normal").length
+console.log(pkmnNormal)
