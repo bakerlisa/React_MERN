@@ -30,23 +30,12 @@ const insertionSort = (arr) => {
 //LISA LOOP:
 const insertionSortLisa = (arr) => {
     for(var i=1;i < arr.length;i++){
-        var setI = arr[i];
-        for(var j=i;j > 0; j--){
-            // console.log(`i: ${i} j: ${j}`)
-            console.log(`j-1: ${arr[j-1]} setI: ${setI}`)
-
-            if(arr[j-1] > setI){
-                var temp = arr[j]
-                arr[j] = setI;
-                setI = temp
-               // arr[j] = setI;
-                console.log("here")
-
+        for(var j=i;j > 0; j--){            
+            if(arr[j-1] > arr[j]){
+                var temp = arr[j-1];
+                arr[j-1] = arr[j];
+                arr[j] = temp;
             } 
-        }
-        console.log();
-        if(i == 2){
-            break;
         }
     }
     return arr;
@@ -54,10 +43,7 @@ const insertionSortLisa = (arr) => {
 console.log(insertionSortLisa([6,4,5,2,8,14,1,3]))
 
 
-
-
-
-
+// THOMAS SORT:
 
 // =========== CODE EDITS:
 // for(i=1;i < arr.length;i++){
