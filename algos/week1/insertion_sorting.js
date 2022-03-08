@@ -11,7 +11,6 @@
 
 // WITH GROUP:
 const insertionSort = (arr) => {
-    var current;
     for(var i=1;i < arr.length;i++){
         current = arr[i];
         for(var j=i - 1;j >= 0 && arr[j] > current; j--){
