@@ -3,6 +3,6 @@
   --black:#000;
 }
 
-*{box-sizing: border-box;}
+*{box-sizing: border-box; text-align: center;}
 
 .App{display: flex;align-items: start;justify-content: start;flex-wrap: wrap;}
