@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import StylePixel from './css/StylePixel.js';
+import StylePixel from './css/ColorPixelStyles.js';
 
 var randomColor = require('randomcolor');
 
@@ -9,7 +9,9 @@ const ColorPixel = props => {
     const onHover = (e) => {
         var color = randomColor()
         setColor({ color});
-        console.log({ color })
+        setTimeout(function(){
+            setColor({ color: "cccccc"}); 
+        },1000);
     }
 
     return(

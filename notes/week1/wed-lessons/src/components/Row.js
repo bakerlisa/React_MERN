@@ -20,6 +20,59 @@ class Row extends Component{
                 <ColorPixel />
                 <ColorPixel />
                 <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+                <ColorPixel />
+             
             </div>
         );
     }
