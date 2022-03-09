@@ -1,8 +1,17 @@
 :root{
   --white:#fff;
+  --gray:#cccccc;
   --black:#000;
   --green:green;
   --blue:blue;
   --purple:purple;
 
 }
+
+*{box-sizing: border-box;}
+
+.row{display: flex;align-items: center;justify-content: center; flex-wrap: wrap;}
+.pixel{height:15px;width: 15px;background-color:var(--gray); margin: 1px; transform-origin: center; transform: scale(1); transition: all .25s ease-in;}
+  .pixel:hover{cursor: pointer; transform: scale(.9); transition: all .25s ease-in;}
+.filled{background-color: var(--blue);}
+
