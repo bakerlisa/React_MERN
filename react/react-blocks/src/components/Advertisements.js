@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 
+import styles from './styles/Advertisements.module.css'
+
 class Advertisements extends Component{
     render(){
         return(
-            <h1>Title</h1>
+            <div className={ styles.ads }>
+                <div className="ad"></div>    
+                <div className="ad"></div>    
+                <div className="ad"></div>    
+                <div className="ad"></div>    
+            </div>
         );
     }
 }
 
-export default Advertisements;
+export default Advertisements

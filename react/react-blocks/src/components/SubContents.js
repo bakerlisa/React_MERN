@@ -5,11 +5,7 @@ import styles from './styles/SubContents.module.css';
 class SubContents extends Component{
     render(){
         return(
-            <>
             <div className={ styles.subContent }>  </div>
-            <div className={ styles.subContent }>  </div>
-            <div className={ styles.subContent }>  </div>
-            </>
         );
     }
 }
