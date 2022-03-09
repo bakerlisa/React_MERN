@@ -10,6 +10,7 @@ import SteelHeart from './img/steel-heart.jpg';
 function App() {
   return (
     <div className="App">
+      <h1>Monthly Book Vote</h1>
       <Books img={ HarryPotter } title="Harry Potter" author="JK Rowling" votes={10}/>
       <Books img={ RedRising } title="Red Rising" author="Pierce Brown" votes={8}/>
       <Books img={ SixOfCrows } title="Six of Crows" author="Leigh Bardugo" votes={13}/>

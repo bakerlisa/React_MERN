@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import BooksStyles from './css/BooksStyles';
+import styles from './css/BooksStyles.module.css';
 
 
 const Books = props => {
