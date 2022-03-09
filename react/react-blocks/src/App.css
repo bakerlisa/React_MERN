@@ -1,10 +1,14 @@
 :root{
   --white:#fff;
   --black:#000B0D;
+  --gray:#d8d8d8bb;
   --orange:#A52502;
   --red:#390D02;
   --teal:#154B52;
-  --sky-blue:#1C8394;
+  --sky_blue:#1C8394;
 }
 
 *{box-sizing: border-box;}
+
+
+.App{padding: 25px; background-color:var(--gray); display: flex;align-items: stretch;justify-content: start;flex-wrap: wrap;}

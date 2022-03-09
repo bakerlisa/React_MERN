@@ -1,0 +1,1 @@
+.mainWrp{width: calc(65% - 25px); margin-left: 25px; margin-top: 25px; padding: 25px 0 25px 25px; background-color:var(--teal); position: relative; overflow: hidden; display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}

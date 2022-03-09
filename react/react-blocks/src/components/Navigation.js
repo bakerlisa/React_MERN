@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 
+import styles from  './styles/Navigation.module.css';
+
 class Navigation extends Component{
     render(){
         return(
-            <h1>Title</h1>
+           <div className={ styles.nav }><span>NA
+               VI
+               GA
+               TI
+               ON</span></div>
         );
     }
 }

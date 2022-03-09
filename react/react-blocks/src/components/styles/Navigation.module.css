@@ -1,0 +1,2 @@
+.nav{width: calc(35% - 25px); height: 100%;background-color:var(--red); margin-top: 25px; margin-right: 25px; color:var(--white); font-weight: 900; font-size: 360px; overflow: hidden; line-height: 284px; position: relative;}
+.nav span{position: relative; left: -30px; top: -10px;}
