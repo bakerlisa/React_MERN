@@ -1,1 +1,1 @@
-.subContent{background-color:var(--sky_blue); padding: 25px; width: calc(33.33% - 25px); margin-right: 25px; height: 100%;}
+.subContent{background-color:var(--sky_blue); padding: 25px; width: calc(33.33% - 25px); margin-right: 25px; height: calc( 75% - 25px);}
