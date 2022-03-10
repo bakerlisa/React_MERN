@@ -1,8 +1,9 @@
 import React, { useReducer } from 'react';
 //does not work
-import styles from './css/UserForm.module.css';
+// import styles from './css/UserForm.module.css';
 //this doens't work either
-import StyledFormWrp from './StyledBox';
+// import UserForm from './UserForm';
+// ?? how do we add styles?
 
 
 const initialState = {
@@ -30,7 +31,7 @@ export default () => {
     }
 
     return (
-        <div>
+        <div className="formWrp">
             {JSON.stringify(state)}
             <div>
                 <label>First Name:</label>
