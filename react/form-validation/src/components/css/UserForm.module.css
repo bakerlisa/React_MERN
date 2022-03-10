@@ -1,0 +1,7 @@
+form.forWrp{max-width: 100%;}
+form > div{padding-bottom: 10px; display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}
+form label{width: 200px; font-weight: 600; }
+form input{width:calc(100% - 200px); padding: 10px; border-radius:5px; border:solid 1px var(--gray);}
+form input:focus{border-color:var(--black); outline: none; color:var(--pink);}
+form .submit{background-color:var(--gray);  border:none; color:var(--black); padding: 15px 15px; margin-top: 5px; transition: all .15s ease-in; margin-left: 200px; width: calc(100% - 200px)}
+    form .submit:hover{cursor: pointer; background-color:var(--pink); transition: all .15s ease-in;}
