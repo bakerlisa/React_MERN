@@ -1,1 +1,1 @@
-.box{padding: 25px; border: solid 1px var(--black); margin-bottom: 25px;}
+.box{padding: 25px; border: solid 1px var(--black); margin-bottom: 25px; transition: all .25s ease-in; cursor: pointer;}
