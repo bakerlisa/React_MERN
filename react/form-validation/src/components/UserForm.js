@@ -1,9 +1,9 @@
 import React, { useReducer } from 'react';
-//don't work with reducer??
+//does not work
 import styles from './css/UserForm.module.css';
-//doesn't work either
-import StyledFormWrp from './UserForm';
-// ?? how does on add styles??
+//this doens't work either
+import StyledFormWrp from './StyledBox';
+
 
 const initialState = {
     firstName: '',
@@ -18,11 +18,6 @@ function reducer(state, action) {
     };
 }
 
-// Walk through it was a bit intimidating and now I'm just curious
-// 1. why does it all go into out export function? 
-// 2. why do we have 2 returns?
-
-
 export default () => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -34,27 +29,25 @@ export default () => {
         });
     }
 
-    return(
-        // <StyledFormWrp>
+    return (
         <div>
             {JSON.stringify(state)}
             <div>
-                <label htmlFor="firstName">First Name: </label>
-                <input type="text" name="firstName" value={state.firstName} placeholder="First Name..." onChange={handleChange} />
+                <label>First Name:</label>
+                <input name="firstName" value={state.firstName} onChange={handleChange} placeholder="First Name..."/>
             </div>
 
             <div>
-                <label htmlFor="lastName">Last Name: </label>
-                <input type="text" name="lastName" value={state.lastName} placeholder="Last Name..." onChange={handleChange} />
+                <label>Last Name:</label>
+                <input name="lastName" value={state.lastName} onChange={handleChange} placeholder="Last Name..."/>
             </div>
 
             <div>
-                <label htmlFor="email">Email: </label>
-                <input type="text" name="email" value={state.email} placeholder="Email..." onchange={handleChange} />
+                <label>Email:</label>
+                <input name="email" value={state.email} onChange={handleChange} placeholder="Email..." />
             </div>
 
-            <input type="submit" value="Submit New User" className={ styles.submit } onChange={handleChange}/>
+            <input type="submit"/>
         </div>
-        // </StyledFormWrp>
     );
 }
