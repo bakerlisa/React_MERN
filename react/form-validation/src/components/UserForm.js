@@ -1,5 +1,9 @@
 import React, { useReducer } from 'react';
+//don't work with reducer??
 import styles from './css/UserForm.module.css';
+//doesn't work either
+import StyledFormWrp from './UserForm';
+// ?? how does on add styles??
 
 const initialState = {
     firstName: '',
@@ -18,7 +22,6 @@ function reducer(state, action) {
 // 1. why does it all go into out export function? 
 // 2. why do we have 2 returns?
 
-//3. css modules don't work with reducer??
 
 export default () => {
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -32,7 +35,8 @@ export default () => {
     }
 
     return(
-        <div className={ styles.forWrp }>
+        // <StyledFormWrp>
+        <div>
             {JSON.stringify(state)}
             <div>
                 <label htmlFor="firstName">First Name: </label>
@@ -51,5 +55,6 @@ export default () => {
 
             <input type="submit" value="Submit New User" className={ styles.submit } onChange={handleChange}/>
         </div>
+        // </StyledFormWrp>
     );
 }
