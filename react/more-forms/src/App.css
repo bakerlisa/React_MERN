@@ -1,6 +1,5 @@
 :root{
   --red:red;
 }
-*{box-sizing: border-box;}
 
-/* .validations{color:var(--red);} */
+*{box-sizing: border-box;}
