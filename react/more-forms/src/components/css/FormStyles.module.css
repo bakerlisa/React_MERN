@@ -6,3 +6,6 @@ form label{width: 200px; padding-right: 25px; text-align: right;}
 form input{width:calc(100% - 200px); padding: 10px; }
 input[type="submit"]{color:white; text-transform: uppercase; letter-spacing: 1px; font-weight: 900;; margin-left:200px; background-color:green; border:none; box-shadow:3px 3px 0px black; transition:all .25s ease-in;}
     input[type="submit"]:hover{cursor: pointer; box-shadow:0px 0px 0px black; transition:all .25s ease-in;}
+
+form div p{color:var(--red); margin: 0 0 0 200px; text-align: left; width: 100%; font-weight: 600;}
+    .validations{color:var(--red);}
