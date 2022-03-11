@@ -1,1 +1,7 @@
-.formWrap{max-width: 600px; margin: 0 auto; text-align: center;}
+.formWrap h1{padding-top: 50px;}
+.formWrap{max-width: 600px; margin: 0 auto; text-align: center;} 
+.formWrap > div{margin-bottom: 15px;}
+.formWrap .title{display: block; font-weight: 600; text-align: left;}
+
+.results{padding-top: 25px; text-align: left; border-top:solid 1px black; margin-top: 25px;}
+.results p{padding-bottom: 0; margin: 0 0 5px ;}
