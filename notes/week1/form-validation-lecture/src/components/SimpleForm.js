@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import styled from './css/TradtionalFormStyles.module.css';
 
 const SimpleForm = (props) => {
+    const [formStarted,setFormStarted] = useState(false)
+
     const [form,setForm] = useState({
         flavor:"",
         sauce: "",
@@ -10,22 +12,39 @@ const SimpleForm = (props) => {
     })
 
     const onChangeHandler = (event) => {
+        setFormStarted(true)
         console.log(event.target.name + ' : ' + event.target.value)
         setForm({ ...form, 
             [event.target.name]: event.target.type === "checkbox" ? event.target.checked : event.target.value
         });
     }
+    
+    const submitSundea = (event) => {
+        event.preventDefault();
+        console.log(form)
+    };
+
+    const lengthValidator = (input,num) => {
+        return input.length >= num ? true :  false
+    };
+
+    const allVaild = (inputs) => {
+        return lengthValidator(inputs.flavor,4) && lengthValidator(inputs.sauce,4)
+    }
 
     return(
         <div className={styled.container}>
+            <h1>Ice Cream!!</h1>
             <div>
                 <label htmlFor="Flavor">Flavor: </label>
                 <input type="name" name="flavor" onChange={onChangeHandler} />
+                { lengthValidator(form.flavor,4) || form.flavor.length === 0 || !formStarted ? "" : <span className={styled.error}>You need at least 4 characters</span> } 
             </div>
 
             <div>
                 <label htmlFor="sauce">Sauce: </label>
-                <input type="text" name="sauce"   onChange={onChangeHandler}/>
+                <input type="text" name="sauce"  onChange={onChangeHandler}/>
+                { lengthValidator(form.sauce,4) || form.sauce.length === 0 || !formStarted ? "" : <span className={styled.error}>You need at least 4 characters</span> } 
             </div>
 
             <div>
@@ -45,10 +64,14 @@ const SimpleForm = (props) => {
             
             <div>
                 <label htmlFor="whippedCream">Whipped Cream: </label>
-                <input type="checkbox" name="whippedCream"   onChange={onChangeHandler}/>
+                <span className={styled.chkWrp}><input type="checkbox" name="whippedCream"   onChange={onChangeHandler}/></span>
             </div>
 
-            <marquee behavior="" direction=""><input type="submit" value="Submit!" /></marquee>
+            {
+                allVaild(form) 
+                    ?  <input type="submit" value="Submit!" onClick={submitSundea} className={ styled.submit } />
+                    :  <input  disabled type="submit" value="Make My Sundea!" onClick={submitSundea} className={ styled.submit } />
+            }
 
             <p><strong>Flavor:</strong> { form.flavor }</p>
             <p><strong>Sauce:</strong> { form.sauce }</p>

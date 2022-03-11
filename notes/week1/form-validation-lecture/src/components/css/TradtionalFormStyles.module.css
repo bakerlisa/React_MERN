@@ -1,1 +1,17 @@
-.container{max-width: 600px; margin: 0 auto;}
+.container{max-width: 600px; margin: 0 auto; padding: 50px; border-radius:10px; top:50%; left: 0;right: 0;     transform: translateY(-50%); position: absolute; color:white
+}
+.container h1{text-align: center;}
+.container p{margin: 0; padding-bottom: 5px;}
+.container > div{display: flex;align-items: center; justify-content: center; flex-wrap: wrap; margin-bottom: 10px;}
+.container label{width: 150px; font-weight: 600;}
+.container input, .container select{width: calc(100% - 150px); padding: 10px; border:none;}
+    .container input:focus{outline: none;  background-color:var(--lav); transition:all .25s ease-in;}
+.container .chkWrp{width: calc(100% - 150px); padding: 0px;}
+.container .chkWrp input{width: 15px;}
+
+/* submit */
+.submit{margin-left:150px; background-color:var(--gray);font-weight: 600; letter-spacing:1px;  transition: all .25s ease-in;}
+.submit:hover{cursor: pointer; background-color:var(--lav); transition: all .25s ease-in;}
+
+/* error */
+.error{display: block; margin-left: 150px; width: 100%; color:var(--red); font-weight: 600;}

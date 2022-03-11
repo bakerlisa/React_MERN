@@ -6,8 +6,9 @@ import SimpleForm from './components/SimpleForm';
 function App() {
   return (
     <div className="App">
-      <h1>Ice Cream!!</h1>
+     
       <SimpleForm/>
+      {/* <TradtionalFrom /> */}
     </div>
   );
 }
