@@ -1,5 +1,7 @@
 # Hook Form..again?
 
-Yup started to do the assigment again translating bettwen functional components and class components
+Yup its the "same" as the other Hook form. But this one has more! 
 
-we all went down a rabbit how on how to handle checkboxes
+To make sure I truly understood all I've learned, I decided to go back and redo all my assigments. The idea was practice and to do the assigments in both class componets and functional components! 
+
+Of course there were rabbit holes I went down, the checkboxes were the funniest! Checkout file: src/components/SuperHeroFormClass.js
