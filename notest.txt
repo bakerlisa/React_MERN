@@ -3,3 +3,5 @@ FOOTER:
 <script crossorigin="" src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> 
 
 
+I like to build stuff
+I can maintain but its not what gets me excited
