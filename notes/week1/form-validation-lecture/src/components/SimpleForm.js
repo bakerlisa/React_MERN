@@ -1,29 +1,36 @@
-import React,{ useState } from 'react';
+import React, {useState} from 'react';
 import styled from './css/TradtionalFormStyles.module.css';
 
+const SimpleForm = (props) => {
+    const [form,setForm] = useState({
+        flavor:"",
+        sauce: "",
+        toppings: "",
+        whippedCream: false
+    })
 
-const TradtionalFrom = (props) => {
-    const [flavor, setFlavor] = useState("");
-    const [sauce, setSauce] = useState("");
-    const [toppings, setToppings] = useState("");
-    const [whippedCreame, setWhippedCreame] = useState(false);
-
+    const onChangeHandler = (event) => {
+        console.log(event.target.name + ' : ' + event.target.value)
+        setForm({ ...form, 
+            [event.target.name]: event.target.type === "checkbox" ? event.target.checked : event.target.value
+        });
+    }
 
     return(
         <div className={styled.container}>
             <div>
                 <label htmlFor="Flavor">Flavor: </label>
-                <input type="name" name="flavor" value={ flavor }  onChange={ (event) => setFlavor(event.target.value)}/>
+                <input type="name" name="flavor" onChange={onChangeHandler} />
             </div>
 
             <div>
                 <label htmlFor="sauce">Sauce: </label>
-                <input type="text" name="sauce" value={sauce} onChange={ (event) => setSauce(event.target.value) }/>
+                <input type="text" name="sauce"   onChange={onChangeHandler}/>
             </div>
 
             <div>
                 <label htmlFor="toppings">Toppings: </label>
-                <select name="toppings" value={toppings} onChange={ (event) => setToppings(event.target.value)}>
+                <select name="toppings"  onChange={onChangeHandler}>
                     <option value="Cookie Dough">Cookie Dough</option>
                     <option value="Peanuts">Peanuts</option>
                     <option value="Brownie Bits">Brownie Bits</option>
@@ -38,17 +45,17 @@ const TradtionalFrom = (props) => {
             
             <div>
                 <label htmlFor="whippedCream">Whipped Cream: </label>
-                <input type="checkbox" name="whippedCream" value={whippedCreame} onChange={(event) => setWhippedCreame(event.target.checked)}/>
+                <input type="checkbox" name="whippedCream"   onChange={onChangeHandler}/>
             </div>
 
             <marquee behavior="" direction=""><input type="submit" value="Submit!" /></marquee>
 
-            <p><strong>Flavor:</strong> {flavor}</p>
-            <p><strong>Sauce:</strong> {sauce}</p>
-            <p><strong>Toppings:</strong> {toppings}</p>
-            <p><strong>Whipped Cream:</strong> {whippedCreame}</p>
+            <p><strong>Flavor:</strong> { form.flavor }</p>
+            <p><strong>Sauce:</strong> { form.sauce }</p>
+            <p><strong>Toppings:</strong> { form.toppings }</p>
+            <p><strong>Whipped Cream:</strong> { form.whippedCream ? "Yes please!" : "No thank you" } </p>
         </div>
     );
 }
 
-export default TradtionalFrom;
+export default SimpleForm;
