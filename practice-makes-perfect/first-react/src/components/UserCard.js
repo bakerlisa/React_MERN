@@ -11,19 +11,20 @@ class UserCard extends Component{
 
     render(){
         const addTalent = (e) => {
-            console.log()
-            // var moreHob = `${e.target.value}, ${this.state.talents}`;
-            // this.setState({ hobby:  e.target.value });
+            // this.setState({ hobby: this.state.talents + ', ' + e.target.value });
+            this.setState({ hobby: e.target.value });
         }
         const submitTalent = (e) => {
             e.preventDefault();
-            console.log(e.target.value);
+            this.setState({talents: this.state.talents + ', ' + this.state.hobby})
+            this.setState({hobby: ' '})
+            
         }
         return(
             <div>
-                <h1>I love {this.state.talents} /h1>
+                <h1>I love {this.state.talents} </h1>
                 <form onSubmit={ submitTalent }>
-                    <input type="text" className="text" onChange={ addTalent } />
+                    <input type="text" className="text" onChange={ addTalent } value={this.state.hobby}/>
                     <input type="submit" value="Add Hobby" />
                 </form>
             </div>
