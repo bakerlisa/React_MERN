@@ -32,4 +32,5 @@ class UserCard extends Component{
     }
 }
 
+
 export default UserCard;
