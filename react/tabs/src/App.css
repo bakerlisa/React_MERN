@@ -1,38 +1,25 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+
+:root{
+  --white:#fff;
+  --black:#262416;
+  --red:#BF1304;
+    --dk_red:#592411;
+
+  --mint:#81A691;
+    --lt_mint:#A8BFBB;
+  --orange:#D96A29;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+*{ box-sizing: border-box; font-family: 'Hubballi', sans-serif;}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+body{background-image: url('./components/img/pizza.jpg');}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+p,div{font-size: 18px;}
 
-.App-link {
-  color: #61dafb;
-}
+#root{height: 100vh; width: 100%; position: relative;}
+#root:before{content:''; height: 100%; width: 100%; background-color:rgba(0,0,0,.65); position: absolute; top: 0;left: 0;}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+h1{font-size: 75px; margin: 0; padding-bottom: 10px;}
+
+.App{max-width: 600px; margin: 0 auto; text-align: center; color:var(--white); position: relative; z-index: 100; padding-top: 100px;}
