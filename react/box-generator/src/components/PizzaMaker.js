@@ -1,23 +1,42 @@
 import React, { useState } from 'react';
 import styled from './css/PizzaMaker.module.css'
-import NewPizza from './NewPizza';
+
 
 const PizzaMaker = props => {
-    const [pizza,setPizza] = useState("");
+    const [pizza,setPizza] = useState({
+        color: "",
+        height: "",
+        width: ""
+    });
 
     const handleOnChange = (event) => {
-        setPizza(event.target.value)
+        setPizza({ ...pizza,
+            [event.target.name]: event.target.value })
     }
     const createPizza = (event) => {
         event.preventDefault();
-        props.addColor( pizza );
+        props.createBox( [pizza.color, pizza.height, pizza.width] );
+        setPizza({ color: "", height: "", width: "" })
     }
     return(
         <div>
             <h1>{props.title}</h1>
             <div className={styled.pizza}>
-                <label htmlFor="pizza">Pizza Type: </label>
-                <input type="text" name="pizza" value={ pizza } onChange={ handleOnChange } />
+                <div>
+                    <label htmlFor="color">Color:</label>
+                    <input type="text" name="color" value={ pizza.color } onChange={ handleOnChange } />
+                </div>
+
+                <div>
+                    <label htmlFor="height" >Height:</label>
+                    <input type="number" name="height" value={ pizza.height } onChange={ handleOnChange } />
+                </div> 
+
+                <div>
+                    <label htmlFor="width" >Width:</label>
+                    <input type="number" name="width" value={ pizza.width } onChange={ handleOnChange }/>
+                </div>
+
                 <input type="submit" value="Create" className={styled.submit} onClick={ createPizza }/>
             </div>
         </div>

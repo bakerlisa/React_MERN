@@ -1,34 +1,44 @@
 import './App.css';
-// import PizzaMaker from './components/PizzaMaker';
-// import NewPizza from './components/NewPizza';
-import { useState } from 'react/cjs/react.production.min';
-import MessageForm from './components/MessageForm';
-import MessageDisplay from './components/MessageDisplay';
+import { useState } from 'react';
+
+import PizzaMaker from './components/PizzaMaker';
+import NewPizza from './components/NewPizza';
+
+// import MessageForm from './components/MessageForm';
+// import MessageDisplay from './components/MessageDisplay';
 
 function App() {
-  // const [color, setColor] = useState("There are no orders!");
-  
-  // const addColor = ( newColor ) => {
-  //   setColor( newColor );
-  // }
 
-  const [currentMsg, setCurrentMsg] = useState("There are no messages");
-    
-  const youveGotMail = ( newMessage ) => {
-      setCurrentMsg( newMessage );
+  // PIZZA BOX COLORS
+  const [allAttr, setAllAttr] = useState([]);
+  
+  const addBox = ( boxAttr ) => {
+    setAllAttr([ ...allAttr, [boxAttr] ]);
   }
 
   return (
     <div className="App">
-      {/* <PizzaMaker title="Make Your Own Pizza!" creatColor = { addColor } />
-      <NewPizza  color={color}/> */}
+      <PizzaMaker title="Make Your Own Pizza!" createBox = { addBox } />
 
-      <div>
-        <MessageForm onNewMessage={ youveGotMail } />
-        <MessageDisplay message={ currentMsg } />
+      <div className="pizzas">
+          <NewPizza color={ allAttr }/>
       </div>
+      
     </div>  
   );
 }
 
 export default App;
+
+
+// MESSAGE 
+  // const [currentMsg, setCurrentMsg] = useState("There are no messages");
+    
+  // const youveGotMail = ( newMessage ) => {
+  //     setCurrentMsg( newMessage );
+  // }
+
+  {/* <div>
+        <MessageForm onNewMessage={ youveGotMail } />
+        <MessageDisplay message={ currentMsg } />
+      </div> */}
