@@ -5,3 +5,6 @@ h1:before{content:''; height:3px; width: 50px; background-color:var(--pink); pos
 .pizza input{width: calc(75% - 150px); outline: none;padding:10px;  border:solid 1px var(--green);}
 .pizza .submit{width: 25%; border:none; background-color:var(--green); color:var(--white); border:solid 1px var(--green); transform: scale(1); transition: all .25s ease-in;}
     .pizza .submit:hover{cursor: pointer; transform: scale(.9); transition: all .25s ease-in;}
+
+.pizzas{display: flex;align-items: start;justify-content: start;flex-wrap: wrap;}
+.pizzas .pizzaBox{height:100px; width: 100px; display: flex;align-items: center;justify-content: center;flex-wrap: wrap;text-align: center;}
