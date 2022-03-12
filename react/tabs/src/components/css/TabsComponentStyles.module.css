@@ -15,7 +15,8 @@
     .tabsActive:after{content:''; height:1px; width: 150px; position: absolute; bottom:0; left: 0; background-color: var(--mint); z-index: 15;}
 
 /* CONTENT */
-.content{margin-top: 50px; opacity: 1; animation:fadeIn .35s ease-in;}
+.content,.fadeInContent{margin-top: 50px; }
+.fadeInContent{opacity: 1; animation:fadeIn .35s ease-in;}
 
 @keyframes fadeIn{
     0%{opacity: 0;}

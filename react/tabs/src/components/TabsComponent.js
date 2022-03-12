@@ -11,14 +11,28 @@ const TabsComponent = props => {
     const [ activeItems, setActiveItems ] = useState({
         title: information[0][0],
         value: information[0][1],
+        animation: false
     });
 
     const changeTabsHandler = (event,i) => {
         setActiveItems({
             title: information[i][0],
-            value: information[i][1]
+            value: information[i][1],
+            animation: true
         })
+        const onFadeChangeHandler = (i) => {
+            setTimeout(() => {
+                setActiveItems({ 
+                    title: information[i][0],
+                    value: information[i][1],
+                    animation: false
+                })
+            }, 500);
+        }
+        onFadeChangeHandler(i)
+        
     }
+
     
     return(
         <div>
@@ -29,8 +43,9 @@ const TabsComponent = props => {
                         <div className={ styled.tabsActive } key={ i } onClick={ (event) => changeTabsHandler(event,i)} ><span> { item[0] } </span></div> :
                         <div className={ styled.tabs } key={ i } onClick={ (event) => changeTabsHandler(event,i)} ><span> { item[0] } </span></div> ) 
                 }
-           </div>
-            <div className={ styled.content }>{activeItems.value}</div>
+            </div>
+
+            <div className={activeItems.animation ?  styled.fadeInContent : styled.content  } >{activeItems.value}</div>
         </div>
     );
 }
