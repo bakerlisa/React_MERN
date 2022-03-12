@@ -1,3 +1,14 @@
+*{box-sizing: border-box;}
+:root{
+  --white:#fff;
+  --black:#1F2024;
+  --pink:#A68F97;
+  --lav:#79717A;
+  --gray:#4B4952;
+  --green:#004F4D;
+
+}
+.App > div{max-width:600px; margin:0 auto;}
 .App {
   text-align: center;
 }
