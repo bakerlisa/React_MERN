@@ -2,37 +2,55 @@ import React,{ useState } from 'react';
 import styled from './css/ToDoStyles.css';
 
 const ToDo = props => {
+    const [allToDos,setAllToDos] = useState([])
+
     const [newItem, setNewItem] = useState({
             task:"",
-            msg:"",
-            completed: false
+            valid: false,
+            showValid: false
         })
 
     const onChangeHandler = (event) => {
-        event.target.value.length < 4 ? setNewItem({})
+        setNewItem({
+            ...newItem,
+            task: event.target.value,
+            valid: event.target.value.length < 3 ? false : true,
+        })
     }
 
-    const lengthValidator = (input,num) => {
-        return input.length >= num ? true :  false
-    };
-
-    const allVaild = (inputs) => {
-        return lengthValidator(inputs.flavor,4) && lengthValidator(inputs.sauce,4)
+    const showValid = (event) => {
+        setNewItem({
+            ...newItem,
+            showValid: true
+        })
     }
-
-    const sumbitNewTask = () => {
-
+    const sumbitNewTask = (event) => {
+        event.preventDefault();
+        setAllToDos([...allToDos,newItem])
     }
 
     return (
         <div className={ styled.listWrp }>
-            <label htmlFor="newTask">New To Do Item:</label>
-            <input type="text" name="newTask" onChange = { onChangeHandler } />
-            {
-                allVaild(form) ?
+
+            <div className="form">
+                <label htmlFor="newTask">New To Do Item:</label>
+                <input type="text" name="newTask" value={ newItem.task} onChange = { onChangeHandler } onBlur={ showValid } />
+                {
+                    newItem.showValid ? newItem.valid ? "" : <span>Must be three characters long</span> : ""
+                }
                 <input type="submit" value="submit" onClick = { sumbitNewTask} />
-                :  <input type="submit" value="submit" onClick = { sumbitNewTask} disabled/>
-            }
+            </div>
+
+            <div className="results">
+                <h2>Todays List:</h2>
+                <ul>
+                    {
+                        allToDos.map( (item, i) => 
+                            <li key={ i }>{ item.task }</li> )
+                    }
+                </ul>
+            </div>
+
         </div>
     );
 }
