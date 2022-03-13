@@ -12,6 +12,14 @@ const ToDo = props => {
         event.target.value.length < 4 ? setNewItem({})
     }
 
+    const lengthValidator = (input,num) => {
+        return input.length >= num ? true :  false
+    };
+
+    const allVaild = (inputs) => {
+        return lengthValidator(inputs.flavor,4) && lengthValidator(inputs.sauce,4)
+    }
+
     const sumbitNewTask = () => {
 
     }
@@ -20,8 +28,11 @@ const ToDo = props => {
         <div className={ styled.listWrp }>
             <label htmlFor="newTask">New To Do Item:</label>
             <input type="text" name="newTask" onChange = { onChangeHandler } />
-
-            <input type="submit" value="submit" onClick = { sumbitNewTask} />
+            {
+                allVaild(form) ?
+                <input type="submit" value="submit" onClick = { sumbitNewTask} />
+                :  <input type="submit" value="submit" onClick = { sumbitNewTask} disabled/>
+            }
         </div>
     );
 }

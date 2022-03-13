@@ -6,7 +6,6 @@ const BasicComponent = props => {
     
     const onClickHandler = (e) => {
         pixel.filled ? setPixel({ filled: false }) : setPixel({ filled: true });
-        //
     }
 
     return(
