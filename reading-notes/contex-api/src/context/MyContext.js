@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import MyContext from './context/MyContext';
 
-const MyContext = props => {
+const context = useContext(MyContext);
+
+const MyContext = () => {
     return(
         <div>
-            <h2>Context provider</h2>
+            <h2> hello {context} Context provider</h2>
         </div>
     );
 }
