@@ -21,7 +21,6 @@ const SimpleForm = (props) => {
     
     const submitSundea = (event) => {
         event.preventDefault();
-        console.log(form)
     };
 
     const lengthValidator = (input,num) => {
