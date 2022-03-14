@@ -1,5 +1,11 @@
 import React,{ useState } from 'react';
-import styled from './css/ToDoStyles.css';
+import styled from './css/ToDoStyles.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquareFull } from '@fortawesome/free-solid-svg-icons'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import {  faTrashCan } from '@fortawesome/free-solid-svg-icons'
+
+
 
 const ToDo = props => {
     const [allToDos,setAllToDos] = useState([])
@@ -27,26 +33,37 @@ const ToDo = props => {
     const sumbitNewTask = (event) => {
         event.preventDefault();
         setAllToDos([...allToDos,newItem])
+        setNewItem({
+            task:"",
+            valid: false,
+            showValid: false
+        })
+    }
+
+    const clickToCompleteHandler = (e,i) =>{
+        console.log(e)
+        console.log(i)
+        console.log("jellp")
     }
 
     return (
         <div className={ styled.listWrp }>
 
-            <div className="form">
-                <label htmlFor="newTask">New To Do Item:</label>
-                <input type="text" name="newTask" value={ newItem.task} onChange = { onChangeHandler } onBlur={ showValid } />
+            <div className={ styled.form }>
+                <label className={ styled.label} htmlFor="newTask">New To Do Item:</label>
+                <input className={ styled.input} type="text" name="newTask" value={ newItem.task} onChange = { onChangeHandler } onBlur={ showValid } />
                 {
-                    newItem.showValid ? newItem.valid ? "" : <span>Must be three characters long</span> : ""
+                    newItem.showValid ? newItem.valid ? "" : <span className={ styled.error }>Must be three characters long</span> : ""
                 }
-                <input type="submit" value="submit" onClick = { sumbitNewTask} />
+                <input type="submit" value="submit" onClick = { sumbitNewTask} className={ styled.submit}/>
             </div>
 
             <div className="results">
                 <h2>Todays List:</h2>
-                <ul>
+                <ul className={ styled.listWrp }>
                     {
                         allToDos.map( (item, i) => 
-                            <li key={ i }>{ item.task }</li> )
+                            <li key={ i } className={ styled.list }><FontAwesomeIcon icon={faSquareFull} onClick={ () = (e,i) => {clickToCompleteHandler} }/> { item.task }</li> )
                     }
                 </ul>
             </div>

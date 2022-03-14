@@ -1,0 +1,20 @@
+.form {display: flex;  align-items: center;justify-content: start;flex-wrap: wrap; position: relative;z-index: 10;}
+.form .label{width: 250px; display: block; text-transform: uppercase;
+    font-weight: 600; }
+.form .input{display: block; width: calc(100% - 250px); padding: 10px;}
+
+
+.listWrp{margin: 0; padding: 0 50px 0 0; position: relative; z-index: 10; }
+.list{list-style-type: none; padding-left: 15px; padding-bottom: 5px;}
+    .list:hover{cursor: pointer; color:var(--green);}
+.list svg{margin-right: 15px;}
+
+.submit{display: block; margin-left:auto; border:none; padding: 10px 25px; background-color:var(--blue); color:var(--white); border-radius:5px; margin-top: 15px; width: 150px; text-transform: uppercase; font-weight: 600; border:solid 2px var(--green);transition: all .25s ease-in;}
+    .submit:hover{cursor: pointer; background-color:transparent; color:var(--green); transition: all .25s ease-in;}
+
+/* error */
+.error{display: block;width: 100%;color:var(--red); font-weight: 600; text-align: right;}
+
+/* can */
+.can{position: absolute; right: 0;}
+.can:hover{color:var(--red);}

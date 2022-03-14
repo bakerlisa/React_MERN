@@ -1,7 +1,7 @@
 :root{
   --white:#fff;
   --black:#000;
-  --salmon:#D96941;
+  --salmon:#F4E2DE;
   --red:#A62B1F;
   --blue:#193C40;
   --green:#2E5902;
@@ -10,5 +10,11 @@
 
 *{box-sizing: border-box;}
 
-.App{max-width: 600px; margin: 0 auto;}
-.App h1{text-align: center;}
+#root{height: 100vh; position: relative;}
+#root:before{content:''; height:100vh; width: 500px; position: absolute; z-index: 0; background-color:var(--salmon);}
+#root:after{content:''; background-image: url('./components/img/left.png'); background-position: right center; background-size: cover; height: 100%; width: 300px; position: absolute; top: 0; left: 200px; z-index: 0;}
+
+.App{max-width: 600px; margin: 0 0 0 550px; padding-top: 50px;}
+.App h1{text-align: center; margin: 0; }
+
+.decorator{height: 100%; width: 100%; position: absolute; top: 0; left: 500px; opacity: .25 ; background-image: url('./components/img/right.png'); background-position: left center; background-size: cover;}
