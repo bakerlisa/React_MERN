@@ -1,5 +1,7 @@
 import './App.css';
 import { useState } from "react";
+import Place from './components/Place';
+import styled from './components/css/PlaceStyle.module.css';
 
 function App() {
   const [places,setPlaces] = useState([
@@ -14,20 +16,32 @@ function App() {
     "🍦 TCBY"
   ]);
 
+  const [form,setForm] = useState("");
+
+  const onChangeHandler = (event) =>{
+    setForm(event.target.value)
+  }
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    const newArr = [ ...places, form ]
+    setPlaces(newArr);
+  }
+
   return (
     <div className="App">
       <h1>ICE CREEEEEEEEEEAM!</h1>
       <p>Favorite Ice Cream location</p>
-      <div>
+      <form onSubmit={ onSubmitHandler }>
+        <input type="text" name="name" placeholder="Add your favorite ice cream parlor!" onChange={ onChangeHandler }/>
+        <input type="submit" value="Add" className={styled.submit}/>
+      </form>
+      <div className={ styled.formWrapper }>
         {
-          places.map( (item, i) => <p key={ i }>{ item }</p> ) 
+          places.map( (item, i) => <Place name={item} key={ i } /> ) 
         }
-        <ol>
-        {
-          places.map((item,i) => <li key={i}> { item } </li> )
-        }
-        </ol>
       </div>
+      <Place/>
     </div>
   );
 }
@@ -36,5 +50,6 @@ export default App;
 
 
 // no for loops in your return statements
-// mao is a function that takes a funtion as a parameter
-//map needs to have JSX (html) tags
+// map is a function that takes a funtion as a parameter
+// map needs to have JSX (html) tags
+// need a new array or nothing will happen

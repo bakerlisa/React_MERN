@@ -1,0 +1,5 @@
+.formWrapper{display: flex; flex-wrap: wrap;align-items: center;justify-content: center;}
+.place{width: calc(50% - 30px); background-color:var(--green); margin: 15px; padding: 25px;color:var(--white); text-align: center;}
+
+
+.submit{padding: 10px 25px; background-origin: none; background-color:var(--mint); border:none;}
