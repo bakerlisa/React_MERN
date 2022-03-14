@@ -1,7 +1,7 @@
 .form {display: flex;  align-items: center;justify-content: start;flex-wrap: wrap; position: relative;z-index: 10;}
 .form .label{width: 250px; display: block; text-transform: uppercase;
     font-weight: 600; }
-.form .input{display: block; width: calc(100% - 250px); padding: 10px;}
+.form .input{display: block; width: calc(100% - 250px); padding: 10px; border:solid 1px var(--lav)}
 
 
 .listWrp{margin: 0; padding: 0 50px 0 0; position: relative; z-index: 10; }
