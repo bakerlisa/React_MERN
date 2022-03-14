@@ -18,3 +18,7 @@
 .App h1{text-align: center; margin: 0; }
 
 .decorator{height: 100%; width: 100%; position: absolute; top: 0; left: 500px; opacity: .25 ; background-image: url('./components/img/right.png'); background-position: left center; background-size: cover;}
+
+.svg-inline--fa.fa-trash-can:hover{color:var(--red); cursor: pointer;}
+.svg-inline--fa.fa-square-full{transform-origin: center; transform: scale(1); transition: all .25s ease-in;}
+.svg-inline--fa.fa-square-full:hover{transform: scale(.9); cursor: pointer; color:var(--green);}

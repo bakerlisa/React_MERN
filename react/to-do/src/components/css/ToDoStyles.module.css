@@ -5,9 +5,12 @@
 
 
 .listWrp{margin: 0; padding: 0 50px 0 0; position: relative; z-index: 10; }
-.list{list-style-type: none; padding-left: 15px; padding-bottom: 5px;}
-    .list:hover{cursor: pointer; color:var(--green);}
-.list svg{margin-right: 15px;}
+.list{list-style-type: none; padding-left: 15px; padding-bottom: 5px; display: flex;flex-wrap: wrap;align-items: start;justify-content: center;}
+.listWrp > div span{width: 30px; padding: 10px;}
+
+.list svg{margin-right: 15px; }
+.list .first{width: calc(100% - 30px); display: block; padding-right: 15px;}
+.strike{text-decoration: line-through;}
 
 .submit{display: block; margin-left:auto; border:none; padding: 10px 25px; background-color:var(--blue); color:var(--white); border-radius:5px; margin-top: 15px; width: 150px; text-transform: uppercase; font-weight: 600; border:solid 2px var(--green);transition: all .25s ease-in;}
     .submit:hover{cursor: pointer; background-color:transparent; color:var(--green); transition: all .25s ease-in;}
