@@ -26,6 +26,7 @@ function App() {
     event.preventDefault();
     const newArr = [ ...places, form ]
     setPlaces(newArr);
+    setForm("");
   }
 
   return (
@@ -33,7 +34,7 @@ function App() {
       <h1>ICE CREEEEEEEEEEAM!</h1>
       <p>Favorite Ice Cream location</p>
       <form onSubmit={ onSubmitHandler }>
-        <input type="text" name="name" placeholder="Add your favorite ice cream parlor!" onChange={ onChangeHandler }/>
+        <input type="text" name="name" placeholder="Add your favorite ice cream parlor!" onChange={ onChangeHandler } value={form} className={styled.input}/>
         <input type="submit" value="Add" className={styled.submit}/>
       </form>
       <div className={ styled.formWrapper }>
@@ -41,7 +42,6 @@ function App() {
           places.map( (item, i) => <Place name={item} key={ i } /> ) 
         }
       </div>
-      <Place/>
     </div>
   );
 }
