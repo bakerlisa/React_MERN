@@ -42,5 +42,31 @@ const reverseWordOrder = (str) => {
     return newNewArr;
 }
 
-console.log(reverseWordOrder("This is a test"));
-console.log(reverseWordOrder("A man a plan a canal Panama"));
+// console.log(reverseWordOrder("This is a test"));
+// console.log(reverseWordOrder("A man a plan a canal Panama"));
+
+
+// TAKE TWO
+
+const reverseWordOrderTwo = (str) => {
+    var word = "";
+    var sentnce = "";
+
+    for(let i = 0; i < str.length; i++){
+        if(str[i] === " " && word.length != 0){
+            sentnce = word + ' ' + sentnce;
+            word = "";
+        }else if(str[i] != " "){
+            word += str[i];
+        }
+    }
+
+    if(word.length != 0){
+        sentnce = word + sentnce;
+    }
+    return sentnce;
+}
+
+console.log(reverseWordOrderTwo("Did I shine my shoes today? "));
+console.log(reverseWordOrderTwo("Did I shine my shoes today?      "));
+console.log(reverseWordOrderTwo("two             words"));
