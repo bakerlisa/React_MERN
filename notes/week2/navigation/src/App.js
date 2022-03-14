@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './App.css';
+
 import Step from './component/Step';
+
 import baby from './img/babygif.gif';
 import banana from './img/banana-dance.gif'
 
@@ -9,7 +11,7 @@ function App() {
     {direction: "right", instruction:"turn right Raccoon Lane",distance:3.4},
     {direction: "Straight", instruction:"Go straight till Phaontas Ave.",distance:7.4},
     {direction: "Left", instruction:"turn left John Smith",distance:1.4},
-    {direction: "right", instruction:"turn RIGHT into the lake",distance:Infinity},
+    {direction: "right", instruction:"turn RIGHT into the lake",distance:Infinity}
   ]);
 
   const [form,setForm] = useState({
@@ -27,7 +29,7 @@ function App() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    setForm([
+    setSteps([
         ...steps,
         form
     ])
