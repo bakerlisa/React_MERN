@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './App.css';
-import AddDirection from './component/AddDirection';
 import Step from './component/Step';
 import baby from './img/babygif.gif';
 import banana from './img/banana-dance.gif'
@@ -17,21 +16,22 @@ function App() {
     direction: "left",
     instruction: "",
     distance: 0
-})
-const onChangeHandler = (event) => {
-    setForm({
-        ...form,
-        [event.target.name]:event.target.value
-    })
-}
+  })
 
-const onSubmit = (event) => {
+  const onChangeHandler = (event) => {
+      setForm({
+          ...form,
+          [event.target.name]:event.target.value
+      })
+  }
+
+  const onSubmit = (event) => {
     event.preventDefault();
     setForm([
         ...steps,
         form
     ])
-}
+  }
   
 
   return (
@@ -59,11 +59,10 @@ const onSubmit = (event) => {
                 <label htmlFor="distance">Miles</label>
                 <input  type="number" name="distance" onChange={onChangeHandler}/>
             </div>
-            <input type="submit" value="submit" />
+            <input type="submit" value="submit" onClick={onSubmit}/>
         </form>
 
       <div classaName="stesWrapper">
-        {/* <Step direction="right" instructions="turn right at Fullerton Ave." distance="3.2"/> */}
         {
           steps.map( (item,key) => { 
             return <Step key={key} direction={item.direction} instruction={item.instruction} distance={item.distance}/>
