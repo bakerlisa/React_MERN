@@ -1,7 +1,8 @@
 .form {display: flex;  align-items: center;justify-content: start;flex-wrap: wrap; position: relative;z-index: 10;}
 .form .label{width: 250px; display: block; text-transform: uppercase;
     font-weight: 600; }
-.form .input{display: block; width: calc(100% - 250px); padding: 10px; border:solid 1px var(--lav)}
+.form .input{display: block; width: calc(100% - 250px); padding: 10px; border:solid 1px var(--cream);}
+.form .input:focus{outline: none; border:solid px var(--pink);}
 
 
 .listWrp{margin: 0; padding: 0 50px 0 0; position: relative; z-index: 10; }
@@ -16,8 +17,8 @@
     .submit:hover{cursor: pointer; background-color:transparent; color:var(--green); transition: all .25s ease-in;}
 
 /* error */
-.error{display: block;width: 100%;color:var(--red); font-weight: 600; text-align: right;}
-
+.error{display: block;width: 100%;color:var(--red); font-weight: 600; text-align: right; width: 100% !important;}
+ 
 /* can */
 .can{position: absolute; right: 0;}
 .can:hover{color:var(--red);}

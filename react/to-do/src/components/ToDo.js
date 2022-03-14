@@ -5,8 +5,6 @@ import { faSquareFull } from '@fortawesome/free-solid-svg-icons'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import {  faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
-
-
 const ToDo = props => {
     const [allToDos,setAllToDos] = useState([])
 
@@ -73,10 +71,17 @@ const ToDo = props => {
             })
 
             var copyState = allToDos
-            // copyState.isChecked.splice(copyState.isChecked.indexOf(e.target.value),1,true)
-            // copyState.splice(copyState.indexOf(i),1,tempItem)
-            copyState.splice(i,1,tempItem)
+            //1.  copyState.isChecked.splice(copyState.isChecked.indexOf(e.target.value),1,true)
+            
+            //2.  copyState.splice(copyState.indexOf(i),1,tempItem)
+            
+            // 3. 
+            copyState.splice(i,1,tempItem) 
             setAllToDos( copyState )
+
+            //4. 
+            // copyState.splice(i,1) 
+            // setAllToDos([...allToDos,tempItem])
         }
     }
 
