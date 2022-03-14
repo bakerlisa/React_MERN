@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useState,useEffect } from 'react';
 import styled from './css/ToDoStyles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareFull } from '@fortawesome/free-solid-svg-icons'
@@ -15,6 +15,11 @@ const ToDo = props => {
         isChecked: false
     })
 
+    useEffect(() => {
+        const myToDos = localStorage.getItem('myToDoList');
+        setAllToDos(JSON.parse(myToDos));
+    });
+
     const onChangeHandler = (event) => {
         setNewItem({
             ...newItem,
@@ -30,9 +35,11 @@ const ToDo = props => {
             isChecked: false
         })
     }
+
     const sumbitNewTask = (event) => {
         event.preventDefault();
         setAllToDos([...allToDos,newItem])
+        localStorage.setItem("myToDoList",JSON.stringify([...allToDos]));
         setNewItem({
             task:"",
             valid: false,
@@ -44,16 +51,19 @@ const ToDo = props => {
     const clickToRemoveHandler = (i) =>{
         var  copyState = allToDos
         copyState.splice(i,1)
-        //had to clear the state?
-        setNewItem({})
         setAllToDos(copyState)
+        localStorage.setItem("myToDoList",JSON.stringify([...allToDos]));
+        setNewItem({})
     }
 
     const clickToCompleteHandler = (i) =>{
         const copyAllToDos = [...allToDos]
         copyAllToDos[i].isChecked = !copyAllToDos[i].isChecked
         setAllToDos(copyAllToDos);
+        localStorage.setItem("myToDoList",JSON.stringify([...allToDos]));
     }
+
+    
 
     return (
         <div className={ styled.listWrp }>
