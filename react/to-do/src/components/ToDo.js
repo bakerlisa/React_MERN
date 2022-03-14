@@ -15,13 +15,6 @@ const ToDo = props => {
         isChecked: false
     })
 
-    const [tempItem, setTempItem] = useState({
-        task:"",
-        valid: true,
-        blur: true,
-        isChecked: true
-    })
-
     const onChangeHandler = (event) => {
         setNewItem({
             ...newItem,
@@ -48,41 +41,18 @@ const ToDo = props => {
         })
     }
 
-    const clickToRemoveHandler = (e,i,item) =>{
+    const clickToRemoveHandler = (i) =>{
         var  copyState = allToDos
         copyState.splice(i,1)
         //had to clear the state?
-        setNewItem({
-            task:"",
-            valid: false,
-            blur: false,
-            isChecked: false
-        })
+        setNewItem({})
         setAllToDos(copyState)
     }
 
-    const clickToCompleteHandler = (e,i,item) =>{
-        if(allToDos[i].isChecked === false){
-            setTempItem({
-                task:item.task,
-                valid: true,
-                blur: true,
-                isChecked: true
-            })
-
-            var copyState = allToDos
-            //1.  copyState.isChecked.splice(copyState.isChecked.indexOf(e.target.value),1,true)
-            
-            //2.  copyState.splice(copyState.indexOf(i),1,tempItem)
-            
-            // 3. 
-            copyState.splice(i,1,tempItem) 
-            setAllToDos( copyState )
-
-            //4. 
-            // copyState.splice(i,1) 
-            // setAllToDos([...allToDos,tempItem])
-        }
+    const clickToCompleteHandler = (i) =>{
+        const copyAllToDos = [...allToDos]
+        copyAllToDos[i].isChecked = !copyAllToDos[i].isChecked
+        setAllToDos(copyAllToDos);
     }
 
     return (
@@ -102,13 +72,13 @@ const ToDo = props => {
                 <div className={ styled.listWrp }>
                     {
                         allToDos < 1 ?
-
                         <p>To do list is complete </p> :
+
                         allToDos.map( (item, i) => 
 
                         <div key={ i } className={ styled.list }>
                             
-                            <span className={styled.first} onClick={ (e) => { clickToCompleteHandler(e,i,item) } }>
+                            <span className={styled.first} onClick={ () => { clickToCompleteHandler(i) } }>
                                 {
                                     item.isChecked ?  <FontAwesomeIcon icon={faCheck} /> : <FontAwesomeIcon icon={faSquareFull} />  
                                 }
@@ -116,7 +86,7 @@ const ToDo = props => {
                                 
                             </span> 
 
-                            <span onClick={ (e) => { clickToRemoveHandler(e,i,item) } }><FontAwesomeIcon icon={faTrashCan} /></span>
+                            <span onClick={ (e) => { clickToRemoveHandler(i) } }><FontAwesomeIcon icon={faTrashCan} /></span>
 
                         </div> )
                     }
