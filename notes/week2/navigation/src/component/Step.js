@@ -2,7 +2,7 @@ import React from 'react';
 
 const Step = props => {
     return(
-        <div className="directionWrapper">
+        <div className="directionWrapper" onClick={props.onDelete}>
             <span className="direction">
                 { props.direction === "right" ? "➡️"
                     : props.direction === "left" ? "⬅️ "

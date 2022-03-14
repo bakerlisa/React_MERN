@@ -34,6 +34,13 @@ function App() {
         form
     ])
   }
+
+  const onDelete = (index) =>{
+    const copyState = [...steps];
+    copyState.splice(index,1)
+    setSteps(copyState);
+  }
+
   
 
   return (
@@ -67,7 +74,7 @@ function App() {
       <div classaName="stesWrapper">
         {
           steps.map( (item,key) => { 
-            return <Step key={key} direction={item.direction} instruction={item.instruction} distance={item.distance}/>
+            return <Step key={key} direction={item.direction} instruction={item.instruction} distance={item.distance} onDelete={() => {onDelete(key)} }/>
           })
         }
       </div>
