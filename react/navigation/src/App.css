@@ -1,38 +1,23 @@
-.App {
-  text-align: center;
+:root{
+  --white:#fff;
+  --black:#000;
+  --green:#91BF8F;
+  --blue:#419FD9;
+  --gray:#95ACBF;
+  --salmon:#BF6956;
 }
+*{box-sizing: border-box;}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+h1{margin: 0; font-size: 45px;}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.App {text-align: center;}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
+nav{background-color:var(--green); padding: 25px 50px; margin-bottom: 25px; text-align: right;}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+form{max-width: 600px; margin: 0 auto; display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}
+form label{width: 125px; text-align: right;padding-right: 25px; font-weight: 600;}
+form input{padding: 10px; width: calc(100% - 275px); border:solid 1px var(--black); color:var(--blue); border-right:none;}
+form input:focus{outline: none; border-color:var(--blue); color:var(--black);}
+form input.submit{width: 100px; background-color:var(--blue); border:solid 2px var(--blue); text-transform: uppercase;letter-spacing: 1px;font-weight: 600; color:var(--white); transition: all .25s ease-in;}
+form input.submit:hover{cursor: pointer; opacity: .75;  transition: all .25s ease-in;}
