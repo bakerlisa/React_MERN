@@ -1,53 +1,57 @@
 import React,{ useState } from 'react';
+import CountUp from 'react-countup';
 
 const TakeTwo = () => {
     const [coin,setCoin] = useState({
-        headsCount: 0,
-        attempts: 0,
-        message: ""
+        count: 0,
+        flips: 0,
+        message: "Now flip that coin, and win your million dollars!",
+        beenFlipped: false
+
     })
 
     const tossCoin = () => { return Math.random() > 0.5 ? "heads" : "tails"} ;
 
     const fiveHeads = () => { 
-        let coinAttempts = 0;
-        let coinHeads = 0;
-        // while(coinHeads !== 5 && coinAttempts < 100) {
-            coinAttempts++;
-            let result = tossCoin();
-            console.log(result)
+        setCoin({count: 0, flips: 0, message: "Now flip that coin, and win your million dollars!"});
 
-            if(result === "heads"){
-                coinAttempts++;
-                setCoin({...coin, headsCount: coin.headsCount + 1,attempts: coin.attempts + 1});
-            } else {
-                coinAttempts = 0;
-                setCoin({...coin, headsCount: 0,attempts: coin.attempts + 1});
-            }
-            console.log(coin.attempts)
-        // }//end while
+        let headsCount = 0;
+        let attempts = 0;
 
-        return new Promise ( (resolve, reject)  => {
-            if(coin.attempts >= 100) {
-                setCoin({...coin, message: "Waa Waa Waaa...You now owe me 1 MILLION dollars!"});
-                reject("success")
-            }
-            else if (coin.headsCount === 5) {
-                setCoin({...coin, message: "You won! You won! You won!"});
-                resolve("error")
-            }
-        });
+        for(let x=0;x < 100 ; x++){
+            if(headsCount === 5 ){ 
+                break;
+            }else{
+                attempts++;
+                let result = tossCoin();
+                console.log(`attempts ${attempts} : headsCount ${headsCount}`)
+
+                if(result === "heads"){
+                    headsCount++;
+                } else {
+                    headsCount = 0;
+                } 
+            }    
+        }
+        
+        //Had to do it down here, because it wasn't working in the for loop.
+        if(headsCount === 5 ){
+            setCoin({count: headsCount, flips: attempts, message: "You won! You won! You won!",beenFlipped:true });
+        }else if(attempts >= 100){
+            setCoin({count: headsCount, flips: 100, message: "Waa Waa Waaa...You now owe me a MILLION dollars!",beenFlipped:true });
+        }
     }
 
     return(
         <div className="container">
             <h1>Money Money Money!</h1>
-            <p>Flip the coin...you may win a million dollars!</p>
-            <button onClick={fiveHeads }>Flip a Coin</button>
-            
+            <p><strong>Rules: 100 attempts to get 5 heads in a row</strong></p>
             <p className="message">{coin.message}</p>
-            <p>Attempts: {coin.attempts} </p>
-            <p>Head Count: {coin.headsCount} </p>
+            {/* Had to make it a function call or else it would just call itself */}
+            <button onClick={() => {fiveHeads()} }>Flip a Coin</button>
+            
+            <p>Attempts: <CountUp end={coin.flips} /> </p>
+            <p>Heads in a row: <span className="count"> {coin.count} </span></p>
         </div> 
     );
 }

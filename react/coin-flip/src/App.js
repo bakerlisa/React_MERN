@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       {/* <TakeOne /> */}
-      
+
       <TakeTwo />
       <div className="background"></div>
     </div>

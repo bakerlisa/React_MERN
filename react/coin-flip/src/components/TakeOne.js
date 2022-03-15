@@ -1,11 +1,6 @@
 import React,{useState} from 'react';
 
-const TakeOne = () => {
-    const [coin,setCoin] = useState({
-        headsCount: 0,
-        attempts: 0
-    })
-    
+const TakeOne = () => {    
     const tossCoin = () => { return Math.random() > 0.5 ? "heads" : "tails"} ;
         
     function fiveHeads() {
