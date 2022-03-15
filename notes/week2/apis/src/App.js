@@ -21,6 +21,7 @@ function App() {
   return (
     <div className="App">
       <h1>Beer Beer Beer</h1>
+      <p>We all love beer</p>
         <form onSubmit={fetchInfo} >
           <input type="text" name="" onChange={(event)=> setForm(event.target.value)} />
           <button type="submit" onClick={ fetchInfo }>Click me</button>
