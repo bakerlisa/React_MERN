@@ -1,16 +1,16 @@
-import React, { useState,createContext } from 'react';
+import React, { useState } from 'react';
 
-const FormContext = createContext();
-
-const FormContextProvider = props => {
+const Form = props => {
     const [form,setForm] = useState("")
 
     const onFormSubmit = (event) => {
-        event.preventDefault();        
+        event.preventDefault();     
+        props.newName( form );   
     }
     
     const onChangeHandler = (event) => {
         setForm(event.target.value)
+        
     }
 
     return(
@@ -18,9 +18,9 @@ const FormContextProvider = props => {
         <form>
             <label htmlFor="name">Your Name:</label>
             <input type="text" name="name" placeholder="Bob Smith"  onChange={ onChangeHandler }/>
-            <input type="submit" onClick={ onFormSubmit } class="submit"/>
+            <input type="submit" onClick={ onFormSubmit } className="submit"/>
         </form>
     ) ;
 }
 
-export default FormContext;
+export default Form;
