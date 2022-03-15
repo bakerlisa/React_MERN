@@ -12,33 +12,31 @@ function App() {
       
   const fiveHeads = (event) => {
     return new Promise( (resolve, reject) => {
-          console.log(coin.headsCount)
           while(coin.headsCount < 5 && coin.attempts < 100) {
             setCoin({...coin, attempts: coin.attempts + 1});
             let result = tossCoin();
 
-            console.log(`${result} was flipped`);
+          //   console.log(`${result} was flipped`);
             if(result === "heads"){
               setCoin({...coin, headsCount: coin.headsCount + 1});
             } else {
               setCoin({...coin, headsCount: 0});
             }
-          }//end while
+          // }//end while
 
-        if(coin.headsCount === 5) {
-            resolve("Good, it's not Monday!");
-        } else {
-            reject("Someone has a case of the Mondays!");
+        // if(coin.headsCount === 5) {
+        //   setCoin({...coin, message: "You won! You won! You won!"});
+        //   resolve("You won! You won! You won!");
+        // } else {
+        //   setCoin({...coin, message: "Waa Waa Waaa...You now owe me 1 MILLION dollars!"});
+        //   reject("Waa Waa Waaa...I won! I won! I won! You owe me $1 MILLION!");
         }
-
     });
   }
 
   fiveHeads()
   .then( res => console.log(res) ) 
   .catch( err => console.log(err) );
-
-  console.log( "When does this run now?" );
     
   return (
     <div className="App">
