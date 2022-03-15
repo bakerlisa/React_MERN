@@ -10,13 +10,18 @@ const TakeTwo = () => {
     const tossCoin = () => { return Math.random() > 0.5 ? "heads" : "tails"} ;
 
     const fiveHeads = () => { 
-        // while(coin.headsCount !== 5 && coin.attempts < 100) {
+        let coinAttempts = 0;
+        let coinHeads = 0;
+        // while(coinHeads !== 5 && coinAttempts < 100) {
+            coinAttempts++;
             let result = tossCoin();
             console.log(result)
 
             if(result === "heads"){
+                coinAttempts++;
                 setCoin({...coin, headsCount: coin.headsCount + 1,attempts: coin.attempts + 1});
             } else {
+                coinAttempts = 0;
                 setCoin({...coin, headsCount: 0,attempts: coin.attempts + 1});
             }
             console.log(coin.attempts)
