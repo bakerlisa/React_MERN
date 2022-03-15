@@ -6,4 +6,5 @@
 
 Anyways, I learned that state is slower than let varialbes, and they don't update as fast. I also found a cool package called CountUp, that makes the numbers count up once the coin is flipped! Fun project! enjoy
 
+![](https://github.com/lisabroadhead/MERN/blob/main/react/coin-flip/Screen_Recording_2022-03-15_at_5_36_09_PM_AdobeCreativeCloudExpress.gif)
 ![](https://github.com/lisabroadhead/MERN/blob/main/react/coin-flip/Screen%20Shot%202022-03-15%20at%205.39.26%20PM.png)
