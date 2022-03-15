@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import './App.css';
 import Form from './components/Form';
+import FormContext from './components/FormContext';
 import FormWrapper from './components/FormWrapper';
 import Navigation from './components/Navigation';
-import Wrapper from './components/Wrapper';
+
 
 function App() {
   const [fullName, setFullName] = useState("what is your name?");
@@ -12,15 +13,16 @@ function App() {
     setFullName(currentName)
   }
 
-  return (
-      <Wrapper>
-        <Navigation name={ fullName } />
-        <FormWrapper >
-          <Form newName={ OnNewName }/>  
+  return (  
+    <FormContext.Provider value={{ fullName,setFullName }} >
+        <Navigation/>
+        <FormWrapper>
+          <Form/>  
         </FormWrapper>
-      </Wrapper>
+      </FormContext.Provider>
   );
 
 }
 
 export default App;
+

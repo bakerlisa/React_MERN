@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import FormContext from './FormContext';
 
 const Form = props => {
-    const [form,setForm] = useState("")
+    //dcon obj
+    const {setFullName} = useContext(FormContext)
 
     const onFormSubmit = (event) => {
         event.preventDefault();     
-        props.newName( form );   
+        // props.newName( fullName );   
     }
     
     const onChangeHandler = (event) => {
-        setForm(event.target.value)
+        setFullName(event.target.value)
         
     }
 

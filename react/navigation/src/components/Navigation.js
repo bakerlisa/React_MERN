@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import FormContext from './FormContext';
 
 const Navigation = props =>{
+    const {fullName} = useContext(FormContext)
+
     return(
         <nav>
-            <h1> Hello { props.name }</h1>
+            <h1> Hello { fullName }</h1>
         </nav>
     );
 }
