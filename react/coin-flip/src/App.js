@@ -1,23 +1,56 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [coin,setCoin] = useState({
+    headsCount: 0,
+    attempts: 0
+  })
+
+const tossCoin = () => { return Math.random() > 0.5 ? "heads" : "tails"} ;
+    
+function fiveHeads() {
+  return new Promise( (resolve, reject) => {
+    let headsCount = 0;
+    let attempts = 0;
+      
+    while(headsCount < 6 && attempts <= 100) {
+      attempts++;
+      let result = tossCoin();
+
+      console.log(`${result} was flipped`);
+        if(result === "heads"){
+            headsCount++;
+        } else {
+            headsCount = 0;
+        }
+
+        if(headsCount === 5) {
+          resolve("5 heads in a row!");
+          // break;
+        }  
+        if(attempts > 100) {
+          reject("You've hit your limit");
+          // break;
+        }
+    }
+  });
+}
+
+  fiveHeads()
+  .then( res => console.log(res) ) 
+  .catch( err => console.log(err) );
+
+  console.log( "When does this run now?" );
+    
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <h1>Money Money Money!</h1>
+        <p>Flip the coin...you may win a million dollars!</p>
+
+      </div>  
+      <div className="background"></div>
     </div>
   );
 }
