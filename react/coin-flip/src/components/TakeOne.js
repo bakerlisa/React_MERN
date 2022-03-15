@@ -13,7 +13,7 @@ const TakeOne = () => {
             let headsCount = 0;
             let attempts = 0;
 
-            while(headsCount != 5 && attempts < 100) {
+            while(headsCount !== 5 && attempts < 100) {
                 attempts++;
                 let result = tossCoin();
                 
