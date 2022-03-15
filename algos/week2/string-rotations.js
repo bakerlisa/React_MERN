@@ -29,34 +29,31 @@ const rotateString = (str, num) => {
 //rotation of str1. otherwise return false
 //("Did I shine my shoes today?", "es today?Did I shine my shoe")
 // -> returns true
-const isRotation = (str1, str2,num) => {
-    var rotate = 0;
-    var same = false;
+const isRotation = (str1, str2,num=0) => {
+    var rotate = num
+    var same;
+    str1 = rotateString(str1,rotate);
 
-    if(str1.length === str2.length){
-        if(num){    
-            rotate = num
-            str1 = rotateString(str1,rotate);
-        }
-
-        for(x=0;x < str2.length; x++){
-            if(str2[x] === str1[x]){
-                same = true;
-                continue;
-            }else{
-                same = false;
-                if(rotate + 1 < str2.length - 1){
-                    rotate++;
-                    isRotation(str1,str2,rotate)
-                    break;
-                }else{
-                    return same;
-                }
-            }
+    for(x=0;x < str2.length && str1.length === str2.length; x++){
+        if(str2[x] === str1[x]){
+            console.log(str1[x] + " : " + str2[x])
+            same = "true";
+        }else{
+            same = "false";
+            rotate++;
+            break;
         }
     }
-    return same;
+    
+    console.log(rotate)
+    console.log(str2.length)
+    if(rotate < str2.length){
+        isRotation(str1,str2,rotate)
+    }
+    console.log("same: " + same)
+
+    //return same;
 }
 
-console.log(isRotation("es today?Did I shine my sho", "es today?Did I shine my sho"));
+isRotation("es today?Did I shine my sho", "es today?Did I shine my sho");
 // console.log(isRotation("Did I shine my shoes today? ", "es today?Did I shine my sho"));
