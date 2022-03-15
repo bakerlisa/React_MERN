@@ -48,7 +48,7 @@ const TakeTwo = () => {
             <p><strong>Rules: 100 attempts to get 5 heads in a row</strong></p>
             <p className="message">{coin.message}</p>
             {/* Had to make it a function call or else it would just call itself */}
-            <button onClick={() => {fiveHeads()} }>Flip a Coin</button>
+            <button className="button" onClick={() => {fiveHeads()} }><span>Flip a Coin</span></button>
             
             <p>Attempts: <CountUp end={coin.flips} /> </p>
             <p>Heads in a row: <CountUp end={coin.count} />  </p>
