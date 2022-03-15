@@ -51,7 +51,7 @@ const TakeTwo = () => {
             <button onClick={() => {fiveHeads()} }>Flip a Coin</button>
             
             <p>Attempts: <CountUp end={coin.flips} /> </p>
-            <p>Heads in a row: <span className="count"> {coin.count} </span></p>
+            <p>Heads in a row: <CountUp end={coin.count} />  </p>
         </div> 
     );
 }

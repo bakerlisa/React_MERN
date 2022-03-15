@@ -5,8 +5,7 @@ import TakeTwo from './components/TakeTwo';
 function App() {    
   return (
     <div className="App">
-      {/* <TakeOne /> */}
-
+      <TakeOne />
       <TakeTwo />
       <div className="background"></div>
     </div>
