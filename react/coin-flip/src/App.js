@@ -14,25 +14,23 @@ function fiveHeads() {
     let headsCount = 0;
     let attempts = 0;
       
-    while(headsCount < 6 && attempts <= 100) {
+    while(headsCount < 5) {
       attempts++;
       let result = tossCoin();
 
       console.log(`${result} was flipped`);
-        if(result === "heads"){
-            headsCount++;
-        } else {
-            headsCount = 0;
-        }
+      if(result === "heads"){
+          headsCount++;
+      } else {
+          headsCount = 0;
+      }
 
-        if(headsCount === 5) {
-          resolve("5 heads in a row!");
-          // break;
-        }  
-        if(attempts > 100) {
-          reject("You've hit your limit");
-          // break;
-        }
+      if(headsCount === 5) {
+        resolve("5 heads in a row!");
+      } else if(attempts > 100) {
+        reject("You've hit your limit");
+      }
+
     }
   });
 }
