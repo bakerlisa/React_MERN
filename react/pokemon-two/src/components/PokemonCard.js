@@ -1,17 +1,19 @@
 import React from 'react';
-import styled from './css/PokemonCardStyles.moduls.css';
+import styled from './css/PokemonCardStyles.module.css';
 
 const PokemonCard = props => {
     const allMoves = props.moves
-    console.log(allMoves)
 
     return(
         <div className={styled.indvPoke}>
-            <img src={props.img} alt={props.name} />
-            <p className={styled.name}>{props.name}</p>
-            <div ><strong>Moves: </strong>
+            <div className={styled.imgName}>
+                <img src={props.img} alt={props.name} />
+                <p className={styled.name}>{props.name}</p>
+            </div>    
+
+            <div className={styled.moves}><strong>Moves: </strong>
                 {
-                    allMoves.map((item,i) => {return <div key={i} className={styled.moves}> {item.move.name}</div>})
+                    allMoves.map((item,i) => {return <span key={i}> {item.move.name},</span>})
                 }
             </div>
         </div>

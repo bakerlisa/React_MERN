@@ -9,14 +9,15 @@ function App() {
   const[poke,setPoke] = useState("");
   const[fetchAll,setFetchAll] = useState([]);
 
+  const[allPokemons,setAllPokemons] = useState([]);
+
   const onChangeHandler = (event) =>{
-    setPoke(event.target.value)
+    setPoke(event.target.value.toLowerCase())
   }
 
   const onClickHandler = (event) =>{
     event.preventDefault();
     axios.get(' https://pokeapi.co/api/v2/pokemon/' + poke).then(response=>{
-
         setFetchAll([...fetchAll,
           {
             pokemon: poke,
@@ -24,11 +25,15 @@ function App() {
             moves:response.data.moves
           } 
         ]);
-
     })
   }
-
-
+  const fetchAllHandler = (event) => {
+    event.preventDefault();
+    axios.get(' https://pokeapi.co/api/v2/pokemon?limit=807').then(response=>{
+        console.log(response.data.results)
+        setAllPokemons(response.data.results)
+    })
+  }
 
   return (
     <div className="App">
@@ -42,12 +47,12 @@ function App() {
 
         <div>
           <label htmlFor="allPokes">Fetch All Pokemons:</label>
-          <input type="submit" value="Fetch All" className={styled.submitFetch}/>
+          <input type="submit" value="Fetch All" className={styled.submitFetch} onClick={fetchAllHandler}/>
         </div>
       </form>
 
       {
-        fetchAll.length > 0 ? <h2>Your Party</h2> : ""
+        fetchAll.length > 0 ? <div><h2 className={styled.title}>Your Party</h2><p className={styled.subtitle}>Build you epic world dominating take over party!</p></div> : ""
       }
       
 
@@ -55,6 +60,16 @@ function App() {
         fetchAll.map((item,i) => { return <PokemonCard key={i} name={item.pokemon} img={item.img} moves={item.moves} />})
       }
       
+      {
+        allPokemons.length > 0 ? <div><h2 className={styled.title}>All Pokemons!</h2><p className={styled.subtitle}>Bam! Bam! Bam! Lets go to Waaaaaaaar</p></div> : ""
+      }  
+      <ul>
+      {
+        allPokemons.map((item,i) => {
+          return <li key={i} className={styled.indvPokemon}>{item.name}</li>
+        })
+      }
+      </ul>
     </div>
   );
 }
