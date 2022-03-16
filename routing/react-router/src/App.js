@@ -1,8 +1,8 @@
 import './App.css';
 import Home from './components/Home';
 import Hello from './components/Hello';
-import { Switch, Route } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom';
+import HelloTwo from './components/HelloTwo';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 
 function App() {
@@ -13,12 +13,20 @@ function App() {
           <Home/>
         </Route>
       </Switch>
-        
+
+ 
       <Switch>
-        <Route exact path="/hello">
+        <Route exact path="/:text">
           <Hello />
         </Route>
       </Switch>
+
+      <Switch>
+        <Route exact path="/:colorOne/:colorTwo">
+          <HelloTwo />
+        </Route>
+      </Switch>
+
     </div>
   );
 }

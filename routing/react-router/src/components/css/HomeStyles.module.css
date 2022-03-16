@@ -1,0 +1,6 @@
+.bannerTwo{position: relative;}
+
+.bannerTwo h1{margin: 0; padding:25px 50px; color:var(--white); position: relative;z-index: 100; font-size: 50px;}
+.bannerTwo p{color:var(--white); font-size: 18px;}
+
+.bannerTwo{ width: 100%; top: 50%; transform: translateY(-50%);}
