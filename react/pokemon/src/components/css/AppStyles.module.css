@@ -1,0 +1,5 @@
+.getAllPokes{padding: 50px; display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}
+.getAllPokes .wrp{width: 50%; display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}
+.getAllPokes label{display: block; text-align: left; width: 100%;}
+.getAllPokes input{padding: 10px; width: calc(100% - 200px);}
+.getAllPokes input.submit{width: 200px;}

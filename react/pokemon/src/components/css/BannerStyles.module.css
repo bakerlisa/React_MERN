@@ -1,0 +1,2 @@
+.banner{padding:300px 50px 25px; background-image: url('../img/pokemon.jpg'); background-position: bottom center; background-size: cover; color:var(--white);}
+.banner .title{color:var(--white); font-size: 100px;margin: 0;}
