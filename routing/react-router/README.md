@@ -1,4 +1,4 @@
-# Practice using Routing
+# Practice with Routing
 
 Pretty straight forward, using a few more components:  react-router-dom@5, useParams
 
