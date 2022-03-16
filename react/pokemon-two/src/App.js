@@ -3,6 +3,7 @@ import Banner from './components/Banner';
 import PokemonCard from './components/PokemonCard';
 import styled from './components/css/App.module.css';
 import { useState } from 'react';
+import axios from 'axios';
 
 function App() {
   const[poke,setPoke] = useState("");
@@ -14,8 +15,20 @@ function App() {
 
   const onClickHandler = (event) =>{
     event.preventDefault();
-    setFetchAll([...fetchAll,poke])
+    axios.get(' https://pokeapi.co/api/v2/pokemon/' + poke).then(response=>{
+
+        setFetchAll([...fetchAll,
+          {
+            pokemon: poke,
+            img:response.data.sprites.front_default,
+            moves:response.data.moves
+          } 
+        ]);
+
+    })
   }
+
+
 
   return (
     <div className="App">
@@ -29,10 +42,19 @@ function App() {
 
         <div>
           <label htmlFor="allPokes">Fetch All Pokemons:</label>
-          <input type="submit" value="Fetch All" class={styled.submitFetch}/>
+          <input type="submit" value="Fetch All" className={styled.submitFetch}/>
         </div>
       </form>
-      <PokemonCard />
+
+      {
+        fetchAll.length > 0 ? <h2>Your Party</h2> : ""
+      }
+      
+
+      {
+        fetchAll.map((item,i) => { return <PokemonCard key={i} name={item.pokemon} img={item.img} moves={item.moves} />})
+      }
+      
     </div>
   );
 }
