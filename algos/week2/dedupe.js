@@ -7,14 +7,25 @@ const dedupe = (str) => {
     var newString = "";
     var usedStrs = [];
 
-    for(let i = str.length; i > 0; i--){
-        for(let x = 0; usedStrs.length < x; x++){
-            console.log('hello')
+    for(var i = str.length-1; i >= 0; i--){
+        for(var x = 0; x <= usedStrs.length; x++){
+            //console.log(str[i])
+            //console.log(usedStrs[x])
+
+            if(str[i] != usedStrs[x]){
+                usedStrs.push(str[i])
+                newString =  str[i] + newString ;
+                console.log(newString)
+                break;
+            }
         }
+        // console.log(usedStrs)
+        // console.log(newString)
     }
+    
 }
 
-console.log("hello")
+
 
 console.log(dedupe("Snaps! crackles! pops!"));
 // console.log(dedupe("Did I shine my shoes today?"));
