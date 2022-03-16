@@ -1,6 +1,9 @@
 :root{
   --white:#fff;
   --black:#000;
+  --yellow:#D1B838;
+  --blue:#38909E;
+  --cream:#eff1e9;
 }
 .App {
   text-align: center;
