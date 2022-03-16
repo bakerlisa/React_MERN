@@ -8,10 +8,17 @@ import { BrowserRouter } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-
-      <Home/>
-
-      <Hello />
+      <Switch>
+        <Route exact path="/">
+          <Home/>
+        </Route>
+      </Switch>
+        
+      <Switch>
+        <Route exact path="/hello">
+          <Hello />
+        </Route>
+      </Switch>
     </div>
   );
 }
