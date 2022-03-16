@@ -11,7 +11,7 @@ const Home = props => {
                 num ? `, ${ num }  times welcome!` : "!"
             }
             </h1>
-            <p>Where Sci-fi and reality meet! Where we are so bored because robots do all the work for us</p>
+            <p>Where Sci-fi and reality meet! And boredom is rampant...why did we invent robots to do evrything for us </p>
         </div>
     );
 }

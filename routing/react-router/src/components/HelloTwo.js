@@ -18,7 +18,7 @@ const HelloTwo = props => {
 
     return(
         <div style={ btnStyle }>
-            <h1><marquee> ALERT! ALERT! ALERT! This is a world wide alert! The Aliens are invading! Loose your guts and cover your butts </marquee></h1>
+            <h1><marquee> ALERT! ALERT! ALERT! This is a world wide alert! The Aliens are invading! Loose your gut and cover your butts </marquee></h1>
         </div>
     );
 }
