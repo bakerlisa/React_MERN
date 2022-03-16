@@ -1,3 +1,11 @@
+:root{
+  --gray:#EFEFEF;
+  --black:#000;
+  --white:#fff;
+  --red:#270103;
+  --red_orange:#EA2803;
+  --pale_red:#FABAB4;
+}
 .App {
   text-align: center;
 }
@@ -6,6 +14,14 @@
   height: 40vmin;
   pointer-events: none;
 }
+
+h1,h2{margin: 0; padding: 0;}
+
+form{position: relative; z-index: 500; display: flex;align-items: center;justify-content: center;flex-wrap: wrap; font-size: 18px;}
+form label{ padding: 10px;}
+form select, form input{padding: 15px; width: 250px; background-color: var(--gray); border: none; border-radius: 5px; font-size: 18px;}
+form input.submit{background-color:var(--red); background-color:var(--red); width: 100px; color:var(--white); margin-left: 10px;}
+form input.id{width: 50px;}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

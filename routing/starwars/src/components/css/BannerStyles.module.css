@@ -1,0 +1,2 @@
+.banner{color:var(--red); background-image: url('../img/stars.jpg'); background-repeat: no-repeat; background-size: cover; padding: 0px; margin-bottom: 50px; position: relative; height: 250px; position: relative; top: 0;}
+.banner .title{font-size: 20em;text-transform: uppercase; position: absolute; top: -75px;left: 0;right: 0; font-weight: 900; opacity: .5;}
