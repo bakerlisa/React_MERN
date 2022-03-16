@@ -25,6 +25,7 @@ function App() {
             moves:response.data.moves
           } 
         ]);
+        setPoke("")
     })
   }
   const fetchAllHandler = (event) => {
@@ -41,10 +42,10 @@ function App() {
       <form>
         <div>
           <label htmlFor="pokemon">Search for one Pokemon:</label>
-          <input type="text" name="pokemon" className={styled.pokemonName} onChange={onChangeHandler}/>
-          <input type="submit" value="search" className={styled.submit} onClick={onClickHandler}/>
+          <input type="text" name="pokemon" className={styled.pokemonName} onChange={onChangeHandler} value={poke} />
+          <input type="submit" value="search" className={styled.submit} onClick={onClickHandler} />
         </div>
-
+ 
         <div>
           <label htmlFor="allPokes">Fetch All Pokemons:</label>
           <input type="submit" value="Fetch All" className={styled.submitFetch} onClick={fetchAllHandler}/>
