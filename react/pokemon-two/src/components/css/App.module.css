@@ -1,0 +1,12 @@
+form{padding: 50px 50px 0; display: flex;align-items: center;justify-content: space-around;flex-wrap: wrap;}
+form > div{width: calc(50% - 50px);  text-align: left;}
+form > div label{display: block; font-weight: 600; padding-bottom: 10px;}
+
+.pokemonName{border:none; border-bottom:solid 2px var(--black); padding: 10px; width: calc(100% - 150px);}
+    .pokemonName:focus{outline: none; border-color:var(--dk_red);}
+    
+.submit{background-color:var(--red); color:var(--black); border: none; font-weight: 600; padding: 12px 25px; width: 150px; transition: all .15s ease-in;}
+    .submit:hover{cursor: pointer;background-color:var(--black); color:var(--red); transition: all .15s ease-in;}
+
+.submitFetch{width: 100%; padding: 15px; border:none; background-color:var(--black); color:var(--red); font-weight: 600; transition: all .15s ease-in;}
+    .submitFetch:hover{cursor: pointer; background-color:var(--red); color:var(--black); transition: all .15s ease-in;}

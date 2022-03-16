@@ -1,6 +1,17 @@
+*{box-sizing:border-box;}
+:root{
+  --white:#fff;
+  --black:#000;
+  --red:#FF2829;
+  --dk_red:#4D1C1C;
+  --blue:#225C80;
+  --green:#1F8C7B;
+}
+
 .App {
   text-align: center;
 }
+
 
 .App-logo {
   height: 40vmin;
