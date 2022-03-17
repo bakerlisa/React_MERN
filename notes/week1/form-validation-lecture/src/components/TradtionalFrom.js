@@ -42,7 +42,7 @@ const TradtionalFrom = (props) => {
     };
 
     const submitSundea = (event) => {
-        const mySundea = {flavor,sauce,toppings,whippedCreame};=
+        const mySundea = {flavor,sauce,toppings,whippedCreame};
     };
 
     //on blur
