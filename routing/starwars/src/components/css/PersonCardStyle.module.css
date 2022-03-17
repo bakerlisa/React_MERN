@@ -1,1 +1,1 @@
-.personCard{width: 25%; padding: 25px; background-color:var(--gray);}
+.personCard{width: calc(25% - 20px); margin:10px; padding: 25px; background-color:var(--gray);}

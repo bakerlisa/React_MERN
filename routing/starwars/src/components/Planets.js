@@ -12,6 +12,7 @@ const Planets = props => {
             <p className="hairColor"><strong>Terrain: </strong> {props.terrain} </p>
             <p className="skinColor"><strong>Gravity: </strong> {props.gravity}</p>
             <p className="skinColor"><strong>Orbit: </strong> {props.orbit}</p>
+            <p className="skinColor"><strong>Population: </strong> {props.population}</p>
         </div>
     );
 }
