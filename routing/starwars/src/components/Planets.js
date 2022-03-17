@@ -8,6 +8,7 @@ const Planets = props => {
     return(
         <div className={styled.results}>
             <h2>Planets</h2>
+            
         </div>
     );
 }
