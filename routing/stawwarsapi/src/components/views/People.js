@@ -25,6 +25,7 @@ const People = (props) => {
                 axios.get( response.data.homeworld )
                 .then(response=>{
                     setHome(response.data.name)
+                    console.log(response);
                 })
                 .catch(err=>console.log("err"))
             })
@@ -36,10 +37,10 @@ const People = (props) => {
     return(
         <div>
             {
-                error.length > 0 ? <h1>{error}</h1> : 
+                error.length > 0 ? <> <h1>{error}</h1> <img src={props.img} alt="Obi One Knobi" /></>: 
                 <>
                     <h1>{person.name}</h1>
-                    <MainPerson skinColor={person.skin_color} HairColor={person.hair_color}  mass={person.mass} height={person.height} home={home} />
+                    <MainPerson skinColor={person.skin_color} HairColor={person.hair_color}  mass={person.mass} height={person.height} home={home} homeLink={"/planets/" + num} />
                 </>
             }
                 

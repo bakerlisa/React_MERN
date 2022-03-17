@@ -14,12 +14,18 @@ const Starship = (props) => {
         axios.get(`https://swapi.dev/api//${text}/${num}`)
             .then(response=>{
                 setStarship(response.data)
+                setErr("")
             })
-            .catch(err=>console.log(err))
+            .catch(err=>{
+                setErr("You'll never see us coming")
+                })
     },[text,num]); 
 
     return(
-        
+        <div>
+        {
+            error.length > 0 ? <> <h1>{error}</h1> <img src={props.img} alt="warp speed" /></> : 
+
             <div>
                 <h1>{starship.name}</h1>
                 <p><strong>Crew: </strong> {starship.crew}</p>
@@ -27,6 +33,8 @@ const Starship = (props) => {
                 <p><strong>Model: </strong> {starship.model}</p>
                 <p><strong>Passengers: </strong> {starship.passengers}</p>
             </div>
+        }
+        </div>
     )
 }
 

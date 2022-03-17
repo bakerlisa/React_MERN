@@ -8,6 +8,10 @@ import People from './components/views/People';
 import Planets from './components/views/Planets';
 import Starship from './components/views/Starships';
 
+import planet from './components/img/explode.jpeg';
+import obi from './components/img/obi-wan.jpg';
+import warp from './components/img/warp.jpeg';
+
 function App() {
   const [form,setform] = useState({
     type: "people",
@@ -69,15 +73,15 @@ function App() {
           </Route>
 
           <Route exact path="/people/:num">
-            <People />
+            <People img={obi} />
           </Route>
 
           <Route exact path="/planets/:num">
-            <Planets />
+            <Planets img={planet} />
           </Route>
 
           <Route exact path="/starships/:num">
-            <Starship />
+            <Starship img={warp} />
           </Route>
         </Switch>
 

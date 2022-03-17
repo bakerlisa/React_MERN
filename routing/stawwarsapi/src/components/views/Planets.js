@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import planet from '../img/stars.jpg';
+
 
 const Planets = (props) => {
     const [error,setErr] = useState("")
@@ -18,7 +18,7 @@ const Planets = (props) => {
                 setErr("")
             })
             .catch(err=>{
-                setErr("This Planet was destoryed by Vulcans")
+                setErr("The Vulcans have destoryed this Planet")
             })
     },[text,num]);
 
@@ -26,7 +26,7 @@ const Planets = (props) => {
         <div>
             <img src={planet} alt="" />
             {
-                error.length > 0 ? <> <h1>{error}</h1> <img src={planet} alt="exploding planet"/> </>:
+                error.length > 0 ? <> <h1>{error}</h1> <img src={props.img} alt="exploding planet"/> </>:
                 <>
                     <h1>{planet.name}</h1>
                     <p><strong>Climate:</strong> {planet.climate}</p>
