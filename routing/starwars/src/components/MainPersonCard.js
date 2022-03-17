@@ -9,7 +9,7 @@ const MainPersonCard = props => {
     // axios.get(homeworld)
     //     .then(response=>{
     //         console.log(response    )
-    //     },props.homeworld)
+    //     },allPeople)
 
     return(
         <div>
