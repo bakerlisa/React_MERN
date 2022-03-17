@@ -1,9 +1,34 @@
 :root{
   --white:#fff;
-  --black:#000;
-  --red:red;
+  --black:#2C0001;
+  --red:#9E0200;
+  --dk_red:#2C0001;
+  --orange:#F54A04;
+  --yellow:#F78B0C;
+
 }
 *{box-sizing: border-box;}
 
+h1{margin-bottom: 0;}
+
+body{background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffddb6' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");}
+
 .App{text-align: center;}
+
+/* BANNER */
+.banner{ background-position: center; background-size: cover; background-image: url('./components/img/stars.jpg'); border-bottom:solid 10px var(--dk_red);}
+.banner h1{font-size: 300px; font-weight: 900; line-height:175px; margin: 0; color:var(--black); opacity: .5; overflow: hidden;}
+
+
+/* FORM */
+.formWrp{ background-color:var(--dk_red); padding: 25px; color:var(--white);}
+.wrp{max-width: 600px; margin: 0 auto; display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}
+.formWrp label{display: block;font-weight: 600;}
+.formWrp .wrp > div{width: 33.33%; position: relative;}
+.formWrp .wrp > div > span{position: absolute; bottom:-19px; width: 100%; left: 0; text-align: left; padding: 0 17px; color:var(--orange);}
+.formWrp .input{padding: 10px;}
+.formWrp .wrp .submit{width: 33.33%; padding:10px; background-color:var(--white); color:var(--dk_red); border:none; text-transform: uppercase; font-weight: 600; transition: all.2s ease-in;}
+  .formWrp .wrp .submit:hover{ cursor: pointer; opacity: .8; transition: all.2s ease-in;}
+select{padding:10px; width: 100%;}
 
