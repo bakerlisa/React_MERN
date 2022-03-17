@@ -4,32 +4,45 @@ import { useParams } from 'react-router-dom';
 import MainPerson from '../MainPerson';
 
 const People = (props) => {
+    const [error,setErr] = useState("")
+    
     const {num} = useParams()
     const text = "people";
 
     const [person,setPerson] = useState([])
-    const [home,setHome] =  useState( person.homeworld )
-    console.log( home )
-    console.log(person.homeworld)
+    const [home,setHome] =  useState("")
     
     useEffect(()=>{
         axios.get(`https://swapi.dev/api/${text}/${num}`)
             .then(response=>{
                 setPerson(response.data)
-            })
-            .catch(err=>console.log(err))
-
-            axios.get( home )
-            .then(response=>{
+                setErr("")
+                //need to return to chain to children
                 console.log(response)
+                return response
             })
-            .catch(err=>console.log(err))
+            .then(response=>{
+                axios.get( response.data.homeworld )
+                .then(response=>{
+                    setHome(response.data.name)
+                })
+                .catch(err=>console.log("err"))
+            })
+            .catch(err=>{
+                setErr("These aren't the droids you're looking for")
+            })
     },[text,num,home]); 
 
     return(
         <div>
-            <h1>{person.name}</h1>
-            <MainPerson skinColor={person.skin_color} HairColor={person.hair_color}  mass={person.mass} height={person.height} home={person.homeworld} />
+            {
+                error.length > 0 ? <h1>{error}</h1> : 
+                <>
+                    <h1>{person.name}</h1>
+                    <MainPerson skinColor={person.skin_color} HairColor={person.hair_color}  mass={person.mass} height={person.height} home={home} />
+                </>
+            }
+                
         </div>
     );
 }
