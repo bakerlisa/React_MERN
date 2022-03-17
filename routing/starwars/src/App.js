@@ -3,7 +3,6 @@ import { BrowserRouter, Link, Switch, Route, useHistory } from "react-router-dom
 
 import styled from './components/css/HomeStyles.module.css';
 
-import Home from './components/Home';
 import Banner from './components/Banner';
 import Planets from './components/Planets';
 import Starships from './components/Starships';
@@ -21,11 +20,17 @@ function App() {
 
   const [form,setForm] = useState({
     id: 0,
-    type: ""
+    type: "people",
+    valid: false,
+    message: ""
   })
 
-  const onChangeHandler = (event) => {
-    setForm({ ...form, [event.target.name] : event.target.value })
+  const onChangeHandler = (event) => {  
+      if(event.target.value  < 1){  
+      setForm({ ...form, [event.target.name] : event.target.value })
+      } else{
+        setForm({ ...form, message : "Please chaeck field"})
+      }
   }
 
   const onSubmitHandler = (event) => {
@@ -33,10 +38,10 @@ function App() {
     setAllPlanets([...allPlanets, form])  
 
     axios.get(`https://swapi.dev/api/${form.type}/${form.id}`).then(response=>{
-      console.log(response.data);
       if(form.type === "people" ){ setAllPeople([...allPeople, response.data])}
       if(form.type === "planets" ){ setAllPlanets([...allPlanets, response.data])}
       if(form.type === "starships" ){ setAllStarships([...allStarships, response.data])}
+      console.log(response)
     })
 
     history.push(`/${form.type}/${form.id}`);
@@ -47,9 +52,11 @@ function App() {
       <Banner title="Star Wars"/>
       <form>
         <label htmlFor="type">Search for: </label>
-
-        <select name="type" onChange={onChangeHandler}>
-          <option value="" disabled selected>Select...</option>
+        {
+          form.message.length > 0 ? <p> {form.message } </p> : ""
+        }
+        <select name="type" onChange={onChangeHandler} >
+          <option disabled>Select...</option>
           <option>people</option>
           <option>planets</option>
           <option>starships</option>
@@ -63,7 +70,6 @@ function App() {
 
       <Switch>
         <Route exact path="/people/:num">
-          <People>
             {
               allPeople.length > 0 ? <h2>Recent Searches</h2> : ""
             }
@@ -73,19 +79,34 @@ function App() {
               }
             </div>
             
-          </People>
         </Route>
       </Switch>
 
       <Switch>
         <Route exact path="/planets/:num">
-          <Planets planets={allPlanets}/>
+            {
+              allPlanets.length > 0 ? <h2>Recent Searches</h2> : ""
+            }
+            <div className={styled.cardsWrapper}>
+              {
+                allPlanets.map((item,i) => {return <Planets key={i} name={item.name} climate={item.climate} terrain={item.terrain}  gravity={item.gravity} orbit={item.orbital_period}/> })
+              }
+            </div>
         </Route>
       </Switch>
 
       <Switch>
         <Route exact path="/starships/:num">
-          <Starships starship={allStarships} />
+            
+            {
+              allStarships.length > 0 ? <h2>Recent Searches</h2> : ""
+            }
+            <div className={styled.cardsWrapper}>
+              {
+                allStarships.map((item,i) => {return <Starships key={i} name={item.name} crew={item.crew} starship_class={item.starship_class}  model={item.model} manufacturer={item.manufacturer}/> })
+              }
+            </div>
+          
         </Route>
       </Switch>
     </div>

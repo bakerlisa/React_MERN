@@ -1,3 +1,4 @@
+*{box-sizing: border-box;}
 :root{
   --gray:#EFEFEF;
   --black:#000;
@@ -21,5 +22,5 @@ form{position: relative; z-index: 500; display: flex;align-items: center;justify
 form label{ padding: 10px;}
 form select, form input{padding: 15px; width: 250px; background-color: var(--gray); border: none; border-radius: 5px; font-size: 18px;}
 form input.submit{background-color:var(--red); background-color:var(--red); width: 100px; color:var(--white); margin-left: 10px;}
-form input.id{width: 50px;}
+form input.id{width: 75px;}
 
