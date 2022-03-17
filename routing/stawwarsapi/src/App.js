@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import { Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import Home from './views/Home';
+import People from './views/People';
+import Planets from './views/Planets';
+import Starship from './views/Starships';
 
 function App() {
+  const [form,setform] = useState("")
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+
+          <Route exact path="/people/:num">
+            <People />
+          </Route>
+
+          <Route exact path="/planets/:num">
+            <Planets />
+          </Route>
+
+          <Route exact path="/starships/:num">
+            <Starship />
+          </Route>
+        </Switch>
+
+
     </div>
   );
 }
