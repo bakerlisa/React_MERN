@@ -41,7 +41,7 @@ function App() {
       if(form.type === "planets" ){ setAllPlanets([...allPlanets, response.data])}
       if(form.type === "starships" ){ setAllStarships([...allStarships, response.data])}
       // console.log(response)
-    })
+    },[])
 
     history.push(`/${form.type}/${form.id}`);
   }
@@ -70,14 +70,13 @@ function App() {
               {
                 allPeople.map((item,i) => { 
                   if(allPeople.length - 1 === i) {
-                    return   <div className={styled.mainWrapper}>
+                    return   <div key={i} className={styled.mainWrapper}>
                       <h2>Main Card</h2>
-                      <MainPersonCard key={i} name={item.name} height={item.height} hairColor={item.hair_color}  skinColor={item.skin_color}/>
+                      <MainPersonCard name={item.name} height={item.height} hairColor={item.hair_color}  skinColor={item.skin_color} eyeColor={item.eye_color} homeworld={item.homeworld} />
                       <h2>Other Searchs:</h2>
                       </div>
-                    
                   }else{
-                    return <PersonCard key={i} name={item.name} height={item.height} hairColor={item.hair_color}  skinColor={item.skin_color}/>
+                    return <PersonCard key={i} name={item.name} height={item.height} hairColor={item.hair_color}  skinColor={item.skin_color} eyeColor={item.eye_color} homeworld={item.homeworld}/>
                   }
                 })
               }
@@ -91,12 +90,11 @@ function App() {
               {
                 allPlanets.map((item,i) => { 
                   if(allPlanets.length - 1 === i) {
-                    return <div className={styled.mainWrapper}>
+                    return <div key={i} className={styled.mainWrapper}>
                       <h2>Main Card</h2>
-                      <MainPlanet key={i} name={item.name} climate={item.climate} orbit={item.orbital_period} terrain={item.terrain}  gravity={item.gravity} population={item.population} />
+                      <MainPlanet  name={item.name} climate={item.climate} orbit={item.orbital_period} terrain={item.terrain}  gravity={item.gravity} population={item.population} />
                       <h2>Other Searchs:</h2>
                       </div>
-                    
                   }else{
                     return <Planets key={i} name={item.name} climate={item.climate} orbit={item.orbital_period} terrain={item.terrain}  gravity={item.gravity} population={item.population} />
                   }
@@ -112,12 +110,11 @@ function App() {
               {
                 allStarships.map((item,i) => { 
                   if(allStarships.length - 1 === i) {
-                    return <div className={styled.mainWrapper}>
+                    return <div key={i} className={styled.mainWrapper}>
                       <h2>Main Card</h2>
-                      <MainStarship key={i} name={item.name} model={item.model} manufacturer={item.manufacturer} starship_class={item.starship_class} crew={item.crew} />
+                      <MainStarship  name={item.name} model={item.model} manufacturer={item.manufacturer} starship_class={item.starship_class} crew={item.crew} />
                       <h2>Other Searchs:</h2>
                       </div>
-                    
                   }else{
                     return <Starships key={i} name={item.name} model={item.model} manufacturer={item.manufacturer} starship_class={item.starship_class} crew={item.crew} />
                   }
