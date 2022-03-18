@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 8000;
 const { faker } = require('@faker-js/faker');
+const Order = require("./orders");
     
 
 // req is shorthand for request

@@ -1,3 +1,4 @@
+const { faker } = require('@faker-js/faker')
 class Order{
     constructor(){
         const bases = ["espresso shot","creamer","ice","milk","water","dark roast","light roast","drip","columbian","french raost","chai tea","black tea","green tea"];

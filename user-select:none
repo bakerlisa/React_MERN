@@ -1,0 +1,25 @@
+user-select:none
+
+---
+
+CODE REVIEW:
+1. Lag
+	-its waiting on the api and the state change
+2. move onsubmit to the form tag not submit
+	-on the form 
+	-on submit
+3. move the images to the 
+4. can I pass a non parameter as a parameter
+5. have comopnet that makes the sxioss call to films
+
+
+
+EXPRESS
+
+1. make a ew folder
+npm init-y
+npm i express
+
+.gitignore
+-> node_modules/
+
