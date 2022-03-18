@@ -5,9 +5,8 @@ const { faker } = require('@faker-js/faker');
 const Order = require("./orders");
     
 
-// req is shorthand for request
-// res is shorthand for response
 app.get("/api", (req, res) => {
+    console.log("we're trying to connect to the database")
     res.json({ message: "Hello World" });
 });
 

@@ -1,4 +1,5 @@
 const { faker } = require('@faker-js/faker')
+
 class Order{
     constructor(){
         const bases = ["espresso shot","creamer","ice","milk","water","dark roast","light roast","drip","columbian","french raost","chai tea","black tea","green tea"];
@@ -10,11 +11,12 @@ class Order{
         this.coffeeShop = faker.company.companyName() + "Coffee Shop"
         this.barista = faker.image.avatar();
         this.name = faker.name.findName();
-        this.base = bases[Math.floor(Math.ranom() * bases.length)];
-        this.additives = additives[Math.floor(Math.ranom() * additives.length)];
-        this.toppings = toppings[Math.floor(Math.ranom() * toppings.length)];
+        this.base = bases[Math.floor(Math.random() * bases.length)];
+
+        this.additives = additives[Math.floor(Math.random() * additives.length)];
+        this.toppings = toppings[Math.floor(Math.random() * toppings.length)];
         this.cost = "$" + faker.finance.amount();
     }
 }
 
-export.modules
+module.exports = Order
