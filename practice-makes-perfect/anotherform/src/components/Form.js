@@ -22,12 +22,21 @@ const Form = (props) => {
         return false
     }
 
+    const onLengthValidator = (event,num) =>{
+        if(event.target.length > num){
+            console.log("yes")
+        }else{
+            console.log("no")
+        }
+    }
+
     return(
         <div>
             <form>
                 <div>
                     <label htmlFor="firstName">First Name</label>
-                    <input type="text" name="firstName" onChange={onChangeHandler}/>
+                    <input type="text" name="firstName" onChange={()=>{onLengthValidator(5)}}/>
+
                 </div>
 
                 <div>
