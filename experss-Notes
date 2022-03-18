@@ -1,0 +1,5 @@
+npm init -y  
+npm i express
+npm install @faker-js/faker --save-dev
+
+nodemon server.js
