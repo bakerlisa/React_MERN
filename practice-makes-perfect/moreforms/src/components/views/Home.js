@@ -1,9 +1,11 @@
 import React from 'react';
+import Form from '../Form';
 
-const Home = (props) => {
+const Home = props => {
     return(
         <div>
-            <h2>Home</h2>
+            <h1>Home</h1>
+            <Form />
         </div>
     );
 }
