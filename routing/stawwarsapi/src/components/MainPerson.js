@@ -1,7 +1,12 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Films from './Films';
 
 const MainPerson = (props) => {
+    var allFilms = props.films
+
+
     return(
         <div className="mainPerson">
             <p><strong> Skin Color: </strong> {props.skinColor}</p>

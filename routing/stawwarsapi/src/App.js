@@ -8,9 +8,6 @@ import People from './components/views/People';
 import Planets from './components/views/Planets';
 import Starship from './components/views/Starships';
 
-import planet from './components/img/explode.jpeg';
-import obi from './components/img/obi-wan.jpg';
-import warp from './components/img/warp.jpeg';
 
 function App() {
   const [form,setform] = useState({
@@ -45,7 +42,7 @@ function App() {
       <div className="banner">
         <h1>Star Wars</h1>
       </div>
-      <form className="formWrp">
+      <form className="formWrp" onSubmit={onClickHandler}>
         <div className="wrp">
           <div>
             <select name="type" value={form.type} onChange={onChangeHandler}>
@@ -64,7 +61,7 @@ function App() {
             
           </div>
 
-          <input type="submit" value="Search" className="submit" onClick={onClickHandler} />
+          <input type="submit" value="Search" className="submit"  />
         </div>
       </form>
         <Switch>
@@ -73,19 +70,17 @@ function App() {
           </Route>
 
           <Route exact path="/people/:num">
-            <People img={obi} />
+            <People />
           </Route>
 
           <Route exact path="/planets/:num">
-            <Planets img={planet} />
+            <Planets />
           </Route>
 
           <Route exact path="/starships/:num">
-            <Starship img={warp} />
+            <Starship />
           </Route>
         </Switch>
-
-
     </div>
   );
 }

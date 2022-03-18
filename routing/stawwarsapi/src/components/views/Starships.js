@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import warp from '../img/warp.jpeg';
 
 const Starship = (props) => {
     const [error,setErr] = useState("")
     
     const {num} = useParams()
-    const text = "starships";
 
     const [starship,setStarship] = useState([])
 
     useEffect(()=>{
-        axios.get(`https://swapi.dev/api//${text}/${num}`)
+        axios.get(`https://swapi.dev/api/starships/${num}`)
             .then(response=>{
                 setStarship(response.data)
                 setErr("")
@@ -19,12 +19,12 @@ const Starship = (props) => {
             .catch(err=>{
                 setErr("You'll never see us coming")
                 })
-    },[text,num]); 
+    },[num]); 
 
     return(
         <div>
         {
-            error.length > 0 ? <> <h1>{error}</h1> <img src={props.img} alt="warp speed" /></> : 
+            error.length > 0 ? <> <h1>{error}</h1> <img src={warp} alt="warp speed" /></> : 
 
             <div>
                 <h1>{starship.name}</h1>
