@@ -3,3 +3,6 @@ npm i express
 npm install @faker-js/faker --save-dev
 
 nodemon server.js
+
+const Company = require("./companies");
+module.exports = User;
