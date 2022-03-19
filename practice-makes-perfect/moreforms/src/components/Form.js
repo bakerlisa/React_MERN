@@ -29,9 +29,13 @@ const Form = (props) =>{
         return input.length > num;
     }
 
+    const allValid = (inputs) => {
+        return isLengthValid(inputs.firstName,3) && isLengthValid(inputs.lastName,3) && isLengthValid(inputs.email,10) 
+    }
+
     return(
         <div>
-            <form>
+            <form onSubmit={onSubmitHandler}>
                 <div>
                     <label htmlFor="firstName" value={user.firstName}> First Name: </label>
                     <input type="text" name="firstName" onChange={onChangeHandler} onBlur={ onBlurHandler }/>
@@ -67,8 +71,12 @@ const Form = (props) =>{
                     <label htmlFor="confirmPasswrod">Confirm Password: </label>
                     <input type="text" name="confirmPasswrod" onChange={onChangeHandler}/>
                 </div>
+                {
+                    allValid(form) ?  <input type="submit" value="submit" onClick={onSubmitHandler} /> :  <input type="submit" value="submit" onClick={onSubmitHandler} disabled/>
+                }
+                
 
-                <input type="submit" value="submit" onClick={onSubmitHandler} />
+                    <input type="submit" value="submit" />
             </form>
         </div>
     );
