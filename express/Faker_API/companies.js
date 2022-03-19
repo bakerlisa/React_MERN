@@ -6,8 +6,6 @@ class Company{
         this.noun = faker.company.bsNoun();
         this.catch = faker.company.catchPhraseAdjective();
         this.description = faker.company.catchPhraseDescriptor();
-
-
     }
 }
 
