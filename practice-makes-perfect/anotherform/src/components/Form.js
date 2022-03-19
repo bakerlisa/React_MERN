@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 const Form = (props) => {
+    const [emailValidate,setEmailValidate] = useState(false)
+    
     const [form,setForm] = useState({
         firstName:"",
         lastName:"",
@@ -12,14 +14,15 @@ const Form = (props) => {
 
     const onChangeHandler = (event) => {
         setForm({...form,[event.target.name]:event.target.value})
-        console.log(event.target.value);
     }
 
     function ValidateEmail(event) {
+        setForm({...form,[event.target.name]:event.target.value})
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(event.target.value)){
-            return true
+            setEmailValidate(true)
+        }else{
+            setEmailValidate(false)
         }
-        return false
     }
 
     const onLengthValidator = (event,num) =>{
@@ -28,6 +31,12 @@ const Form = (props) => {
         }else{
             console.log("no")
         }
+    }
+
+    const allValid = (inputs) => {
+        console.log(emailValidate)
+        console.log(emailValidate(form.email))
+        return emailValidate(form.email);
     }
 
     return(
@@ -49,7 +58,7 @@ const Form = (props) => {
                     <input type="text" name="email" onChange={ValidateEmail}/>
                     <span>
                     {
-                        ValidateEmail ? "True" : "You have entered an invalid email address!"
+                        emailValidate ? "looks good!" : "You have entered an invalid email address!"
                     }
                     </span>
                 </div>
@@ -63,8 +72,10 @@ const Form = (props) => {
                     <label htmlFor="confirmPassword">Confirm Password</label>
                     <input type="text" name="confirmPassword" onChange={onChangeHandler}/>
                 </div>
-
-                <input type="submit" value="Submit" />
+                {
+                    allValid ? "I'm a valid form" : "I'm not vaild"
+                }   
+                <input type="submit" value="Submit" /> 
             </form>
         </div>
     );
