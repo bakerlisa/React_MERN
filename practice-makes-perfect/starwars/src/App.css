@@ -20,3 +20,7 @@ nav li a:hover{color:red;}
 form{display: flex; align-items: center;justify-content: center;flex-wrap: wrap;}
 input + span{display: none;}
 input:focus + span{display: block; color:red;}
+
+/* LIST */
+.listsWrap{display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}
+.listsWrap li{list-style-type: none; padding: 0 5px;}

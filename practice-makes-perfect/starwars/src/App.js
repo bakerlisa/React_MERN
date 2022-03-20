@@ -23,7 +23,6 @@ function App() {
 
   const onSubmitHandler = (event) =>{
     event.preventDefault();
-    console.log(form.type)
     history.push(`/${form.type}/${form.id}`);
   }
 
