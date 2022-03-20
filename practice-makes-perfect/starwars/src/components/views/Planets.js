@@ -15,7 +15,7 @@ const Planets = (props) => {
             setPlanet(response.data)
             setResidents(response.data.residents)
         })
-    }, []);
+    }, [num]);
 
     return(
         <div>

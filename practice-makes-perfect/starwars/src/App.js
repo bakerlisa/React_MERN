@@ -71,7 +71,7 @@ function App() {
           <Planets />
         </Route>
 
-        <Route exact path="/starship/:num">
+        <Route exact path="/starships/:num">
           <Starships />
         </Route>
 

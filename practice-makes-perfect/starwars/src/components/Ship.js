@@ -2,27 +2,27 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Resident = (props) => {
-    const [people,setPeople] = useState({})
-    
+const Ship = (props) => {
+    const [shipName,setShipName] = useState({})
 
     useEffect(() => {
-        axios.get(props.person).then(response=>{
+        axios.get(props.name).then(response=>{
             var txt = response.data.url;
             var numb = txt.match(/\d/g);
             numb = numb.join("");
 
-            setPeople({ 
+            setShipName({ 
                 name:response.data.name,
                 id:numb
             })
         })
-    }, [props.person]);
-    var link = `/people/${ people.id }`
+    }, [props.name]);
+    var link = `/starships/${ shipName.id }`
 
     return(
-        <li><Link to={link}> {people.name}</Link></li>
+        <li><Link to={link}>{shipName.name}</Link>, </li>
     );
 }
 
-export default Resident;
+export default Ship;
+
