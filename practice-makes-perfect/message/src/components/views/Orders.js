@@ -16,7 +16,7 @@ const Orders = (props) =>{
         toppings: false
     })
 
-    const [lengths,setLengths] = useState({
+    const [lengths] = useState({
         flavor: 1,
         scoops: 1
     })
@@ -52,6 +52,7 @@ const Orders = (props) =>{
 
     const onSubmitHandler = (event) =>{
         event.preventDefault();
+        props.newOrder(order)
     }
 
     return(
@@ -90,7 +91,7 @@ const Orders = (props) =>{
 
                 <span>
                     <label htmlFor="toppings">chocolate syrup</label>
-                    <input type="checkbox" name="toppings" value="chocolate_syrup" onChange={onCheckboxHandler}/>
+                    <input type="checkbox" name="toppings" value="chocolate syrup" onChange={onCheckboxHandler}/>
                 </span>
 
                 <span>
@@ -100,7 +101,7 @@ const Orders = (props) =>{
 
                 <span>
                     <label htmlFor="toppings">whipped cream</label>
-                    <input type="checkbox" name="toppings" value="whipped_cream" onChange={onCheckboxHandler}/>
+                    <input type="checkbox" name="toppings" value="whipped cream" onChange={onCheckboxHandler}/>
                 </span>
 
                 <span>

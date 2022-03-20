@@ -5,12 +5,19 @@ import Message from './components/Message';
 import MessageDisplay from './components/MessageDisplay';
 import { useState } from 'react';
 import Orders from './components/views/Orders';
+import ViewOrders from './components/ViewOrders';
 
 function App() {
   const [currentMsg, setCurrentMsg] = useState("These are no message")
 
   const youveGotMail = (newMessage) =>{
     setCurrentMsg(newMessage)
+  }
+
+  const [currentOrder,setCurrentOrder] = useState("no orders");
+
+  const youveGotNewOrder = (neworder) => {
+    setCurrentOrder(neworder)
   }
 
   return (
@@ -26,7 +33,8 @@ function App() {
         </Route>
 
         <Route exact path="/orders">
-          <Orders />
+          <Orders newOrder={youveGotNewOrder}/>
+          <ViewOrders allOrders={currentOrder}/>
         </Route>
       </Switch>
     </div>
