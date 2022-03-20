@@ -10,3 +10,8 @@
 *{box-sizing: border-box;}
 
 .App{text-align: center;}
+
+
+/* FORM */
+input + span,textarea + span{display: none;}
+input:focus + span,textarea:focus + span{color:red; display: block;}
