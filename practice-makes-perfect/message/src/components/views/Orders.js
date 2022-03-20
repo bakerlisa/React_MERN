@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Orders = (props) =>{
+   // const [allToppings,setAllToppings] = useState([])
 
     const [order,setOrder] = useState({
         flavor: "",
@@ -15,15 +16,15 @@ const Orders = (props) =>{
         toppings: false
     })
 
-    const lengths = {
+    const [lengths,setLengths] = useState({
         flavor: 1,
-        scoops: 1,
-        toppings: 1
-    }
+        scoops: 1
+    })
 
     const onChangeHandler = (event) => {
         setOrder({...order,[event.target.name]: event.target.value})
-        if(error[event.target.name]){
+        
+        if(event.target.name in error){
             if(event.target.value.length >= lengths[event.target.name]){
                 setError({...error,[event.target.name]:true})
             }else{
@@ -32,14 +33,31 @@ const Orders = (props) =>{
         }
     }
 
+    // handles validation
     const onCheckboxHandler = (event) => {
-       console.log(event.target.value)
+        if(event.target.checked === true){
+            setOrder({...order,toppings:[...order.toppings,event.target.value]})
+            setError({...error,[event.target.name]:true})
+        }else{
+            // remove the item its it already exists
+            if(order.toppings.length <= 0){
+                setError({...error,[event.target.name]:false}) 
+            }
+            var copytoppings = order.toppings
+            copytoppings.splice(copytoppings.indexOf(event.target.value))
+            setOrder({...order,toppings:order.toppings})
+        }
+
+    }
+
+    const onSubmitHandler = (event) =>{
+        event.preventDefault();
     }
 
     return(
         <div>
             <h2>Orders</h2> 
-            <form>
+            <form onSubmit={onSubmitHandler}>
                 <div>
                     <label htmlFor="flavor"><strong>Ice Cream:</strong></label>
                     <select name="flavor" defaultValue="empty" onChange={onChangeHandler}>
@@ -50,11 +68,18 @@ const Orders = (props) =>{
                         <option value="sorbet">Sorbet</option>
                         <option value="orange cream">OrangeCream</option>
                     </select>
+
+                    {
+                        error.flavor === false ? <span>Pick a Flavor</span> : ""
+                    }
                 </div>
 
                 <div>
                     <label htmlFor="scoops">Scoops:</label>
                     <input type="number" name="scoops" min="0" onChange={onChangeHandler}/>
+                    {
+                        error.scoops === false ? <span>How many scoops?</span> : ""
+                    }
                 </div>
 
                 <label htmlFor="toppings"><strong>Toppings:</strong></label>
@@ -92,13 +117,19 @@ const Orders = (props) =>{
                     <label htmlFor="toppings">cookie dough</label>
                     <input type="checkbox" name="toppings" value="cookie_dough" onChange={onCheckboxHandler}/>
                 </span>
+                {
+                        error.toppings === false ? <span>Pick at least one topping</span> : ""
+                    }
 
                 <div>
                     <label htmlFor="other">Other:</label>
                     <input type="text" name="other" onChange={onChangeHandler}/>
                 </div>
 
-                <input type="submit" value="submit" />
+                {
+                    Object.keys(error).every((item) => error[item]) ? <input type="submit" value="submit" /> : <input type="submit" value="submit" disabled/>
+                }
+                
             </form> 
         </div>
     )
