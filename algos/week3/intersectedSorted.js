@@ -69,7 +69,7 @@ const intersectUp = (arrLeft,arrRight) => {
     var runner =  0;
     var runnerTwo = 0;
 
-    while(runner <= arrLeft.length - 1){
+    while(runner <= arrLeft.length - 1 || runnerTwo <= arrRight.length - 1 ){
         if(arrLeft[runner] === arrRight[runnerTwo]){
             intersection.push(arrLeft[runner])
             runner++;
@@ -88,4 +88,4 @@ const intersectUp = (arrLeft,arrRight) => {
 // console.log(intersectUp([1,3,5,7,9],[2,4,6,8,10]));
 // console.log(intersectUp([-9,-5,-5,3,4,4,4,4,4,4,5,7],[-5,0,1,1,1,1,1,2,4,4,6,7]));
 // console.log(intersectUp([-9,-5,-5,3,4,4,4,4,4,4,5,7],[-5,0,1,1,1,1,1,2,4,4,6,7]));
-console.log(intersectUp([1,2,3,4,50],[50,51,53]));
+console.log(intersectUp([50,51,53],[1,2,3,4,50]));
