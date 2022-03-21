@@ -1,4 +1,4 @@
-const SundeaController = require('../contorllers/sundeas.controller')
+const SundeaController = require('../controllers/sundea.controller')
 
 module.exports = app => {
     app.get("api/test", SundeaController.testResponse);
