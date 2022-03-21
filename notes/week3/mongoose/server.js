@@ -6,6 +6,6 @@ require("./server/config/mongoose.cofig")
 
 app.use(express.json(),express.urlencoded({extended:true}))
 
-require("./server/routes/sundea.route")(app);
+require("./server/routes/sundea.routes")(app);
 
 app.listen(port,()=>console.log(`running on port ${port} Hell Yeah!`));
