@@ -47,3 +47,5 @@ module.exports.deleteJoke = (req,res) => {
         .then(result => res.json({ result: result }))
         .catch(err => res.json({ message: 'Couldn\'t delete joke ', error: err }));
 }
+
+
