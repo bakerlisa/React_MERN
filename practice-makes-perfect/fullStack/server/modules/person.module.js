@@ -5,7 +5,7 @@ const PersonSchema = new mongoose.Schema({
     lastName: String,
     birthday: Date,
     email: String,
-    phone: Number,
+    phone: Number
 });
 
 const Person = mongoose.model('Person', PersonSchema);
