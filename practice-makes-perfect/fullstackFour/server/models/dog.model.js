@@ -5,7 +5,7 @@ const DogSchema = new mongoose.Schema({
     breed: String,
     gender: String,
     age: Number
-});
+},{ timestamps: true });
 
 const Dog = mongoose.model('Dog', DogSchema);
 
