@@ -13,23 +13,17 @@ module.exports.getSingleJoke = (req,res) =>{
     .catch(err => res.json({ message: 'Something went wrong getting one joke', error: err }));
 }
 
-// jokes is  an array of objects
-// should be able to target one
+// RANDOM
+module.exports.randomJoke = (req,res) => { 
+    Joke.count().exec(function (err, count) {
 
-// ?? how do we get the length
-// ?? where do we put the data
-// ??
+        var random = Math.floor(Math.random() * count)
 
-
-module.exports.randomJoke = (req,res) => {
-    Joke.findOne()
-    .then( 
-        newRandomJoke => res.json({ random:  newRandomJoke }))
-    .catch(err => res.json({ message: 'Couldn\'t get a random joke', error: err }));
+        Joke.findOne().skip(random)
+        .then(newRandomJoke => res.json({ random:  newRandomJoke }))
+        .catch(err => res.json({ message: 'Couldn\'t get a random joke', error: err }));
+    })
 }
-
-
-
 
 // CREATE
 module.exports.addJoke = (req,res) => {
