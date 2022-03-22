@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-
-
 const JokeSchema = new mongoose.Schema({
     setup: {
         type: String,
@@ -14,7 +12,6 @@ const JokeSchema = new mongoose.Schema({
         minlength: [3, "Punchline must be 3 cahracters long"]
     }
 });
-
 
 const Joke = mongoose.model('Joke', JokeSchema);
 
