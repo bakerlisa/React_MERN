@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import { Switch,Route,useHistory } from 'react-router-dom';
 
-import Starship from './components/views/Form';
+import Form from './components/views/Form';
 
 function App() {
 
