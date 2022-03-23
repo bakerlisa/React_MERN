@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const AddProductForm = props => {
+    const history = useHistory();
+
     const [dbError,setDBError] = useState([])
 
     const [form,setForm] = useState({ 
@@ -43,9 +46,17 @@ const AddProductForm = props => {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        axios.put('http://localhost:8000/api/create/product/', form)
-            .then(res => console.log(res))
-            .catch(err => console.error(err.response));
+        axios.post('http://localhost:8000/api/create/product', form)
+            .then(res =>  { 
+                console.log("res");
+                console.log(res);
+                // history.push("/"); 
+            })
+            .catch(err => {
+                // console.error(err.response.data.data.error)
+                setDBError(err.response.data.error.errors)
+                // console.log(setDBError)
+            });
     }
     return(
         <>
@@ -53,7 +64,12 @@ const AddProductForm = props => {
             {props.single}
             <form onSubmit={onSubmitHandler}>
                 {
-                    dbError && dbErrorMessage ? " " : ""
+                    dbError && dbError.mesage ? "" : dbError.map((item,i) => {
+                        return <span key={i}>{item}</span>
+                    })
+                }
+                {
+                    dbError
                 }
                 <div>
                     {
