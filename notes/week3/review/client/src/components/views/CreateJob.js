@@ -100,7 +100,7 @@ const CreateJob = (props) => {
             
             <h1>{props.title}</h1>
             <form onSubmit={onSubmitHandler}>                
-                <div className={styled.errWrp}>
+                <div className="errWrp">
                     {
                         errorSize > 0 ? <><h4>Entries Required: </h4> {Object.keys(dbErrors).join(', ')}</> : ""
                     }
