@@ -1,0 +1,27 @@
+// backend wants keys and values: object
+// if you have more than one you'll have to concat them together
+const onj = { 
+    name:name, 
+    flavor:flavor,
+    numScoops:numScoops 
+}
+
+
+axios.post("http://localhost:8000/api/sundea/create", form)
+.then(res=> {
+    console.log(res)
+})
+.catch(err=>{
+    console.log(err)
+})
+
+
+Backend Errors
+
+catch(err=>){
+    console.log(err.response.data.err.errors)
+}
+
+{
+    error.flavor && error.flavor.message
+}
