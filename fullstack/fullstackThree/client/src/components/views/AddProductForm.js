@@ -2,18 +2,31 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const AddProductForm = props => {
-    const [form,setForm] = useState({})
+    const [dbError,setDBError] = useState([])
+
+    const [form,setForm] = useState({ 
+        title:"",
+        price: "",
+        description: "",
+        amount: "",
+        type: ""
+
+    })
 
     const [error,setError] = useState({
         title: false,
         price: false,
         description: false,
+        amount: false,
+        type: false
     })
 
     const lengths = {
         title: 3,
         price: 1,
         description: 10,
+        amount: 1,
+        type: 1
     }
 
     const onChangeHandler = (event) => {
@@ -30,34 +43,69 @@ const AddProductForm = props => {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
+        axios.put('http://localhost:8000/api/create/product/', form)
+            .then(res => console.log(res))
+            .catch(err => console.error(err.response));
     }
     return(
         <>
-            <h1>Product Form</h1>
+            <h1>{props.title}</h1>
+            {props.single}
             <form onSubmit={onSubmitHandler}>
+                {
+                    dbError && dbErrorMessage ? " " : ""
+                }
                 <div>
-                    <label htmlFor="title">Title: </label>
-                    <input type="text"  name="title" placeholder="Title" onChange={onChangeHandler} />
+                    {
+                        props.product ? <label htmlFor="title">Current Title {props.product}: </label> : <label htmlFor="title">Title: </label>
+                    }
+                    <input type="text"  name="title" value={form.title} placeholder="Title" onChange={onChangeHandler} />
                     {
                         error.title ? "" : <span>Please enter a product title</span>
                     }
                 </div>
                 <div>
-                    <label htmlFor="price">Price: </label>
-                    <input type="number" min="0" name="price" step='0.01' placeholder="1.00" onChange={onChangeHandler} />
+                    {   
+                        props.price ? <label htmlFor="title">Current Price {props.price}: </label> : <label htmlFor="title">Price: </label>
+                    }
+                    <input type="number" min="0" name="price" value={form.price} step='0.01' placeholder="1.00" onChange={onChangeHandler} />
                     {
                         error.price ? "" : <span>Please enter a price</span>
                     }
                 </div>
                 <div>
-                    <label htmlFor="description">Description: </label>
-                    <textarea type="number" min="0" name="description"  placeholder="Description..." onChange={onChangeHandler} ></textarea>
+                    {      
+                        props.description ? <label htmlFor="title">Current description {props.description}: </label> : <label htmlFor="title">Description: </label>
+                    }
+                    <textarea type="number" min="0" name="description"  placeholder="Description..." onChange={onChangeHandler} value={form.description} ></textarea>
                     {
                         error.description ? "" : <span>Please enter a description</span>
                     }
                 </div>
 
-                <input type="hidden" name="amount" value="1" />
+                <div>
+                    {      
+                        props.amount ? <label htmlFor="title">Current amount {props.amount}: </label> : <label htmlFor="title">Amount: </label>
+                    }
+                    <input type="num" name="amount" value={form.amount} min="0" onChange={onChangeHandler}/>
+                    {
+                        error.amount ? "" : <span>Please enter an amount</span>
+                    }
+                </div> 
+
+                <div>
+                    {      
+                        props.type ? <label htmlFor="title">Current type {props.type}: </label> : <label htmlFor="title">Type: </label>
+                    }
+                    <select name="type" value={form.type} onChange={onChangeHandler}>
+                        <option>Select Type...</option>
+                        <option value="single">Single Item</option>
+                        <option value="dozen">Dozen</option>
+                    </select>
+                    {
+                        error.type ? "" : <span>Please enter a type</span>
+                    }
+                </div>  
                 
                 {
                     Object.keys(error).every((item) => error[item]) ? <input type="submit" value="Create" /> : <input type="submit" value="Create" disabled/>

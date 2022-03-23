@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styled from '../css/Single.module.css'
 
 const SingleProduct = (props) => {
@@ -20,10 +20,10 @@ const SingleProduct = (props) => {
                 <h1>{single.title}</h1>
                 <p className={styled.subtitle}>{single.description}</p>
                 <p className='price'><strong>Price: </strong> ${single.price}</p>
-                <p className='amount'><strong>Amount: </strong> {single.priamountce}</p>
+                <p className='amount'><strong>Amount: </strong> {single.priamountce} {single.type}</p>
             </div>
             <div className={styled.container}>
-                
+                <Link className="button" to={`/edit/product/${single._id}`}>Edit Product</Link>
             </div>
         </>
     )

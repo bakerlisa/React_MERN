@@ -14,14 +14,18 @@ const ProductSchema = new mongoose.Schema({
     description: {
         type:String,
         required: [true, "Your product needs a description"],
-        minlength: [true, "You must have a minimum of 10 chacters"]
+        minlength: [10, "You must have a minimum of 10 chacters"]
     },
     amount:{
-        type:Number
+        type:Number,
+        required: [true, "Amount needed"],
+        minlength: [1, "Minimum of 1"]
     },
-    amountType:{
-        type: String
-    }
+    type:{
+        type: String,
+        required: [true, "Type needed"]
+    },
+    
 },{timestamps:true});
 
 const Product = mongoose.model('Product', ProductSchema);

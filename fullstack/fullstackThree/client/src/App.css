@@ -26,8 +26,8 @@ h1{font-size: 65px;}
 
 
 /* FORM */
-input + span,textarea + span{display: none;}
-input:focus + span,textarea:focus + span{color:red; display: block;}
+input + span,textarea + span,select + span{display: none;}
+input:focus + span,textarea:focus + span,select:focus + span{color:red; display: block;}
 
 /* NAV */
 nav{text-align: right; padding: 25px 50px; background-color:var(--black); border-bottom: solid 1px var(--pink);}
