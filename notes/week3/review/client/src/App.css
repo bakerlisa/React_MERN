@@ -1,38 +1,39 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;900&display=swap');
+
+:root{
+  --black:#000;
+  --white:#fff;
+  --red:#8C1F28;
+  --br_red:#D92525;
+  --green:#044040;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+*{box-sizing: border-box; font-family: 'Inter', sans-serif;}
+body{background-color: #f6f6f7;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%23dedede' fill-opacity='0.4'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+/* APP */
+.App{text-align: center;}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* CONTAINER */
+.container{max-width: 1200px; margin: 0 auto;}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/* FORM */
+form{max-width: 600px; margin: 0 auto;}
+form label{display: block;text-align-last: left; font-weight: 600;}
+form input,form select{width: 100%; padding: 10px;}
+  form input:focus,form select:focus{outline: none; border: solid 2px var(--green);}
+form .checkbox{display: flex;align-items: center;justify-content: start;flex-wrap: wrap; margin: 20px 0;}
+form .checkbox input{width: 25px;margin: 0; height: 18px; width: 18px; margin-left: 15px;}
+form .submit{background-color:var(--green); color:var(--white); text-transform: uppercase; font-weight: 400; letter-spacing: 1px; border: none;; padding: 15px;}
+form .submit:hover{cursor: pointer; opacity: .75;}
+  input .disabled{background-color:var(--red); opacity: 0.25;}
+  /* validations */
+  form > div{ margin-bottom: 20px;}
+  form > div > span{text-align-last: left;}
+  input + span,textarea + span,select + span{display: block; max-height:0; height:100%; overflow: hidden; transition: all .2s ease-in;}
+  input:focus + span,textarea:focus + span,select:focus + span{color:var(--red); max-height:50px; transition: all .2s ease-in;}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* NAV */
+nav{text-align: right; padding: 25px 50px; background-color:var(--black); border-bottom: solid 1px var(--white);}
+nav a{color:var(--white); padding: 0 10px; text-decoration: none; font-weight: 600;}
+nav a:hover{color:var(--white);}

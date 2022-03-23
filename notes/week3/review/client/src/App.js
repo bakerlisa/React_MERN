@@ -1,24 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
+
+import { Switch,Route,useHistory,Link } from 'react-router-dom';
+
+import Home from './components/views/Home';
+import SingleJob from './components/views/SingleJob';
+import CreateJob from './components/views/CreateJob';
+import EditJob from './components/views/EditJob';
+import Apply from './components/views/Apply';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/add/jobs">Create Job</Link>
+      </nav>
+
+      <div className="App">
+        <Switch>
+
+          <Route exact path="/">
+            <Home />
+          </Route>
+
+          <Route exact path="/add/jobs">
+            <CreateJob title="Create Job"/>
+          </Route>
+
+          <Route exact path="/jobs/:id">
+            <SingleJob />
+          </Route>
+
+          <Route exact path="/edit/jobs/:id">
+            <EditJob />
+          </Route>
+
+          <Route exact path="/apply">
+            <Apply />
+          </Route>
+        </Switch>
+      </div>
+    </>
   );
 }
 
