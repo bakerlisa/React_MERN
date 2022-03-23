@@ -39,18 +39,14 @@ const AddProductForm = props => {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        
-        console.log(form)
         axios.post('http://localhost:8000/api/create/product', form)
             .then(res =>  { 
-                console.log(res.data.error.errors);
-                //setDBError(res)
+                console.log(res);
                 // history.push("/"); 
             })
             .catch(err => {
                 console.error(err)
                 setDBError(err.response.data.error.errors)
-                // console.log(setDBError)
             });
     }
     return(
