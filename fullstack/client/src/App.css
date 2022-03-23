@@ -1,14 +1,38 @@
+/* ======================================= 
+GLOBAL STYLES 
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;900&display=swap');
+
 :root{
   --white:#fff;
-  --black:#000;
+  --black:#2d2d2d;
   --blue:#56738C;
   --green:#014034;
   --pink:#E3CBCE;
+  --yellow:#F3D09B;
+  --brown:#3a1605;
 
 
 }
-*{box-sizing: border-box;}
 
-.App {
-  text-align: center;
-}
+h1{font-size: 65px;}
+
+*{box-sizing: border-box; font-family: 'Inter', sans-serif;}
+
+.App {text-align: center;}
+
+/* FORM */
+input + span,textarea + span{display: none;}
+input:focus + span,textarea:focus + span{color:red; display: block;}
+
+/* NAV */
+nav{text-align: right; padding: 25px 50px; background-color:var(--black); border-bottom: solid 1px var(--pink);}
+nav a{color:var(--pink); padding: 0 10px; text-decoration: none; font-weight: 600;}
+nav a:hover{color:var(--white);}
+
+/* CONTAINER */
+.container{max-width: 1200px; margin: 0 auto;}
+
+/* FOOTER */
+footer{background-color:var(--black); padding: 50px; color:var(--whtie);}

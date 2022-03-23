@@ -1,0 +1,13 @@
+/* BANNER */
+.banner{background-image: url('../img/farmer.jpg'); background-size: cover; background-position: center; position: relative;}
+    .banner:before{content:''; height:100%; width: 100%; background-color:var(--black); opacity: .4; position: absolute; top: 0;left: 0; padding: 0;}
+.banner .title{margin: 0; padding: 500px 50px 0px; position: relative; z-index: 10; color:var(--white);}
+.banner .subtitle{color:var(--white); font-size: 20px;  position: relative; z-index: 10; font-weight: 300; margin-top: -0px; padding-bottom: 50px; }
+
+/* ALLBREADS */
+.allBreads{display: flex;align-items: stretch;justify-content: center;flex-wrap: wrap; padding: 25px;}
+.allBreads > div{width: calc(50% - 20px); padding: 25px; margin:10px; background-color:var(--yellow);}
+.allBreads .title{font-size: 28px; font-weight: 960; margin-top: 0;}
+.buttons{display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}
+.buttons a{padding: 0 5px; text-decoration: none;}
+.buttons a:hover{cursor: pointer; color:var(--blue);}
