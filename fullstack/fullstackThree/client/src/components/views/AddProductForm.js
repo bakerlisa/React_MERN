@@ -7,14 +7,7 @@ const AddProductForm = props => {
 
     const [dbError,setDBError] = useState([])
 
-    const [form,setForm] = useState({ 
-        title:"",
-        price: "",
-        description: "",
-        amount: "",
-        type: ""
-
-    })
+    const [form,setForm] = useState({})
 
     const [error,setError] = useState({
         title: false,
@@ -50,7 +43,8 @@ const AddProductForm = props => {
         console.log(form)
         axios.post('http://localhost:8000/api/create/product', form)
             .then(res =>  { 
-                console.log(res);
+                console.log(res.data.error.errors);
+                //setDBError(res)
                 // history.push("/"); 
             })
             .catch(err => {
@@ -62,7 +56,6 @@ const AddProductForm = props => {
     return(
         <>
             <h1>{props.title}</h1>
-            {props.single}
             <form onSubmit={onSubmitHandler}>
                 {
                     dbError && dbError.mesage ? "" : dbError.map((item,i) => {
@@ -71,27 +64,21 @@ const AddProductForm = props => {
                 }
 
                 <div>
-                    {
-                        props.product ? <label htmlFor="title">Current Title {props.product}: </label> : <label htmlFor="title">Title: </label>
-                    }
+                    <label htmlFor="title">Title: </label>
                     <input type="text"  name="title" value={form.title} placeholder="Title" onChange={onChangeHandler} />
                     {
                         error.title ? "" : <span>Please enter a product title</span>
                     }
                 </div>
                 <div>
-                    {   
-                        props.price ? <label htmlFor="title">Current Price {props.price}: </label> : <label htmlFor="title">Price: </label>
-                    }
+                    <label htmlFor="title">Price: </label>
                     <input type="number" min="0" name="price" value={form.price} step='0.01' placeholder="1.00" onChange={onChangeHandler} />
                     {
                         error.price ? "" : <span>Please enter a price</span>
                     }
                 </div>
                 <div>
-                    {      
-                        props.description ? <label htmlFor="title">Current description {props.description}: </label> : <label htmlFor="title">Description: </label>
-                    }
+                    <label htmlFor="title">Description: </label>
                     <textarea type="number" min="0" name="description"  placeholder="Description..." onChange={onChangeHandler} value={form.description} ></textarea>
                     {
                         error.description ? "" : <span>Please enter a description</span>
@@ -99,9 +86,7 @@ const AddProductForm = props => {
                 </div>
 
                 <div>
-                    {      
-                        props.amount ? <label htmlFor="title">Current amount {props.amount}: </label> : <label htmlFor="title">Amount: </label>
-                    }
+                    <label htmlFor="title">Amount: </label>
                     <input type="num" name="amount" value={form.amount} min="0" onChange={onChangeHandler}/>
                     {
                         error.amount ? "" : <span>Please enter an amount</span>
@@ -109,9 +94,7 @@ const AddProductForm = props => {
                 </div> 
 
                 <div>
-                    {      
-                        props.type ? <label htmlFor="title">Current type {props.type}: </label> : <label htmlFor="title">Type: </label>
-                    }
+                    <label htmlFor="title">Type: </label>
                     <select name="type" value={form.type} onChange={onChangeHandler}>
                         <option>Select Type...</option>
                         <option value="single">Single Item</option>
