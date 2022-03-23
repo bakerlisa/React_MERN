@@ -23,3 +23,11 @@ module.exports.singleProduct = (req,res) => {
     .then(singleProductInfo => res.json({ product: singleProductInfo}))
     .catch(err => res.json({ message: 'Something went wrong when getting single product', error: err }));
 }
+
+module.exports.editProduct = (req,res) => {
+    Product.findOneAndUpdate({_id: RegExp.body.id},
+        req.body,
+        { new: true, runValidators: true })
+    .then(updateProduct=> res.json({ updatedProduct: updateProduct}))
+    .catch(err => res.json({ message: 'Something went wrong when getting single product', error: err }));
+}
