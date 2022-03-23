@@ -16,6 +16,12 @@ const ProductSchema = new mongoose.Schema({
         required: [true, "Your product needs a description"],
         minlength: [true, "You must have a minimum of 10 chacters"]
     },
+    amount:{
+        type:Number
+    },
+    amountType:{
+        type: String
+    }
 },{timestamps:true});
 
 const Product = mongoose.model('Product', ProductSchema);
