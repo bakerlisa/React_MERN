@@ -24,8 +24,7 @@ const ProductSchema = new mongoose.Schema({
     type:{
         type: String,
         required: [true, "Type needed"]
-    },
-    
+    }
 },{timestamps:true});
 
 const Product = mongoose.model('Product', ProductSchema);

@@ -15,7 +15,6 @@ const EditProduct = (props) => {
     return(
         
         <div>
-
             <AddProductForm  title={`Edit: ${single.title}`} product={single.title} price={single.price} description={single.description} amount={single.amount} type={single.type} />
         </div>
     )

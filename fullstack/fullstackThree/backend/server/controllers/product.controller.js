@@ -23,7 +23,8 @@ module.exports.editProduct = (req,res) => {
 
 // CREATE
 module.exports.createNewProduct = (req,res) => {
-    Product.create(req.body)
+    Product.create(req.body,
+        { new: true, runValidators: true })
     .then(newProduct => res.json({ createdNewProduct: newProduct }))
     .catch(err => res.json({ message: 'Something went wrong creating new product', error: err }));
 }
