@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+/* ======================================= 
+GLOBAL STYLES 
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;900&display=swap');
+
+:root{
+  --white:#fff;
+  --black:#2d2d2d;
+  --blue:#56738C;
+  --green:#014034;
+  --pink:#E3CBCE;
+  --yellow:#F3D09B;
+  --brown:#3a1605;
+
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+h1{font-size: 65px;}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+*{box-sizing: border-box; font-family: 'Inter', sans-serif;}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.App {text-align: center;}
 
-.App-link {
-  color: #61dafb;
-}
+/* BANNER */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+/* FORM */
+input + span,textarea + span{display: none;}
+input:focus + span,textarea:focus + span{color:red; display: block;}
+
+/* NAV */
+nav{text-align: right; padding: 25px 50px; background-color:var(--black); border-bottom: solid 1px var(--pink);}
+nav a{color:var(--pink); padding: 0 10px; text-decoration: none; font-weight: 600;}
+nav a:hover{color:var(--white);}
+
+/* CONTAINER */
+.container{max-width: 1200px; margin: 0 auto;}
+
+/* FOOTER */
+footer{background-color:var(--black); padding: 50px; color:var(--whtie);}
