@@ -11,3 +11,9 @@ module.exports.createNewProduct = (req,res) => {
     .then(newProduct => res.json({ createdNewProduct: newProduct }))
     .catch(err => res.json({ message: 'Something went wrong creating new product', error: err }));
 }
+
+module.exports.deleteProduct = (req,res) => {
+    Product.deleteMany({_id: req.params.id})
+    .then(result => res.json({ result: result}))
+    .catch(err => res.json({ message: 'Something went wrong when deleting product', error: err }));
+}
