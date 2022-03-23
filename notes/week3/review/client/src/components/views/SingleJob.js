@@ -21,7 +21,7 @@ const SingleJob = (props) => {
             {
                 job.remote ? <p>Remote Position</p> : ""
             }
-            <Link to="/apply"> Apply</Link>
+            <Link to={`/apply/${id}`}> Apply</Link>
         </div>
     );
 }

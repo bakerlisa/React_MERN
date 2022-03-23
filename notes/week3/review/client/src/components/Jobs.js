@@ -1,12 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import styled from './css/Job.module.css'
-import { Link,useHistory } from 'react-router-dom';
+import { Link,useHistory, useParams } from 'react-router-dom';
 
 const Job = (props) => {
     const history = useHistory();
-
-    const onDelete = (event) =>{
+    
+    const onDelete = (event) =>{        
         event.preventDefault();
         axios.delete(`http://localhost:8000/api/delete/jobs/${props.id}`)
         .then(response=>{
@@ -15,7 +15,11 @@ const Job = (props) => {
         .catch(err=>{
             console.log(err.response)
         })
-
+        // if(window.confirm("Are you sure you want to remove this job?")){ }
+        // instead of refreshing the page
+        // const copystate = [...jobs]
+        // copyState.splice(arrInx,1)
+        // setJob(copyState)
 
     }
     return(
@@ -33,7 +37,7 @@ const Job = (props) => {
             <div>
                 <div onClick={onDelete}>Delete</div>
                 <Link to={`/edit/jobs/${props.id}`}>Edit</Link>
-            </div>
+            </div>  
         </div>
     )
 }

@@ -35,7 +35,7 @@ function App() {
             <EditJob />
           </Route>
 
-          <Route exact path="/apply">
+          <Route exact path="/apply/:id">
             <Apply />
           </Route>
         </Switch>

@@ -3,19 +3,19 @@ const People = require('../models/people.model');
 module.exports.findAllPeoples = (req, res) => {
     People.find()
         .then(allDaPeoples => res.json({ Peoples: allDaPeoples }))
-        .catch(err => res.status(400).json({ message: 'Something went wrong finding all Peoples', error: err }));
+        .catch(err => res.status(400).json({ message: 'Something went wrong finding all the People', error: err }));
 }
 
 module.exports.findOneSinglePeople = (req, res) => {
     People.findOne({ _id: req.params.id })
         .then(oneSinglePeople => res.json({ People: oneSinglePeople }))
-        .catch(err => res.status(400).json({ message: 'Something went wrong finding single People', error: err }));
+        .catch(err => res.status(400).json({ message: 'Something went wrong finding a single Person', error: err }));
 }
 
 module.exports.createNewPeople = (req, res) => {
     People.create(req.body)
         .then(newlyCreatedPeople => res.json({ People: newlyCreatedPeople }))
-        .catch(err => res.status(400).json({ message: 'Something went wrong creaging new People', error: err }));
+        .catch(err => res.status(400).json({ message: 'Something went wrong creating new People', error: err }));
 }
 
 module.exports.updateExistingPeople = (req, res) => {
