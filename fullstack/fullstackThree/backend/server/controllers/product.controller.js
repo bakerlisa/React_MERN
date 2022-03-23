@@ -14,7 +14,7 @@ module.exports.singleProduct = (req,res) => {
 }
 
 module.exports.editProduct = (req,res) => {
-    Product.findOneAndUpdate({_id: RegExp.body.id},
+    Product.findOneAndUpdate({_id: req.params.id},
         req.body,
         { new: true, runValidators: true })
     .then(updateProduct=> res.json({ updatedProduct: updateProduct}))

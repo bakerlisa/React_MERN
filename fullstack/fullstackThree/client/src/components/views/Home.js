@@ -8,7 +8,7 @@ const Home = (props) => {
 
     const countUp = (event) => {
         var newAmount = bread.amount
-        console.log(newAmount)
+        
     }
 
     const countDown = (event) => {
@@ -32,7 +32,7 @@ const Home = (props) => {
                 {
                     bread.map((item,i) => {
                         return <div key={i} className={styled.breadBox}>
-                            <Link className={styled.title} to={item._id}>{item.title}</Link>
+                            <Link className={styled.title} to={`/product/${item._id}`}>{item.title}</Link>
                             <p className={styled.price}><strong>Price:</strong> ${item.price}</p>
                             <p className={styled.description}>{item.description}</p>
                             <p className={styled.amount}><strong>Amount: </strong> {item.amount} </p>
