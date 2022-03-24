@@ -6,11 +6,19 @@ const AuthorsSchema = new mongoose.Schema({
         required: [true, "Name is required"],
         minlength: [3, "Name needs to be at least 3 characters"]
     },
-    books: {
-        type:Number
+    email: {
+        type: String,
+        required: [true, "Email is required"],
+        minlength: [3, "Email needs to be at least 10 characters"]
     },
-    gener: {
-        type:String
+    image: {
+        type: String
+    },
+    books: {
+        type: Array
+    },
+    genre: {
+        type: Array
     },
     likes:{
         type: Number
