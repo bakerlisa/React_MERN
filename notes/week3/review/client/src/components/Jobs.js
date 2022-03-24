@@ -9,18 +9,20 @@ const Job = (props) => {
     const onDelete = (event) =>{        
         event.preventDefault();
         if(window.confirm("Are you sure you want to remove this job?")){ 
-            // const copystate = [...jobs]
-            // copyState.splice(arrInx,1)
-            // setJob(copyState)
+            axios.delete(`http://localhost:8000/api/delete/jobs/${props.id}`)
+            .then(response=>{
+                history.push("/");
+            })
+            .catch(err=>{
+                console.log(err.response)
+            })
         }
+        // if(window.confirm("Are you sure you want to remove this job?")){ }
+        // instead of refreshing the page
+        // const copystate = [...jobs]
+        // copyState.splice(arrInx,1)
+        // setJob(copyState)
 
-        axios.delete(`http://localhost:8000/api/delete/jobs/${props.id}`)
-        .then(response=>{
-            console.log(response)
-        })
-        .catch(err=>{
-            console.log(err.response)
-        })
     }
     return(
         <div className={styled.jobBox}>

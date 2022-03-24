@@ -9,7 +9,7 @@ const Home = (props) => {
         axios.get('http://localhost:8000/api/jobs').then(response=>{
             setJobs(response.data.Jobs);
         })
-    }, [jobs]);
+    }, []);
 
     return(
         <div>
