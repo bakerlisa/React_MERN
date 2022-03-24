@@ -23,7 +23,6 @@ const Form = props => {
     }
 
     const onFocusOutHandler = (event) => {
-        console.log(event.target.name)
         const copyCurrentBooks = props.form[event.target.name]
         const arr = copyCurrentBooks.split(',');
         props.setForm({...props.form, [event.target.name]: arr})
