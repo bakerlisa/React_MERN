@@ -5,6 +5,11 @@ import Author from '../components/Author';
 
 const Home = (props) => {
     const [authors,setSuthos] = useState([])
+    
+    const _ = require("lodash"); 
+    let gfg = _.sortBy(authors, ['_v:', 'author']);
+    console.log(gfg)
+
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/authors`).then(response=>{
@@ -19,7 +24,7 @@ const Home = (props) => {
             <Link to="/new" className="button-lg">Add an Author</Link>
             <div className="allAuthors">
                 {
-                    authors.map((item,i) => {
+                    gfg.map((item,i) => {
                         return <Author key={i} author={item}/>
                     }) 
                 }

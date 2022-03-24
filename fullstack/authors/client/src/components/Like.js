@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-
+import styled from '../css/LikesStyles.module.css'
 
 const Like = (props) => {
     const [likes,setLikes] = useState(props.like)
@@ -14,7 +14,7 @@ const Like = (props) => {
     }
 
     return(
-        <p className="likes" onClick={() => addLikeHandler(likes) }><strong>Likes:</strong> {likes}</p>
+        <p className={styled.likes} onClick={() => addLikeHandler(likes) }><strong>Likes:</strong> {likes}</p>
     );
 }
 

@@ -13,6 +13,7 @@ GLOBAL STYLES
   --yellow:#F3D09B;
   --brown:#3a1605;
   --red:#BF0404;
+  --gray:#c4c4c4;
 }
 
 h1{font-size: 65px;}
@@ -27,6 +28,8 @@ h1{font-size: 65px;}
 /* BUTTON */
 .button-lg{background-color:var(--blue); padding: 25px 40px; display: inline-block; text-decoration: none;color:var(--white); text-transform: uppercase; margin-bottom: 25px; border:solid 2px var(--blue); transition: all .25s ease-out;}
   .button-lg:hover{cursor: pointer; background-color: transparent; transition: all .25s ease-out; color:var(--blue);}
+  /* CANCLE */
+  .cancle{background-color:var(--gray); display: block; text-decoration: none; text-transform: uppercase; max-width: 600px; margin: 10px auto 0 auto; color:var(--white); padding: 15px; font-size: 14px;}
 
 /* CONTAINER */
 .container{max-width: 1200px; margin: 0 auto;}

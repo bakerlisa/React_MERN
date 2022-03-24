@@ -3,8 +3,10 @@ import './App.css';
 import { Switch,Route,Link } from 'react-router-dom';
 
 import Home from './views/Home';
-import Edit from './views/Edit';
+import EditAuthor from './views/EditAuthor';
 import NewAuthor from './views/NewAuthor';
+import Error from './views/Error';
+import { Redirect } from 'react-router-dom';
 
 function App() {
   return (
@@ -20,13 +22,19 @@ function App() {
         </Route>
 
         <Route exact path="/edit/:id">
-          <Edit />
+          <EditAuthor />
         </Route>
 
         <Route exact path="/new">
           <NewAuthor />
         </Route>
 
+        <Route exact path="/404">
+          <Error />
+        </Route>
+
+        <Route><Redirect to="/404" /></Route>
+        
       </Switch>
     </div>
   );
