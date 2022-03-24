@@ -16,7 +16,6 @@ const Home = (props) => {
     }, [bread]);
 
     
-
     return(
         <>
             <div className={styled.banner}>
@@ -32,8 +31,9 @@ const Home = (props) => {
                             <p className={styled.price}><strong>Price:</strong> ${item.price}</p>
                             <p className={styled.description}>{item.description}</p>
                             <p className={styled.amount}><strong>Amount: </strong> {item.amount} </p>
+                            <p><strong>Total:</strong> (amount * price) = {item.price * item.amount}</p>
                             <div className={styled.buttons}>
-                                <CountUp indx={i} bread={bread} setBread={setBread}/>
+                                <CountUp indx={i} bread={bread} setBread={setBread} />
                                 <CountDown indx={i} bread={bread} setBread={setBread} />
                                 <Delete indx={i} bread={bread} />
                             </div>

@@ -1,43 +1,28 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 const CountDown = (props) => {
+    const arrIndx = props.indx;
     const [item,setItem] = useState([])
+    const [id,setID] = useState(props.bread[arrIndx]._id)
 
-        const countDown = (i) => {
-            setItem([])
-            
-            const copyBreadState = props.bread[i]
-            var breadPrice = 0;
-            var breadAmount = 0;
+    const countDown = () => {
+        setItem({
+            ...props.bread[arrIndx],
+            amount: props.bread[arrIndx].amount - 1 > 0  ? props.bread[arrIndx].amount - 1  : props.bread[arrIndx].amount
+        })
+    }
     
-            if( copyBreadState.price - (copyBreadState.price / copyBreadState.amount) > 0){
-                breadPrice = copyBreadState.price - (copyBreadState.price / copyBreadState.amount)
-            }else{
-                breadPrice = copyBreadState.price
-            }
-    
-            if(copyBreadState.amount - 1 > 0){
-                breadAmount= copyBreadState.amount - 1 
-            }else{
-                breadAmount = copyBreadState.amount
-            }
-    
-            setItem({
-                ...copyBreadState,
-                amount: breadAmount,
-                price: breadPrice
-            })
-    
-            axios.patch(`http://localhost:8000/api/update/product/${copyBreadState._id}`,item).then(response=>{
-                console.log(response)
-            })
-        }
+    useEffect(() => {
+        axios.patch(`http://localhost:8000/api/update/product/${id}`,item).then(response=>{
+            console.log(response)
+        })
+    }, [item.amount]); 
 
-        return( 
-            <div onClick={() => {countDown(props.indx)} }>Down</div>
-        )
+    return( 
+        <div onClick={countDown}>Down</div>
+    )
 }
 
 export default CountDown;
