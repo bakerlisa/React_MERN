@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 
 const Apply = (props) => {
     const { id } = useParams();
@@ -71,6 +71,7 @@ const Apply = (props) => {
         <div>
             <h1>Job Application: {job.title}</h1>
             <p><strong>Company: </strong> {job.company}</p>
+            <Link to="/account">Already Have an Account</Link>
 
             <form onSubmit={onSubmitHandler}>
             <div className="errWrp">

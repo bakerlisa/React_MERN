@@ -9,7 +9,6 @@ const EditJob = (props) => {
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/jobs/${id}`).then(response=>{
-            console.log(response.data.Job)
             setForm(response.data.Job);
         })
     }, [id]);

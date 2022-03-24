@@ -8,6 +8,7 @@ import CreateJob from './components/views/CreateJob';
 import EditJob from './components/views/EditJob';
 import Apply from './components/views/Apply';
 import People from './components/views/People';
+import Account from './components/views/Account';
 
 function App() {
   return (
@@ -45,6 +46,10 @@ function App() {
           {/* ========== PEOPLE ========== */}
           <Route exact path="/people">
             <People />
+          </Route>
+
+          <Route exact path="/account">
+            <Account />
           </Route>
 
         </Switch>
