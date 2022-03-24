@@ -6,19 +6,15 @@ import Form from '../components/Form';
 const EditProduct = (props) => {
     const history = useHistory();
     const { id } = useParams();
+    const [form,setForm] = useState({})
 
-    const [single,setSingle] = useState({})
+    useEffect(() => {
+        axios.get(`http://localhost:8000/api/product/${id}`).then(response=>{
+            setForm(response.data.product);
+        })
+    }, [id]);
 
-    const [form,setForm] = useState({
-        title: props.job.title,
-        price: props.job.price,
-        description: props.job.description,
-        amount: props.job.amount,
-        type: props.job.type
-    })
-
-    const [dbError,setDBError] = useState({ id:0})
-    var errorSize = Object.keys(dbError).length;
+    const [dbError,setDBError] = useState({ })
     const [error,setError] = useState({
         title: true,
         price: true,
@@ -30,7 +26,7 @@ const EditProduct = (props) => {
     const onSubmitHandler = (event) => {
         event.preventDefault();
 
-        axios.patch(`http://localhost:8000/api/update/product/${props.id}`, form)
+        axios.patch(`http://localhost:8000/api/update/product/${id}`, form)
         .then(res =>  { 
             console.log(res)
             history.push("/"); 
@@ -40,16 +36,10 @@ const EditProduct = (props) => {
         }); 
     }
 
-    useEffect(() => {
-        axios.get(`http://localhost:8000/api/product/${id}`).then(response=>{
-            setSingle(response.data.product);
-        })
-    }, [id]);
-
     return(
         
         <div>
-            <Form  title={`Edit: ${single.title}`}  />
+            <Form title={`Edit: ${form.title}`} form={form} setForm={setForm} onSubmitHandler={onSubmitHandler} dbError={dbError} error={error} setError={setError} />
         </div>
     )
 }

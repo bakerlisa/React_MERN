@@ -22,9 +22,6 @@ h1{font-size: 65px;}
 
 .App {text-align: center;}
 
-/* BANNER */
-
-
 /* FORM */
 input + span,textarea + span,select + span{display: none;}
 input:focus + span,textarea:focus + span,select:focus + span{color:red; display: block;}

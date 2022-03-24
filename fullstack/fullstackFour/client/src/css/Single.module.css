@@ -3,3 +3,4 @@
     .banner:before{content:''; height:100%; width: 100%; background-color:var(--black); opacity: .4; position: absolute; top: 0;left: 0; padding: 0;}
 .banner h1{margin: 0; position: relative; }
 .banner p{position: relative;}
+.banner a{color:var(--white); background-color:var(--blue); position: relative; z-index: 10; text-decoration: none; padding: 10px 15px;display: inline-block;}

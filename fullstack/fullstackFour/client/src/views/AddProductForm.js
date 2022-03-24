@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Form from '../components/Form';
 
 const AddProductForm = props => {
     const history = useHistory();
-    const { id } = useParams();
-    const [single,setSingle] = useState({})
+
     const [form,setForm] = useState({}) 
     
     const [dbError,setDBError] = useState({ id:0 })
-    var errorSize = Object.keys(dbError).length;
-
+    
     const [error,setError] = useState({
         title: false,
         price: false,
@@ -36,7 +34,7 @@ const AddProductForm = props => {
 
     return(
         <div>
-            <Form  title={`Edit: ${single.title}`}  />
+            <Form  title="Add Product" form={form} setForm={setForm}  onSubmitHandler={onSubmitHandler} dbError={dbError} error={error} setError={setError} />
         </div>
     )
 }

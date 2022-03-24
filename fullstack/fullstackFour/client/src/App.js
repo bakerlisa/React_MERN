@@ -24,7 +24,7 @@ function App() {
           </Route>
 
           <Route exact path="/add/product">
-            <AddProductForm title="Product Form"/>
+            <AddProductForm />
           </Route>
 
           <Route exact path="/product/:id">

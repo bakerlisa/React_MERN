@@ -21,8 +21,6 @@ const SingleProduct = (props) => {
                 <p className={styled.subtitle}>{single.description}</p>
                 <p className='price'><strong>Price: </strong> ${single.price}</p>
                 <p className='amount'><strong>Amount: </strong> {single.priamountce} {single.type}</p>
-            </div>
-            <div className={styled.container}>
                 <Link className="button" to={`/edit/product/${single._id}`}>Edit Product</Link>
             </div>
         </>
