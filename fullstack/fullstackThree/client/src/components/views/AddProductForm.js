@@ -5,7 +5,10 @@ import { useHistory } from 'react-router-dom';
 const AddProductForm = props => {
     const history = useHistory();
 
-    const [dbError,setDBError] = useState([])
+    const [dbError,setDBError] = useState({
+        id:0
+    })
+    var errorSize = Object.keys(dbError).length;
 
     const [form,setForm] = useState({})
 
@@ -39,25 +42,55 @@ const AddProductForm = props => {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:8000/api/create/product', form)
-            .then(res =>  { 
-                console.log(res);
-                // history.push("/"); 
-            })
-            .catch(err => {
-                console.error(err)
-                setDBError(err.response.data.error.errors)
-            });
+        if(props.job){
+            axios.patch(`http://localhost:8000/api/update/product/${props.id}`, form)
+                .then(res =>  { 
+                    console.log(res)
+                    history.push("/"); 
+                })
+                .catch(err => {
+                    setDBError(err.response.data.error.errors)
+                });
+        }else{
+            axios.post('http://localhost:8000/api/create/product', form)
+                .then(res =>  { 
+                    console.log(res)
+                    history.push("/"); 
+                })
+                .catch(err => {
+                    setDBError(err.response.data.error.errors)
+                });
+        }
     }
+
+    useEffect(() => {
+        if(props.job){
+            setForm({
+                title: props.job.title,
+                price: props.job.price,
+                description: props.job.description,
+                amount: props.job.amount,
+                type: props.job.type
+            })
+            setError({
+                title: true,
+                price: true,
+                description: true,
+                amount: true,
+                type: true
+            })
+        }
+    }, [props.job]);
+    
     return(
         <>
             <h1>{props.title}</h1>
             <form onSubmit={onSubmitHandler}>
-                {
-                    dbError && dbError.mesage ? "" : dbError.map((item,i) => {
-                        return <span key={i}>{item}</span>
-                    })
-                }
+                <div className="errWrp">
+                    {
+                        errorSize > 1 ? <><h4>Entries Required: </h4> {Object.keys(dbError).join(', ')}</> : ""
+                    }
+                </div>
 
                 <div>
                     <label htmlFor="title">Title: </label>
@@ -92,7 +125,7 @@ const AddProductForm = props => {
                 <div>
                     <label htmlFor="title">Type: </label>
                     <select name="type" value={form.type} onChange={onChangeHandler}>
-                        <option>Select Type...</option>
+                        <option disabled>Select Type...</option>
                         <option value="single">Single Item</option>
                         <option value="dozen">Dozen</option>
                     </select>

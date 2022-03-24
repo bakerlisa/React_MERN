@@ -5,5 +5,5 @@ module.exports = app => {
     app.get('/api/product/:id', ProductController.singleProduct);
     app.post('/api/create/product', ProductController.createNewProduct);
     app.delete('/api/delete/product/:id', ProductController.deleteProduct);
-    app.put('/api/update/product/:id', ProductController.editProduct)
+    app.patch('/api/update/product/:id', ProductController.editProduct)
 }

@@ -10,5 +10,5 @@
     .allBreads > div:hover{background-color:transparent; transition: all.25s ease-in;}
 .allBreads .title{font-size: 28px; font-weight: 960; margin-top: 0; text-decoration: none; color:var(--black);}
 .buttons{display: flex;align-items: center;justify-content: center;flex-wrap: wrap;}
-.buttons a{padding: 0 5px; text-decoration: none;}
-.buttons a:hover{cursor: pointer; color:var(--blue);}
+.buttons > div{padding: 10px; text-decoration: none;}
+.buttons > div:hover{cursor: pointer; color:var(--blue);}

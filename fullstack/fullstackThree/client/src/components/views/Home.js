@@ -6,20 +6,84 @@ import styled from '../css/Home.module.css'
 const Home = (props) => {
     const [bread, setBread] = useState([]);
 
-    const countUp = (event) => {
-        var newAmount = bread.amount
+    const [item,setItem] = useState([])
+
+    const countUp = (i) => {
+        setItem([])
+
+        setItem({
+            ...bread[i],
+            amount: bread[i].amount + 1,
+            price: bread[i].price / bread[i].amount + bread[i].price 
+        })
+
+        const copyingBread = bread
+        copyingBread.splice(i,1,item)
+        setBread(copyingBread)
+
+        axios.patch(`http://localhost:8000/api/update/product/${bread[i]._id}`,item).then(response=>{
+            console.log(response)
+        }) 
+    }
+
+
+
+    const countDown = (i) => {
+        setItem([])
+        
+        const copyBreadState = bread
+        var breadPrice = 0;
+        var breadAmount = 0;
+
+        if( bread[i].price - (bread[i].price / bread[i].amount) > 0){
+            breadPrice = bread[i].price - (bread[i].price / bread[i].amount)
+        }else{
+            breadPrice = bread[i].price
+        }
+
+        if(bread[i].amount - 1 > 0){
+            breadAmount= bread[i].amount - 1 
+        }else{
+            breadAmount = bread[i].amount
+        }
+
+        setItem({
+            ...bread[i],
+            amount: breadAmount,
+            price: breadPrice
+        })
+
+        copyBreadState.splice(i,1,item)
+        setBread(copyBreadState)
+
+        axios.patch(`http://localhost:8000/api/update/product/${bread[i]._id}`,item).then(response=>{
+            console.log(response)
+        })
+        
         
     }
 
-    const countDown = (event) => {
+    const onDeleteHandler = (i) => {
+        if(window.confirm("Are you sure you want to remove this job?")){ 
+            axios.delete(`http://localhost:8000/api/delete/product/${bread[i]._id}`).then(response=>{
+                console.log(response)
+            })
 
+            const copyBread = bread
+            copyBread.splice(i,1)
+            setBread(copyBread)
+        }
     }
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/products').then(response=>{
             setBread(response.data.products);
         })
-    }, []);
+    }, [bread]);
+
+
+
+    
 
     return(
         <>
@@ -37,9 +101,9 @@ const Home = (props) => {
                             <p className={styled.description}>{item.description}</p>
                             <p className={styled.amount}><strong>Amount: </strong> {item.amount} </p>
                             <div className={styled.buttons}>
-                                <a onClick={countUp}>Add</a>
-                                <a onClick={countDown}>Remove</a>
-                                <a href="">Delete</a>
+                                <div onClick={ () => {countUp(i)} }>Add</div>
+                                <div onClick={() => {countDown(i)} }>Down</div>
+                                <div onClick={() => {onDeleteHandler(i)} }>Delete</div>
                             </div>
                         </div>
                     })
