@@ -7,7 +7,6 @@ const People = (props) => {
     
     useEffect(() => {
         axios.get('http://localhost:8000/api/people').then(response=>{
-            console.log(response.data.Peoples);
             setPeople(response.data.Peoples);
         })
     }, []);
