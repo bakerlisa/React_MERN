@@ -6,7 +6,6 @@ import Home from './views/Home';
 import SingleProduct from './views/SingleProduct';
 import EditProduct from './views/EditProduct';
 
-
 function App() {
 
   return (
