@@ -1,4 +1,4 @@
-const AuthorsController = require('../controllers/author.controller');
+const AuthorsController = require('../controllers/team.controller');
 
 module.exports = app => {
     app.get('/api/authors', AuthorsController.allAuthors);

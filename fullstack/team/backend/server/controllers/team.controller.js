@@ -1,36 +1,36 @@
-const Author = require('../models/author.model');
+const Team = require('../models/team.model');
 
 // FIND
-module.exports.allAuthors = (req, res) => {
-    Author.find()
-        .then(allDaAuthors => res.json({ authors: allDaAuthors }))
-        .catch(err => res.status(400).json({ message: 'Something went wrong finding all products', error: err }));
+module.exports.allTeams = (req, res) => {
+    Team.find()
+        .then(allDaTeams => res.json({ teams: allDaTeams }))
+        .catch(err => res.status(400).json({ message: 'Something went wrong finding all teams', error: err }));
 }
 
-module.exports.singleAuthor = (req,res) => {
-    Author.findOne({_id: req.params.id})
-    .then(singleAuthorInfo => res.json({ author: singleAuthorInfo}))
-    .catch(err => res.status(400).json({ message: 'Something went wrong when getting single product', error: err }));
+module.exports.singleTeam = (req,res) => {
+    Team.findOne({_id: req.params.id})
+    .then(singleTeamInfo => res.json({ author: singleTeamInfo}))
+    .catch(err => res.status(400).json({ message: 'Something went wrong finding team', error: err }));
 }
 
-module.exports.editAuthor = (req,res) => {
-    Author.findOneAndUpdate({_id: req.params.id},
+module.exports.editTeam = (req,res) => {
+    Team.findOneAndUpdate({_id: req.params.id},
         req.body,
         { new: true, runValidators: true })
-    .then(updateAuthor=> res.json({ updatedAuthor: updateAuthor}))
-    .catch(err => res.status(400).json({ message: 'Something went wrong when getting single product', error: err }));
+    .then(updateTeam => res.json({ updatedTeam: updateTeam }))
+    .catch(err => res.status(400).json({ message: 'Something went wrong when updating team', error: err }));
 }
 
 // CREATE
-module.exports.createAuthor = (req,res) => {
-    Author.create(req.body)
-    .then(newAuthor => res.json({ createdAuthor: newAuthor }))
-    .catch(err => res.status(400).json({ message: 'Something went wrong creating new product', error: err }));
+module.exports.createTeam = (req,res) => {
+    Team.create(req.body)
+    .then(newTeam => res.json({ createdTeam: newTeam }))
+    .catch(err => res.status(400).json({ message: 'Something went wrong creating team', error: err }));
 }
 
 // DELETE
-module.exports.deleteAuthor = (req,res) => {
-    Author.deleteMany({_id: req.params.id})
+module.exports.deleteTeam = (req,res) => {
+    Team.deleteMany({_id: req.params.id})
     .then(result => res.json({ result: result}))
-    .catch(err => res.status(400).json({ message: 'Something went wrong when deleting product', error: err }));
+    .catch(err => res.status(400).json({ message: 'Something went wrong when deleting team', error: err }));
 }

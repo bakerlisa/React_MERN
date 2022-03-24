@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const AuthorsSchema = new mongoose.Schema({
+const TeamSchema = new mongoose.Schema({
     author: {
         type:String,
         required: [true, "Name is required"],
@@ -26,6 +26,6 @@ const AuthorsSchema = new mongoose.Schema({
     }
 },{timestamps:true});
 
-const Authors = mongoose.model('Authors', AuthorsSchema);
+const Team = mongoose.model('Team', TeamSchema);
 
-module.exports = Authors;
+module.exports = Team;
