@@ -1,29 +1,25 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+
 import Form from '../components/Form';
 
-const NewAuthor = props => {
+
+const NewAuthor = (props) => {
     const history = useHistory();
+    const [form,setForm] = useState({})
 
-    const [form,setForm] = useState({}) 
-    
-    const [dbError,setDBError] = useState({ id:0 })
-    
+    const [dbError,setDBError] = useState({ })
     const [error,setError] = useState({
-        title: false,
-        price: false,
-        description: false,
-        amount: false,
-        type: false
+        author: false,
+        email: false
     })
-
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
         axios.post('http://localhost:8000/api/create/author', form)
             .then(res =>  { 
-                console.log(res)
+                console.log(res.data)
                 history.push("/"); 
             })
             .catch(err => {
@@ -31,10 +27,9 @@ const NewAuthor = props => {
             });
     }
 
-
     return(
         <div>
-            <Form  title="Add Product" form={form} setForm={setForm}  onSubmitHandler={onSubmitHandler} dbError={dbError} error={error} setError={setError} />
+            <Form  title="Add Author" form={form} setForm={setForm}  onSubmitHandler={onSubmitHandler} dbError={dbError} error={error} setError={setError} />
         </div>
     )
 }

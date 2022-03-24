@@ -12,6 +12,7 @@ GLOBAL STYLES
   --pink:#E3CBCE;
   --yellow:#F3D09B;
   --brown:#3a1605;
+  --red:#BF0404;
 }
 
 h1{font-size: 65px;}
@@ -48,8 +49,10 @@ form .submit:hover{cursor: pointer; opacity: .75;}
   form > div > span{text-align-last: left;}
   input + span,textarea + span,select + span{display: block; max-height:0; height:100%; overflow: hidden; transition: all .2s ease-in;}
   input:focus + span,textarea:focus + span,select:focus + span{color:var(--red); max-height:50px; transition: all .2s ease-in;}
-.errWrp{padding-bottom: 25px; color:var(--red);}
-.errWrp h4{margin:0 ;}
+
+  /* Database Errors */
+  .errWrp{ color:var(--red);}
+  .errWrp h4{margin:0 ;}
 /* NAV */
 nav{text-align: right; padding: 25px 50px; background-color:var(--black); border-bottom: solid 1px var(--pink);}
 nav a{color:var(--pink); padding: 0 10px; text-decoration: none; font-weight: 600;}

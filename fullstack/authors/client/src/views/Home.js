@@ -15,6 +15,7 @@ const Home = (props) => {
 
     return(
         <div>
+            <h1>Authors</h1>
             <Link to="/new" className="button-lg">Add an Author</Link>
             <div className="allAuthors">
                 {
