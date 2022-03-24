@@ -9,15 +9,6 @@ import styled from '../css/Home.module.css'
 const Home = (props) => {
     const [bread, setBread] = useState([]);
 
-    const [item,setItem] = useState([])
-
-    const updateBread = (i) => {
-        const copyingBread = bread
-        copyingBread.splice(i,1,item)
-        setBread(copyingBread)
-    }
-
-
     useEffect(() => {
         axios.get('http://localhost:8000/api/products').then(response=>{
             setBread(response.data.products);
@@ -42,12 +33,9 @@ const Home = (props) => {
                             <p className={styled.description}>{item.description}</p>
                             <p className={styled.amount}><strong>Amount: </strong> {item.amount} </p>
                             <div className={styled.buttons}>
-                                
-                                <CountUp indx={i} onSucessCallback={ (i) => {updateBread}}/>
-                                
-                                <CountDown indx={i} onSucessCallback={ (i) => {updateBread}}/>
-
-                                <Delete indx={i} onSucessCallback={ (i) => {updateBread}} />
+                                <CountUp indx={i} bread={bread} setBread={setBread}/>
+                                <CountDown indx={i} bread={bread} setBread={setBread} />
+                                <Delete indx={i} bread={bread} />
                             </div>
                         </div>
                     })

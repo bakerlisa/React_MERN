@@ -13,20 +13,11 @@ const EditProduct = (props) => {
         })
     }, [id]);
 
-    const onSubmitEdit = (form) => {
-        axios.patch(`http://localhost:8000/api/update/product/${props.id}`, form)
-            .then(res =>  { 
-                console.log(res)
-                history.push("/"); 
-            })
-            .catch(err => {
-                setDBError(err.response.data.error.errors)
-            });
-    }
+
     return(
         
         <div>
-            <AddProductForm  title={`Edit: ${single.title}`}  job={single} id={id} onSubmitHandler={() => {onSubmitEdit(form)} } />
+            <AddProductForm  title={`Edit: ${single.title}`}  job={single} id={id}  />
         </div>
     )
 }

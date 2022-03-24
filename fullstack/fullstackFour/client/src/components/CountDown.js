@@ -1,17 +1,18 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 
 
 const CountDown = (props) => {
-    
+    const [item,setItem] = useState([])
+
         const countDown = (i) => {
             setItem([])
             
-            const copyBreadState = bread[i]
+            const copyBreadState = props.bread[i]
             var breadPrice = 0;
             var breadAmount = 0;
     
-            if( bcopyBreadState.price - (copyBreadState.price / copyBreadState.amount) > 0){
+            if( copyBreadState.price - (copyBreadState.price / copyBreadState.amount) > 0){
                 breadPrice = copyBreadState.price - (copyBreadState.price / copyBreadState.amount)
             }else{
                 breadPrice = copyBreadState.price
@@ -31,7 +32,6 @@ const CountDown = (props) => {
     
             axios.patch(`http://localhost:8000/api/update/product/${copyBreadState._id}`,item).then(response=>{
                 console.log(response)
-                props.onSucessCallback
             })
         }
 
