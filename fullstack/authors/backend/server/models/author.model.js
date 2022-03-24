@@ -21,7 +21,8 @@ const AuthorsSchema = new mongoose.Schema({
         type: Array
     },
     likes:{
-        type: Number
+        type: Number,
+        default: 0
     }
 },{timestamps:true});
 
