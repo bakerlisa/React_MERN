@@ -22,7 +22,6 @@ const Edit = (props) => {
             setForm(response.data.author);
         })
         .catch(err => {
-            console.log("error")
             history.push("/404");
         });
     }, [id]);
@@ -32,7 +31,6 @@ const Edit = (props) => {
         event.preventDefault();
         axios.patch(`http://localhost:8000/api/update/author/${id}`, form)
             .then(res =>  { 
-                console.log(res.data)
                 history.push("/"); 
             })
             .catch(err => {

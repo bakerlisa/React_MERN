@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 import Form from '../components/Form';
+import { Link } from 'react-router-dom';
 
 
 const NewAuthor = (props) => {
@@ -17,19 +18,19 @@ const NewAuthor = (props) => {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:8000/api/create/author', form)
-            .then(res =>  { 
-                console.log(res.data)
-                history.push("/"); 
-            })
-            .catch(err => {
-                setDBError(err.response.data.error.errors)
-            });
+        // axios.post('http://localhost:8000/api/create/author', form)
+        //     .then(res =>  { 
+        //         history.push("/"); 
+        //     })
+        //     .catch(err => {
+        //         setDBError(err.response.data.error.errors)
+        //     });
     }
 
     return(
         <div>
             <Form  title="Add Author" form={form} setForm={setForm}  onSubmitHandler={onSubmitHandler} dbError={dbError} error={error} setError={setError} />
+            <Link to="/" className="cancle">Cancle</Link>
         </div>
     )
 }

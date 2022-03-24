@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Form = props => {
     var errorSize = Object.keys(props.dbError).length;
+    const [book,setBook] = useState([])
+    const [genre,setGenre] = useState([])
 
     const lengths = {
         author: 3,
@@ -18,6 +20,13 @@ const Form = props => {
                 props.setError({...props.error,[event.target.name]:false})
             }
         }
+    }
+
+    const onFocusOutHandler = (event) => {
+        console.log(event.target.name)
+        const copyCurrentBooks = props.form[event.target.name]
+        const arr = copyCurrentBooks.split(',');
+        props.setForm({...props.form, [event.target.name]: arr})
     }
     
     return(
@@ -52,12 +61,12 @@ const Form = props => {
 
                 <div>
                     <label htmlFor="books">Books: </label>
-                    <input type="text" name="books" value={props.form.books}  onChange={onChangeHandler} placeholder="comma seperated list"/>
+                    <input type="text" name="books" value={props.form.books}  onChange={onChangeHandler} placeholder="comma seperated list" onBlur={onFocusOutHandler}/>
                 </div> 
 
                 <div>
                     <label htmlFor="genre">Genre: </label>
-                    <input type="text" name="genre" value={props.form.genre}  onChange={onChangeHandler} placeholder="comma seperated list"/>
+                    <input type="text" name="genre" value={props.form.genre}  onChange={onChangeHandler} placeholder="comma seperated list" onBlur={onFocusOutHandler}/>
                 </div> 
                 
                 {
