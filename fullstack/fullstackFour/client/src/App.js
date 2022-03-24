@@ -1,11 +1,10 @@
 import './App.css';
-import { useState } from 'react';
-import { Switch,Route,useHistory,Link } from 'react-router-dom';
+import { Switch,Route,Link } from 'react-router-dom';
 
-import AddProductForm from './components/views/AddProductForm';
-import Home from './components/views/Home';
-import SingleProduct from './components/views/SingleProduct';
-import EditProduct from './components/views/EditProduct';
+import AddProductForm from './views/AddProductForm';
+import Home from './views/Home';
+import SingleProduct from './views/SingleProduct';
+import EditProduct from './views/EditProduct';
 
 
 function App() {

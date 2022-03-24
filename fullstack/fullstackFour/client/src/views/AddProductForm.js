@@ -43,14 +43,7 @@ const AddProductForm = props => {
     const onSubmitHandler = (event) => {
         event.preventDefault();
         if(props.job){
-            axios.patch(`http://localhost:8000/api/update/product/${props.id}`, form)
-                .then(res =>  { 
-                    console.log(res)
-                    history.push("/"); 
-                })
-                .catch(err => {
-                    setDBError(err.response.data.error.errors)
-                });
+            
         }else{
             axios.post('http://localhost:8000/api/create/product', form)
                 .then(res =>  { 
@@ -85,7 +78,7 @@ const AddProductForm = props => {
     return(
         <>
             <h1>{props.title}</h1>
-            <form onSubmit={onSubmitHandler}>
+            <form onSubmit={ () => {props.onSubmitHandler(form)} }>
                 <div className="errWrp">
                     {
                         errorSize > 1 ? <><h4>Entries Required: </h4> {Object.keys(dbError).join(', ')}</> : ""

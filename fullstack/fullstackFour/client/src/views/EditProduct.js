@@ -11,11 +11,22 @@ const EditProduct = (props) => {
         axios.get(`http://localhost:8000/api/product/${id}`).then(response=>{
             setSingle(response.data.product);
         })
-    }, []);
+    }, [id]);
+
+    const onSubmitEdit = (form) => {
+        axios.patch(`http://localhost:8000/api/update/product/${props.id}`, form)
+            .then(res =>  { 
+                console.log(res)
+                history.push("/"); 
+            })
+            .catch(err => {
+                setDBError(err.response.data.error.errors)
+            });
+    }
     return(
         
         <div>
-            <AddProductForm  title={`Edit: ${single.title}`}  job={single} id={id}/>
+            <AddProductForm  title={`Edit: ${single.title}`}  job={single} id={id} onSubmitHandler={() => {onSubmitEdit(form)} } />
         </div>
     )
 }
