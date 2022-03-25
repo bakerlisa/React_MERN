@@ -6,13 +6,17 @@ const TeamSchema = new mongoose.Schema({
         required: [true, "Name is required"],
         minlength: [3, "Name needs to be at least 3 characters"]
     },
+    position: {
+        type:String, 
+        required: [true, "Position is required"]
+    },
     game1: {
         type: String,
-        default: "active"
+        default: "undecided"
     },
     game2: {
         type: String,
-        default: "inactive"
+        default: "undecided"
     },
     game3: {
         type: String,
