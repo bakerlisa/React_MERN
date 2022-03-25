@@ -1,9 +1,9 @@
-const AuthorsController = require('../controllers/team.controller');
+const TeamController = require('../controllers/team.controller');
 
 module.exports = app => {
-    app.get('/api/authors', AuthorsController.allAuthors);
-    app.get('/api/author/:id', AuthorsController.singleAuthor);
-    app.post('/api/create/author', AuthorsController.createAuthor);
-    app.delete('/api/delete/author/:id', AuthorsController.deleteAuthor);
-    app.patch('/api/update/author/:id', AuthorsController.editAuthor)
+    app.get('/api/teams', TeamController.allTeams);
+    app.get('/api/team/:id', TeamController.singleTeam);
+    app.post('/api/create/team', TeamController.createTeam);
+    app.delete('/api/delete/team/:id', TeamController.deleteTeam);
+    app.patch('/api/update/team/:id', TeamController.editTeam)
 }

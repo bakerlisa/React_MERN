@@ -1,28 +1,22 @@
 const mongoose = require('mongoose');
 
 const TeamSchema = new mongoose.Schema({
-    author: {
+    name: {
         type:String,
         required: [true, "Name is required"],
         minlength: [3, "Name needs to be at least 3 characters"]
     },
-    email: {
+    game1: {
         type: String,
-        required: [true, "Email is required"],
-        minlength: [3, "Email needs to be at least 10 characters"]
+        default: "active"
     },
-    image: {
-        type: String
+    game2: {
+        type: String,
+        default: "inactive"
     },
-    books: {
-        type: Array
-    },
-    genre: {
-        type: Array
-    },
-    likes:{
-        type: Number,
-        default: 0
+    game3: {
+        type: String,
+        default: "undecided"
     }
 },{timestamps:true});
 
