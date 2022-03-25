@@ -21,18 +21,22 @@ const Home = (props) => {
                 <Link to="/players/addplayer">Add Player</Link>
             </nav>
             <div className="container">
-                <div className={styled.titleWrp}>
-                    <p className="title">Name</p>
-                    <p className="position">Position</p>
-                    <p className="action">Action</p>
-                </div>
-                <div>
-                    {
-                        team.map((item,i) => {
-                            return <div key={i}  className={styled.subTtleWrp}><p> {item.name} </p><p> {item.position} </p> <Delete id={item._id} team={team} setTeam={setTeam} /> </div>
-                        })
+                {
+                    team.length > 0 ? <>
+                    <div className={styled.titleWrp}>
+                        <p className="title">Name</p>
+                        <p className="position">Position</p>
+                        <p className="action">Action</p>
+                    </div>
+                    <div>
+                        {
+                            team.map((item,i) => {
+                                return <div key={i}  className={styled.subTtleWrp}><p> {item.name} </p><p> {item.position} </p> <Delete id={item._id} team={team} setTeam={setTeam} /> </div>
+                            })
+                        }
+                    </div></>
+                    ? "no Players have been added"
                     }
-                </div>
             </div>
         </div>
     )
