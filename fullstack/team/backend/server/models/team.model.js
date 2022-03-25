@@ -8,6 +8,7 @@ const TeamSchema = new mongoose.Schema({
     },
     position: {
         type:String, 
+        minlength: [3, "Position needs to be at least 3 characters"],
         required: [true, "Position is required"]
     },
     game1: {
