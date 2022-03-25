@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from '../css/HomeStyles.module.css'
 import Delete from '../components/Delete';
+import NavThree from '../components/NavThree';
 
 const Home = (props) => {
     const [team, setTeam] = useState([]);
@@ -16,27 +17,25 @@ const Home = (props) => {
     
     return(
         <div>
-            <nav className="navTwo">
-                <Link to="/players/list">List</Link>
-                <Link to="/players/addplayer">Add Player</Link>
-            </nav>
+            <NavThree />
             <div className="container">
                 {
-                    team.length > 0 ? <>
-                    <div className={styled.titleWrp}>
-                        <p className="title">Name</p>
-                        <p className="position">Position</p>
-                        <p className="action">Action</p>
-                    </div>
-                    <div>
-                        {
-                            team.map((item,i) => {
-                                return <div key={i}  className={styled.subTtleWrp}><p> {item.name} </p><p> {item.position} </p> <Delete id={item._id} team={team} setTeam={setTeam} /> </div>
-                            })
-                        }
-                    </div></>
-                    ? "no Players have been added"
+                    team.length ? <><div className={styled.titleWrp}>
+                    <p className="title">Name</p>
+                    <p className="position">Position</p>
+                    <p className="action">Action</p>
+                </div>
+                <div>
+                    {
+                        team.map((item,i) => {
+                            return <div key={i}  className={styled.subTtleWrp}><p> {item.name} </p><p> {item.position} </p> <Delete id={item._id} team={team} setTeam={setTeam} /> </div>
+                        })
                     }
+                </div></>
+                    : <><h3>No players have been added</h3> <Link to="/players/addplayer" className="button-lg">Add Team Member</Link></>
+                }
+                    
+                    
             </div>
         </div>
     )

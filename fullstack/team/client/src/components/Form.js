@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 
 const Form = props => {
     var errorSize = Object.keys(props.dbError).length;
-    const [book,setBook] = useState([])
-    const [genre,setGenre] = useState([])
 
     const lengths = {
-        author: 3,
-        email: 10
+        name: 3,
+        position: 3
     }
 
     const onChangeHandler = (event) => {
@@ -22,12 +20,6 @@ const Form = props => {
         }
     }
 
-    const onFocusOutHandler = (event) => {
-        const copyCurrentBooks = props.form[event.target.name]
-        const arr = copyCurrentBooks.split(',');
-        props.setForm({...props.form, [event.target.name]: arr})
-    }
-    
     return(
         <>
             <h1>{props.title}</h1>
@@ -39,34 +31,20 @@ const Form = props => {
                 </div>
 
                 <div>
-                    <label htmlFor="author">Author: </label>
-                    <input type="text"  name="author" value={props.form.author} placeholder="Author" onChange={onChangeHandler} />
+                    <label htmlFor="name">Name: </label>
+                    <input type="text"  name="name" value={props.form.name} placeholder="John Doe" onChange={onChangeHandler} />
                     {
-                        props.error.author ? "" : <span>Please enter an author</span>
+                        props.error.name ? "" : <span>Please enter an Name</span>
                     }
                 </div>
 
                 <div>
-                    <label htmlFor="email">Email: </label>
-                    <input type="email"  name="email" value={props.form.email} placeholder="example@email.com" onChange={onChangeHandler} />
+                    <label htmlFor="position">Position: </label>
+                    <input type="text"  name="position" value={props.form.position} placeholder="Position..." onChange={onChangeHandler} />
                     {
-                        props.error.email ? "" : <span>Please enter an email</span>
+                        props.error.position ? "" : <span>Please enter a position</span>
                     }
                 </div>
-                <div>
-                    <label htmlFor="image">Author Image: </label>
-                    <input type="text"  name="image" value={props.form.image} placeholder="image url..." onChange={onChangeHandler} />
-                </div>
-
-                <div>
-                    <label htmlFor="books">Books: </label>
-                    <input type="text" name="books" value={props.form.books}  onChange={onChangeHandler} placeholder="comma seperated list" onBlur={onFocusOutHandler}/>
-                </div> 
-
-                <div>
-                    <label htmlFor="genre">Genre: </label>
-                    <input type="text" name="genre" value={props.form.genre}  onChange={onChangeHandler} placeholder="comma seperated list" onBlur={onFocusOutHandler}/>
-                </div> 
                 
                 {
                     Object.keys(props.error).every((item) => props.error[item]) ? <input type="submit" value="Create" className="submit" /> : <input type="submit" value="Create" disabled className="disabled" />

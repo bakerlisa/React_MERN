@@ -2,6 +2,8 @@ import './App.css';
 
 import { Switch,Route,Link,Redirect } from 'react-router-dom';
 import Home from './views/Home';
+import Add from './views/Add';
+import Game from './views/Game';
 
 
 function App() {
@@ -18,19 +20,11 @@ function App() {
         </Route>
 
         <Route exact path="/players/addplayer">
-          
+          <Add />
         </Route>
 
-        <Route exact path="/status/game/1">
-
-        </Route>
-
-        <Route exact path="/status/game/2">
-
-        </Route>
-
-        <Route exact path="/status/game/3">
-
+        <Route exact path="/status/game/:num">
+          <Game />
         </Route>
         
         <Route><Redirect to="/404" /></Route>
