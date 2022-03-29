@@ -40,25 +40,59 @@ function decimalToBinary(dec){
     var binary = "";
     var newTotal = dec
     
+    //finding the highest power (minus 1)
     while(Math.pow(2,power) <= dec){
         power++;
     }
 
+    // looping through that backwards (like in the first algo)
     for(i=power - 1; i >= 0;i--){
+        // if the power minus our "runner" greater than zero add zero && reset the running total
         if((newTotal - Math.pow(2,i)) >= 0 ){
             binary += 1;
             newTotal = newTotal-Math.pow(2,i)
         }else{
+            //else add zero and minus the power
             binary += 0;
         }
     }
+
     return binary;
 }
 
-decimalToBinary(21)
-// console.log(decimalToBinary("1101101"))
+// console.log(decimalToBinary("21"))
   // Ex: given 109 return "1101101"
   // Ex: given 4 return "100"
   // Ex: given 21 return "10101"
 
   // Note, typically binary has a leading "0b" in front of binary numbers (ex: "0b1101101") - try to modify your code to account for this after getting it to work
+
+
+function decimalToBinaryTwo(dec){
+    var power = 0;
+    var binary = "";
+    var newTotal = dec
+    
+    //finding the highest power (minus 1)
+    while(dec/2 >= 0){
+        dec /=2
+        console.log(dec)
+        power++;
+        break
+    }
+
+    // looping through that backwards (like in the first algo)
+    for(i=power - 1; i >= 0;i--){
+        // if the power minus our "runner" greater than zero add zero && reset the running total
+        if((newTotal - Math.pow(2,i)) >= 0 ){
+            binary += 1;
+            newTotal = newTotal-Math.pow(2,i)
+        }else{
+            //else add zero and minus the power
+            binary += 0;
+        }
+    }
+    // console.log(binary)
+    return binary;
+}
+console.log(decimalToBinaryTwo("21"))
