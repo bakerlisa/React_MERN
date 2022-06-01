@@ -7,7 +7,7 @@ N - Node </br>
 
 Also used Postman, JS, HTML, CSS, npm, terminal, github, and blood swear and tears 😂
 
-This folder if FULL, probably too full of MERN stuff! And I must say I do love me some react. If you're familiart with JS and ES6 React should be no problem!
+This folder if FULL, probably too full of MERN stuff! And I must say I do love me some react. If you're familiar with JS and ES6, then React should be no problem! And if you like JS you'll LOVE React!
 
 ## Best of the Best:
 ### Fullstack Exercises
