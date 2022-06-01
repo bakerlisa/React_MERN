@@ -4,7 +4,7 @@ I know I know! don't hate me, I'm working on the styles. I've got a life you kno
 
 Things to look for:
 1. 404 page
-2. array management thats going on in the backgroudn with books and genres 
+2. array management/saving/updating/deleting with titles and genres 
 3. Likes on the home page
 4. Look at the file structure for componets (its getting cleaner and more modularized)
 
