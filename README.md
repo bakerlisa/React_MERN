@@ -12,7 +12,7 @@ This folder if FULL, probably too full of MERN stuff! And I must say I do love m
 ## Best of the Best:
 ### Fullstack Exercises
 1. Bread - https://github.com/lisabroadhead/MERN/tree/main/fullstack/fullstackTwo
-2. Authors - https://github.com/lisabroadhead/MERN/blob/main/fullstack/authors/README.md
+2. Authors - https://github.com/lisabroadhead/MERN/tree/main/fullstack/authors
 
 ### Smaller projects
 A. Coin Flip - https://github.com/lisabroadhead/MERN/tree/main/react/coin-flip
