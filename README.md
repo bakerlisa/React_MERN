@@ -15,14 +15,16 @@ This folder if FULL, probably too full of MERN stuff! And I must say I do love m
 2. Authors - https://github.com/lisabroadhead/MERN/tree/main/fullstack/authors
 
 ### Smaller projects
-A. Coin Flip - https://github.com/lisabroadhead/MERN/tree/main/react/coin-flip
-B. Tabs -https://github.com/lisabroadhead/MERN/tree/main/react/tabs
-C. To Do - https://github.com/lisabroadhead/MERN/tree/main/react/to-do
+A. Coin Flip - https://github.com/lisabroadhead/MERN/tree/main/react/coin-flip<br/>
+B. Tabs -https://github.com/lisabroadhead/MERN/tree/main/react/tabs<br/>
+C. To Do - https://github.com/lisabroadhead/MERN/tree/main/react/to-do<br/>
 
-- Working with React and APIs - https://github.com/lisabroadhead/MERN/tree/main/react/pokemon-two
+### APIs
+- Pokemon - https://github.com/lisabroadhead/MERN/tree/main/react/pokemon-two
+- StarWars - https://github.com/lisabroadhead/MERN/tree/main/routing/stawwarsapi
 
-
-And of course, with a new folder I must find a new meme! What's ironic about this one is I've been told something similar. HA! Jokes on them</br>
+#### Laughs!
+And of course, with a new folder I must find a new Mmme! What's ironic about this one is I've been told something similar. HA! Jokes on them</br>
 
 ![](https://github.com/lisabroadhead/MERN/blob/main/images.jpeg) 
 
