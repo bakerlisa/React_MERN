@@ -12,7 +12,6 @@ This folder if FULL, probably too full of MERN stuff! And I must say I do love m
 ## Best of the Best:
 ### Full Stack Project: 
 1. Sibs - https://github.com/lisabroadhead/sibs
-<br/>
 2. Full CRUD Exam in 5hr - https://github.com/lisabroadhead/MERN-Deployment
 
 ### Fullstack Exercises
