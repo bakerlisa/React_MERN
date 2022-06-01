@@ -10,9 +10,14 @@ Also used Postman, JS, HTML, CSS, npm
 This folder if FULL, probably too full of MERN stuff! And I must say I do love me some react. If you're familiart with JS and ES6 React should be no problem!
 
 ## Best of the Best:
-1. Coin Flip - https://github.com/lisabroadhead/MERN/tree/main/react/coin-flip
-3. Tabs -https://github.com/lisabroadhead/MERN/tree/main/react/tabs
-4. To Do - https://github.com/lisabroadhead/MERN/tree/main/react/to-do
+### Fullstack Exercises
+1. Bread - https://github.com/lisabroadhead/MERN/tree/main/fullstack/fullstackTwo
+2. Authors - https://github.com/lisabroadhead/MERN/blob/main/fullstack/authors/README.md
+
+### Smaller projects
+A. Coin Flip - https://github.com/lisabroadhead/MERN/tree/main/react/coin-flip
+B. Tabs -https://github.com/lisabroadhead/MERN/tree/main/react/tabs
+C. To Do - https://github.com/lisabroadhead/MERN/tree/main/react/to-do
 
 - Working with React and APIs - https://github.com/lisabroadhead/MERN/tree/main/react/pokemon-two
 
