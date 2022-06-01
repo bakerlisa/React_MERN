@@ -24,7 +24,7 @@ C. To Do - https://github.com/lisabroadhead/MERN/tree/main/react/to-do<br/>
 - StarWars - https://github.com/lisabroadhead/MERN/tree/main/routing/stawwarsapi
 
 #### Laughs!
-And of course, with a new folder I must find a new Mmme! What's ironic about this one is I've been told something similar. HA! Jokes on them</br>
+And of course, new folder new meme, and what's ironic is I was once told this same thing! HA! Jokes on them</br>
 
 ![](https://github.com/lisabroadhead/MERN/blob/main/images.jpeg) 
 
