@@ -1,6 +1,6 @@
 # Authors
 
-Again, not pretty I'm working on things I need to get better for the exam tomorrow, so sorry :/ I don't like it either
+I know I know! don't hate me, I'm working on the styles. I've got a life you know...geezs :) 
 
 Things to look for:
 1. 404 page
