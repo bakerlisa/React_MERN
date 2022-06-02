@@ -24,6 +24,7 @@ This folder if FULL, probably too full of MERN stuff! And I must say I do love m
 3. To Do - https://github.com/lisabroadhead/MERN/tree/main/react/to-do<br/>
 
 ### APIs
+- GitHub User Search - https://github.com/lisabroadhead/github_search
 - Pokemon - https://github.com/lisabroadhead/MERN/tree/main/react/pokemon-two
 - StarWars - https://github.com/lisabroadhead/MERN/tree/main/routing/stawwarsapi
 
