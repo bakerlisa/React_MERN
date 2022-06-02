@@ -6,6 +6,7 @@ import Home from './views/Home';
 import EditAuthor from './views/EditAuthor';
 import NewAuthor from './views/NewAuthor';
 import Error from './views/Error';
+import Banner from './components/Banner';
 import { Redirect } from 'react-router-dom';
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
         <Link to="/">Home</Link>
         <Link to="/new">Create Author</Link>
       </nav>
+      <Banner />
+
 
       <Switch>
         <Route exact path="/">
