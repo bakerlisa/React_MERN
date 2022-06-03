@@ -12,7 +12,7 @@ This folder if FULL, probably too full of MERN stuff! And I must say I do love m
 ## Best of the Best:
 ### Full Stack Project: 
 1. Sibs - https://github.com/lisabroadhead/sibs
-2. https://github.com/lisabroadhead/MERN-Deployment
+2. Pirates - https://github.com/lisabroadhead/Pirates
 
 ### Fullstack Exercises
 1. Bread - https://github.com/lisabroadhead/MERN/tree/main/fullstack/fullstackTwo
