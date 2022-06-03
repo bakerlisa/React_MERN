@@ -57,11 +57,6 @@ form .submit:hover{cursor: pointer; opacity: .75;}
   .errWrp{ color:var(--red);}
   .errWrp h4{margin:0 ;}
 /* NAV */
-nav{text-align: right; padding: 25px 50px; background-color:var(--black); border-bottom: solid 1px var(--pink);}
-nav a{color:var(--pink); padding: 0 10px; text-decoration: none; font-weight: 600;}
-nav a:hover{color:var(--white);}
-
-/* NAV */
-nav{text-align: right; padding: 25px 50px; background-color:var(--black); border-bottom: solid 1px var(--white);}
+nav{text-align: right; padding: 25px 50px; background-color:transparent; border-bottom:  none; position: absolute; top: 0; left: 0; width: 100%;}
 nav a{color:var(--white); padding: 0 10px; text-decoration: none; font-weight: 600;}
-nav a:hover{color:var(--white);}
+nav a:hover{color:var(--blue);}

@@ -20,7 +20,7 @@ function App() {
 
       <Switch>
         <Route exact path="/">
-          <Banner title="Authors"/>
+          <Banner title="Authors" quote="The English language is an arsenal of weapons. If you are going to brandish them without checking to see whether or not they are loaded, you must expect to have them explode in your face from time to time."/>
           <Home />
         </Route>
 
