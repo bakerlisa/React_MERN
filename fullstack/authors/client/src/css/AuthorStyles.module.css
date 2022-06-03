@@ -1,8 +1,13 @@
-.authorBox{width: 33.33%;}
-    .imgWrp{height:300px; width: 300px; overflow: hidden; border-radius: 50%; margin: 0 auto 25px;}
+.authorBox{width: 25%; position: relative; padding: 25px; text-decoration: none;}
+    .imgWrp{height:300px; width: 300px; overflow: hidden; border-radius: 50%; margin: 0 auto 25px; transition: all .25s ease-in;}
     .authorImg{max-width: 300px; height:auto; filter: grayscale(100%);}
-.authorBox .name{display: block;text-decoration: none;font-size: 20px; color:var(--red); padding-bottom: 10px;margin-bottom: 10px;position: relative;}
+    .authorBox:hover .imgWrp{opacity: 0; transition: all .25s ease-in;}
+.nameWrp{position: absolute; top: 50%; transform: translateY(-50%); left: 0; right: 0; opacity: 0;}
+    .authorBox:hover .nameWrp{opacity: 1; transition: all .25s ease-in;}
+
+.authorBox .name{display: block;text-decoration: none;font-size: 20px; color:var(--black); padding-bottom: 10px;margin-bottom: 10px;position: relative; text-decoration: none; }
     .authorBox .name:before{content:''; height:2px; width: 50px; background-color:var(--black); position: absolute; bottom: 0; left: 0; right: 0; margin: 0 auto;}
     /* books */
     .booksGenreList{display: flex;align-items: start;justify-content: center; flex-wrap: wrap; text-align: center; margin: 0; padding: 0;}
     .booksGenreList li{list-style-type: none; padding: 0 5px;}
+.hide{display: none;}

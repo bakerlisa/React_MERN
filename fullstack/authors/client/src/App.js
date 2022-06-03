@@ -21,15 +21,17 @@ function App() {
 
       <Switch>
         <Route exact path="/">
-          <Banner title="Authors" quote="The English language is an arsenal of weapons. If you are going to brandish them without checking to see whether or not they are loaded, you must expect to have them explode in your face from time to time."/>
+          <Banner  page="home"  title="Authors" quote="The English language is an arsenal of weapons. If you are going to brandish them without checking to see whether or not they are loaded, you must expect to have them explode in your face from time to time."/>
           <Home />
         </Route>
 
         <Route exact path="/edit/:id">
+          <Banner page="edit" title="Edit Author" quote="Talent is cheaper than table salt. What separates the talented individual from the successful one is a lot of hard work."/>
           <EditAuthor />
         </Route>
 
         <Route exact path="/new">
+          <Banner page="new" title="Create Author" quote="There is no greater agony than bearing an untold story inside you."/>
           <NewAuthor />
         </Route>
 

@@ -18,18 +18,18 @@ const NewAuthor = (props) => {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        // axios.post('http://localhost:8000/api/create/author', form)
-        //     .then(res =>  { 
-        //         history.push("/"); 
-        //     })
-        //     .catch(err => {
-        //         setDBError(err.response.data.error.errors)
-        //     });
+        axios.post('http://localhost:8000/api/create/author', form)
+            .then(res =>  { 
+                history.push("/"); 
+            })
+            .catch(err => {
+                setDBError(err.response.data.error.errors)
+            });
     }
 
     return(
         <div>
-            <Form  title="Add Author" form={form} setForm={setForm}  onSubmitHandler={onSubmitHandler} dbError={dbError} error={error} setError={setError} />
+            <Form  title="Add Author" form={form} setForm={setForm}  onSubmitHandler={onSubmitHandler} dbError={dbError} error={error} setError={setError} button="create"/>
             <Link to="/" className="cancle">Cancle</Link>
         </div>
     )

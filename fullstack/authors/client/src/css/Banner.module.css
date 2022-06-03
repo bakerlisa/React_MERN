@@ -1,3 +1,2 @@
-.bannerWrp{background-image: url('../img/books.jpg'); background-position:  center; background-size: cover; margin-bottom: 50px;} 
-h1{color:var(--white); margin: 0 0 25px 0; padding:250px 25px 0 25px;}
-.quote{color:var(--white); padding-bottom: 50px; margin: 0 auto; max-width: 1000px; font-size: 20px;}
+h1{color:var(--white); margin: 0 0 25px 0; padding:250px 25px 0 25px; position: relative; z-index: 10;}
+.quote{color:var(--white); padding-bottom: 50px; margin: 0 auto; max-width: 1000px; font-size: 20px; position: relative; z-index: 10;}

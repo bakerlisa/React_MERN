@@ -41,7 +41,7 @@ const Edit = (props) => {
     return(
         <>
             <div>
-                <Form  title={`Edit Author: ${form.author}`} form={form} setForm={setForm}  onSubmitHandler={onSubmitHandler} dbError={dbError} error={error} setError={setError} />
+                <Form  title={`Edit Author: ${form.author}`} form={form} setForm={setForm}  onSubmitHandler={onSubmitHandler} dbError={dbError} error={error} setError={setError} button="Edit"/>
                 <Link to="/" className="cancle">Cancle</Link>
                 <Delete id={id} />
             </div>

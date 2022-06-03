@@ -30,7 +30,6 @@ const Form = props => {
     
     return(
         <>
-            <h1>{props.title}</h1>
             <form onSubmit={props.onSubmitHandler} >
                 <div className="errWrp">
                     {
@@ -69,7 +68,7 @@ const Form = props => {
                 </div> 
                 
                 {
-                    Object.keys(props.error).every((item) => props.error[item]) ? <input type="submit" value="Create" className="submit" /> : <input type="submit" value="Create" disabled className="disabled" />
+                    Object.keys(props.error).every((item) => props.error[item]) ? <input type="submit" value={props.button} className="submit" /> : <input type="submit" value="Create" disabled className="disabled" />
                 }
 
             </form>
