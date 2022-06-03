@@ -15,18 +15,18 @@ This folder if FULL, probably too full of MERN stuff! And I must say I do love m
 2. Pirates - https://github.com/lisabroadhead/Pirates
 
 ### Fullstack Exercises
-1. Bread - https://github.com/lisabroadhead/MERN/tree/main/fullstack/fullstackTwo
-2. Authors - https://github.com/lisabroadhead/MERN/tree/main/fullstack/authors
+1. Bread - https://github.com/lisabroadhead/React_MERN/tree/main/fullstack/fullstackTwo
+2. Authors - https://github.com/lisabroadhead/React_MERN/tree/main/fullstack/authors
 
 ### Smaller Porjects:
-1. Coin Flip - https://github.com/lisabroadhead/MERN/tree/main/react/coin-flip<br/>
-2. Tabs -https://github.com/lisabroadhead/MERN/tree/main/react/tabs<br/>
-3. To Do - https://github.com/lisabroadhead/MERN/tree/main/react/to-do<br/>
+1. Coin Flip - https://github.com/lisabroadhead/React_MERN/tree/main/react/coin-flip<br/>
+2. Tabs -https://github.com/lisabroadhead/React_MERN/tree/main/react/tabs<br/>
+3. To Do - https://github.com/lisabroadhead/React_MERN/tree/main/react/to-do<br/>
 
 ### APIs
 1. GitHub User Search - https://github.com/lisabroadhead/github_search
-2. Pokemon - https://github.com/lisabroadhead/MERN/tree/main/react/pokemon-two
-3. StarWars - https://github.com/lisabroadhead/MERN/tree/main/routing/stawwarsapi
+2. Pokemon - https://github.com/lisabroadhead/React_MERN/tree/main/react/pokemon-two
+3. StarWars - https://github.com/lisabroadhead/React_MERN/tree/main/routing/stawwarsapi
 
 #### Laughs!
 And of course, new folder new meme. What's ironic is I was once told this same thing! HA! Jokes on them</br>
