@@ -1,8 +1,8 @@
 # Authors
 
-I know I know! don't hate me, I'm working on the styles. I've got a life you know...geezs :) 
+I finally got around to making this one look pretty! Still a few things I'd like to do to round it out a bit, but I feel better about the look and feel!
 
-Things to look for:
+Technical things I worked on:
 1. 404 page - any pages that doesn't have a route set up goes here
 2. array management/saving/updating/deleting with titles and genres 
 3. Likes button
