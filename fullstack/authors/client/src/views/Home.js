@@ -18,7 +18,6 @@ const Home = (props) => {
 
     return(
         <div>
-            <Link to="/new" className="button-lg">Add an Author</Link>
             <div className="allAuthors">
                 {
                     gfg.map((item,i) => {
@@ -26,6 +25,7 @@ const Home = (props) => {
                     }) 
                 }
             </div>
+            <Link to="/new" className="button-lg">Add an Author</Link>
         </div>
     )
 }

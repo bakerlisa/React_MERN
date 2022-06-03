@@ -7,6 +7,7 @@ import EditAuthor from './views/EditAuthor';
 import NewAuthor from './views/NewAuthor';
 import Error from './views/Error';
 import Banner from './components/Banner';
+import Footer from './components/Footer';
 import { Redirect } from 'react-router-dom';
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
         <Route><Redirect to="/404" /></Route>
         
       </Switch>
+
+    <Footer />
+
     </div>
   );
 }
