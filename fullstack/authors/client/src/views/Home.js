@@ -7,9 +7,7 @@ const Home = (props) => {
     const [authors,setSuthos] = useState([])
     
     const _ = require("lodash"); 
-    let gfg = _.sortBy(authors, ['_v:', 'author']);
-    console.log(gfg)
-
+    let gfg = _.sortBy(authors, ['_v:', 'author'])
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/authors`).then(response=>{
@@ -20,7 +18,6 @@ const Home = (props) => {
 
     return(
         <div>
-            <h1>Authors</h1>
             <Link to="/new" className="button-lg">Add an Author</Link>
             <div className="allAuthors">
                 {

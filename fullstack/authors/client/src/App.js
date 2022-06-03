@@ -16,11 +16,11 @@ function App() {
         <Link to="/">Home</Link>
         <Link to="/new">Create Author</Link>
       </nav>
-      <Banner />
 
 
       <Switch>
         <Route exact path="/">
+          <Banner title="Authors"/>
           <Home />
         </Route>
 
